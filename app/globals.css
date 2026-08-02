@@ -1,0 +1,305 @@
+@import 'tailwindcss';
+
+/* ==========================================================================
+   LabTechCrew design system — DERIVED FROM THE ACTUAL AD CREATIVES
+   --------------------------------------------------------------------------
+   Every value below was sampled with a colour picker from the six brand
+   creatives (branding / good-creative / different / time-is-now / digital-era
+   / social-media-design), not invented. The gradient is IDENTICAL on all six,
+   which is what makes the ads recognisable — so it is the spine of the site.
+
+   THE BRAND IN ONE LINE:
+     a single hue-257 violet ramp from #2A0090 to black,
+     with coral #DA797E as the one warm emphasis colour.
+
+   MEASURED FROM THE CREATIVES:
+     gradient top     #2A0090   (hue 257.5, S 100%, L 28%)
+     gradient stops   #210074 → #1B005E → #150047 → #0E0032 → #08001D → #000
+     emphasis coral   #DA797E   ("Branding", "spine", "GOOD", "DOWN", "NOW")
+     rose tint        #EAB4B7   ("Digital Era")
+     highlight        #F90060   ("Social" — used once, keep it rare)
+     button violet    #320996   ("CONNECT WITH US", "VISIT NOW")
+     muted indigo     #4D4B94   (the illustration circles)
+     logo gradient    #FFA26D → #E97E92 → #555AFA
+
+   CONTRAST, MEASURED (WCAG 2.1):
+     white   on #2A0090 .................... 13.99:1  ✅
+     coral   on #2A0090 ....................  4.67:1  ✅ body + large
+     coral   on #08001D ....................  6.83:1  ✅
+     #BFB2E4 on #2A0090 ....................  7.13:1  ✅ muted body text
+     coral   on WHITE ......................  2.99:1  ❌ NEVER do this
+     white   on CORAL ......................  2.99:1  ❌ NEVER do this
+     #0F0026 on CORAL ......................  6.8:1   ✅ this is why the
+                                                          primary button has
+                                                          DARK text
+   THE FIVE RULES:
+     1. The site is DARK BY DEFAULT. Every creative is dark violet → black.
+        A white site would not look like this brand.
+     2. Coral means "this is the important part." Use it for the one emphasis
+        word in a heading, and for the primary button. Nothing else.
+     3. A coral surface ALWAYS carries dark text (--color-accent-contrast).
+        White on coral fails contrast and looks washed out.
+     4. #F90060 magenta appears at most once per page. It is a highlight,
+        not a palette member.
+     5. Light sections exist for long-form reading only (blog). In a light
+        section, coral text must switch to --color-accent-strong (#B23F49) —
+        raw coral fails contrast on white.
+   ========================================================================== */
+
+@theme {
+  /* --- The violet ramp. Higher number = lighter, as sampled. ------------- */
+  --color-brand-950: #05000f;
+  --color-brand-900: #08001d;
+  --color-brand-850: #0e0032;
+  --color-brand-800: #150047;
+  --color-brand-700: #1b005e;
+  --color-brand-600: #210074;
+  --color-brand-500: #2a0090; /* ← the signature violet. Top of every creative. */
+  --color-brand-400: #3a18b8;
+  --color-brand-300: #5b34e8;
+  --color-brand-250: #4d4b94; /* muted indigo from the illustration circles */
+  --color-brand-200: #8d7ec2;
+  --color-brand-100: #bfb2e4;
+  --color-brand-50: #ede9f9;
+
+  /* --- Coral. The one warm colour in the system. ------------------------- */
+  --color-coral-700: #b23f49; /* text on LIGHT backgrounds only (5.68:1) */
+  --color-coral-600: #c4545c;
+  --color-coral-500: #da797e; /* ← brand accent, exactly as sampled */
+  --color-coral-400: #e9989c;
+  --color-coral-300: #eab4b7; /* rose tint, from "Digital Era" */
+  --color-coral-200: #f0c9cb;
+
+  /* --- Rare highlight. One use per page, maximum. ------------------------ */
+  --color-magenta-500: #f90060;
+  --color-magenta-700: #c6004c; /* the light-background variant */
+
+  /* --- Logo gradient. Decorative only, never behind text. ---------------- */
+  --color-logo-warm: #ffa26d;
+  --color-logo-pink: #e97e92;
+  --color-logo-blue: #555afa;
+
+  /* --- Semantic tokens. DARK IS THE DEFAULT. ---------------------------- */
+  --color-bg: #05000f;
+  --color-bg-top: #2a0090;
+  --color-surface: #12003c;
+  --color-surface-2: #1b005e;
+  --color-border: #2e1b5b;
+  --color-text: #ffffff;
+  --color-text-muted: #bfb2e4;
+  --color-text-subtle: #8d7ec2;
+  --color-accent: #da797e;
+  --color-accent-contrast: #0f0026; /* text that sits ON coral */
+  --color-accent-strong: #b23f49; /* coral for LIGHT backgrounds */
+
+  /* --- Semantic states --------------------------------------------------- */
+  --color-success: #3ddc9a;
+  --color-warning: #f5b74d;
+  --color-danger: #ff7a85;
+
+  /* --- Type -------------------------------------------------------------- */
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: var(--font-display), var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --text-display-1: clamp(2.75rem, 6vw, 4.5rem);
+  --text-display-1--line-height: 1.05;
+  --text-display-1--letter-spacing: -0.02em;
+  --text-display-1--font-weight: 700;
+
+  --text-display-2: clamp(2rem, 4vw, 3rem);
+  --text-display-2--line-height: 1.1;
+  --text-display-2--letter-spacing: -0.015em;
+  --text-display-2--font-weight: 700;
+
+  --text-h3: clamp(1.375rem, 2vw, 1.75rem);
+  --text-h3--line-height: 1.25;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 600;
+
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.65;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.7;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.6;
+
+  --text-eyebrow: 0.8125rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.08em;
+  --text-eyebrow--font-weight: 600;
+
+  /* --- Radii, shadow, motion --------------------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 8px 28px rgb(0 0 0 / 0.45);
+  --shadow-lg: 0 18px 56px rgb(0 0 0 / 0.55);
+  --shadow-coral: 0 10px 30px rgb(218 121 126 / 0.28);
+
+  --ease-brand: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  --container-site: 1200px;
+}
+
+/* ==========================================================================
+   Theme scopes
+   ========================================================================== */
+
+@layer base {
+  /*
+    The signature gradient. Sampled stop-for-stop from the creatives, applied
+    once to <body> and fixed so it does not repeat per-section. This single
+    declaration is what makes the site look like the ads.
+  */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    background-color: var(--color-brand-950);
+  }
+
+  html[data-scroll-behavior='smooth'] {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    background-color: var(--color-brand-950);
+    /*
+      The ramp is ANCHORED TO THE PAGE, not the viewport, and bounded to
+      ~2200px. So the hero sits in the bright violet, the fold fades through
+      it, and everything below is the deep near-black — which is exactly how
+      a single ad creative reads, translated to a scrolling page.
+
+      Do NOT use `background-attachment: fixed` here. It maps the gradient to
+      the viewport, so the violet reappears at the top of every screen as you
+      scroll and the ramp stops meaning anything.
+    */
+    background-image: linear-gradient(
+      180deg,
+      #2a0090 0%,
+      #260082 10%,
+      #210074 20%,
+      #1b005e 33%,
+      #150047 46%,
+      #0e0032 60%,
+      #08001d 76%,
+      #05000f 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 2200px;
+  }
+
+  /*
+    LIGHT SECTION. For long-form reading only (blog posts, legal pages).
+    Reassigning the semantic custom properties re-themes every Tailwind
+    utility inside the scope, so components need no light-mode variants.
+  */
+  [data-theme='light'] {
+    --color-bg: #ffffff;
+    --color-surface: #f6f4fc;
+    --color-surface-2: #ece8f8;
+    --color-border: #ddd6f2;
+    --color-text: #10002e;
+    --color-text-muted: #4a3d70;
+    --color-text-subtle: #6b5f8f;
+    --color-accent: #b23f49; /* raw coral fails on white — this is the swap */
+    --color-accent-contrast: #ffffff;
+
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-text);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Accessibility requirement, not a style choice. Coral reads clearly on
+     every background in the ramp. */
+  :focus-visible {
+    outline: 2px solid var(--color-coral-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-coral-500);
+    color: var(--color-accent-contrast);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* The brand's signature move: one coral word inside a white heading.
+     Use it ONCE per heading. Twice and it stops meaning anything. */
+  .em-accent {
+    color: var(--color-accent);
+  }
+
+  /* Logo-gradient text. Decorative headlines only — never body copy, and
+     never at small sizes where the gradient destroys legibility. */
+  .text-logo-gradient {
+    background-image: linear-gradient(
+      92deg,
+      var(--color-logo-warm) 0%,
+      var(--color-logo-pink) 45%,
+      var(--color-logo-blue) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Measure: 60–75 characters. Elementor prose runs 110+, which is the main
+     reason those pages feel unreadable. */
+  .prose-measure {
+    max-width: 68ch;
+  }
+
+  /* Frosted panel that lets the page gradient show through — this is what
+     stops a long dark page from reading as a flat black rectangle. */
+  .panel {
+    background-color: color-mix(in oklab, var(--color-brand-700) 42%, transparent);
+    border: 1px solid color-mix(in oklab, #ffffff 10%, transparent);
+    backdrop-filter: blur(10px);
+  }
+
+  [data-theme='light'] .panel {
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+    backdrop-filter: none;
+  }
+
+  /* Long one-pagers: skip offscreen layout work.
+     contain-intrinsic-size is MANDATORY or you trade INP for CLS. */
+  .defer-paint {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+  }
+}
