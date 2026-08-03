@@ -650,6 +650,24 @@ export function getCaseStudy(slug: string): CaseStudy | undefined {
   return CASE_STUDIES.find((c) => c.slug === slug)
 }
 
+/**
+ * Short display name — the part of `title` before the em dash.
+ *
+ * Every title above is written "Name — description", so the name is derivable
+ * and must always BE derived. The homepage "Recent work" strip used to hold a
+ * hand-typed array of these names, which is why it went on saying "uLoad" long
+ * after the client was renamed to Utrade Logistics here. Any list of project
+ * names maintained by hand is a second copy of this data, and it will drift.
+ *
+ * A title with no em dash falls back to the whole title rather than an empty
+ * string, so an entry that breaks the convention degrades instead of vanishing.
+ */
+export function caseStudyName(study: CaseStudy): string {
+  // `?? study.title` is for the type checker (noUncheckedIndexedAccess) and for
+  // the no-em-dash case at once — split always yields at least one element.
+  return (study.title.split('—')[0] ?? study.title).trim()
+}
+
 export function caseStudiesForService(serviceSlug: string, limit = 2): CaseStudy[] {
   return CASE_STUDIES.filter((c) => c.services.includes(serviceSlug)).slice(0, limit)
 }

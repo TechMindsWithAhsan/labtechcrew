@@ -18,11 +18,20 @@ import {
   getCaseStudy,
   caseStudiesForService,
   featuredCaseStudies,
+  caseStudyName,
   type CaseStudy,
 } from './data/work'
 
 export type { ServiceContent, CaseStudy }
-export { SERVICES, getService, CASE_STUDIES, getCaseStudy, caseStudiesForService, featuredCaseStudies }
+export {
+  SERVICES,
+  getService,
+  CASE_STUDIES,
+  getCaseStudy,
+  caseStudiesForService,
+  featuredCaseStudies,
+  caseStudyName,
+}
 
 export type Post = {
   slug: string

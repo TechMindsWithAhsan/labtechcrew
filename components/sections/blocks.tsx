@@ -1,9 +1,10 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Container, Section, SectionHeading, Eyebrow } from '@/components/ui/layout'
 import { Card, Badge } from '@/components/ui/card'
 import { ButtonLink } from '@/components/ui/button'
 import { SITE, SERVICE_TIERS, PRIMARY_CTA, SECONDARY_CTA } from '@/lib/site'
-import type { CaseStudy } from '@/lib/content'
+import { caseStudyName, type CaseStudy } from '@/lib/content'
 
 /* ==========================================================================
    ProofStrip
@@ -13,22 +14,86 @@ import type { CaseStudy } from '@/lib/content'
    that is trademark infringement plus false association under Lanham Act
    §43(a). The live site currently shows seven, three of which have no case
    study anywhere. Blueprint §10.1.
+
+   ⚠️ TAKES CASE STUDIES, NEVER A LIST OF NAMES. This used to accept
+   `projects: string[]` and the homepage passed a hand-typed array. It said
+   "uLoad" for months after the client was renamed to Utrade Logistics in
+   lib/data/work.ts — a list kept in sync by hand is a second copy of the data
+   and it always drifts. Names come from caseStudyName(), nowhere else.
+
+   Six unfamiliar company names in plain text proved nothing to a US buyer:
+   "PPInstalls" is not a credential. Each item is now a link to the case study
+   carrying a real screenshot, so the strip is evidence rather than a claim.
    ========================================================================== */
 
-export function ProofStrip({ projects }: { projects: string[] }) {
+export function ProofStrip({ studies }: { studies: CaseStudy[] }) {
   return (
     <div className="border-y border-white/10 bg-black/25 py-8">
       <Container>
         <p className="text-small text-(--color-text-subtle)">Recent work</p>
-        <ul className="mt-3 flex flex-wrap items-center gap-x-8 gap-y-3">
-          {projects.map((p) => (
-            <li
-              key={p}
-              className="font-(family-name:--font-display) text-[1.0625rem] font-semibold text-(--color-text-muted)"
-            >
-              {p}
-            </li>
-          ))}
+
+        {/*
+          Horizontal rail. The negative margins cancel Container's px-6/md:px-8
+          exactly, so the row bleeds to the viewport edge and the next card is
+          visibly cut off — that clipping IS the "scroll me" affordance. Keep
+          the -mx and px values matched to Container or the page gains a
+          horizontal scrollbar.
+
+          Widths stay on the spacing scale (w-64, not w-[256px]): check:responsive
+          fails bracketed pixel widths, which is the class of bug it exists for.
+        */}
+        <ul className="-mx-6 mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 md:-mx-8 md:px-8">
+          {studies.map((study) => {
+            const shot = study.shots?.[0]
+            return (
+              <li key={study.slug} className="w-64 shrink-0 snap-start">
+                <Link
+                  href={`/portfolio/${study.slug}/`}
+                  className="panel group flex h-full flex-col overflow-hidden rounded-(--radius-lg) hover:border-coral-500/40"
+                >
+                  {/*
+                    No screenshot → no image element at all. Never a placeholder
+                    or an empty framed box; the card degrades to name + category
+                    and still reads as intentional. Same decision, same reason as
+                    ProductShot — see the comment there.
+
+                    object-cover is required, not cosmetic: the real shots run
+                    from 1902×865 to 720×1497, and anything preserving their
+                    aspect ratios turns this row ragged.
+                  */}
+                  {shot ? (
+                    <div className="relative aspect-16/10 w-full overflow-hidden border-b border-white/10 bg-(--color-brand-900)">
+                      <Image
+                        src={shot.src}
+                        /*
+                          Empty alt ON PURPOSE — do not "fix" this. The image sits
+                          inside a link whose visible text already names the target,
+                          so a descriptive alt would bolt ~30 words onto the link's
+                          accessible name (the shot alts are full sentences). WCAG
+                          H2: image inside a labelled link is decorative. The real
+                          alt still does its work on the case-study page, where the
+                          screenshot is content rather than a thumbnail.
+                        */
+                        alt=""
+                        fill
+                        sizes="256px"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  ) : null}
+
+                  <div className="flex flex-col gap-1 p-4">
+                    <span className="font-(family-name:--font-display) text-[1.0625rem] font-semibold text-white">
+                      {caseStudyName(study)}
+                    </span>
+                    <span className="text-eyebrow uppercase text-(--color-text-subtle)">
+                      {study.category}
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </Container>
     </div>

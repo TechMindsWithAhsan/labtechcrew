@@ -17,7 +17,7 @@ import {
 import { FaqSection } from '@/components/sections/faq'
 import { pageMetadata } from '@/lib/seo'
 import { SITE } from '@/lib/site'
-import { getCaseStudy, featuredCaseStudies } from '@/lib/content'
+import { CASE_STUDIES, getCaseStudy, featuredCaseStudies } from '@/lib/content'
 
 /**
  * Home — section order per blueprint §4.1.
@@ -110,10 +110,16 @@ export default async function HomePage() {
         ]}
       />
 
-      {/* OWN WORK ONLY — no third-party logos without written permission. */}
-      <ProofStrip
-        projects={['QuranRI', 'PPInstalls', 'uLoad', 'TraderMind', 'FrameXLabs', 'Digital Samurais']}
-      />
+      {/*
+        OWN WORK ONLY — no third-party logos without written permission.
+
+        Pass the case studies themselves, never a list of names. The array that
+        used to live here was hand-typed and still said "uLoad" long after the
+        client was renamed to Utrade Logistics in lib/data/work.ts. It had also
+        quietly dropped 2 of the 8 studies with no record of why. Names and
+        categories are derived in ProofStrip now.
+      */}
+      <ProofStrip studies={CASE_STUDIES} />
 
       {/* --- The flagship, stated early. It is the whole argument. -------- */}
       {flagship ? (
