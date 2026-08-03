@@ -24,6 +24,8 @@ import { WebVitals } from './_components/web-vitals'
  *
  * Do NOT set `alternates.canonical` here. `alternates` merges shallowly and
  * would canonical every child page to one URL. Canonicals are page-level only.
+ *
+ * `pb-20 lg:pb-0` on <body> is not decorative — see the note below.
  */
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -44,7 +46,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en" className={fontVariables} data-scroll-behavior="smooth">
-      <body className="flex min-h-dvh flex-col antialiased">
+      {/*
+        pb-20 lg:pb-0 — MobileCtaBar below is position:fixed at bottom-0, so it
+        is out of flow and covers whatever the page ends with, which is the
+        footer. Measured height: p-3 (24px) + the size="lg" button's h-13 (52px)
+        + border-t (1px) = 77px. pb-20 is 80px, the smallest step on the scale
+        that clears it. The bar is lg:hidden, so the padding comes back off at
+        the same breakpoint or every desktop page gains 80px of dead space.
+        If the bar's padding or button size changes, re-measure this.
+      */}
+      <body className="flex min-h-dvh flex-col pb-20 antialiased lg:pb-0">
         {/*
           Consent Mode v2 DEFAULTS must execute before gtag.js loads, or the
           defaults do not apply at all. This inline script is deliberately
