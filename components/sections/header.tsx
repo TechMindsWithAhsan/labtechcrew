@@ -23,6 +23,13 @@ import { MegaMenu } from './mega-menu'
  *
  * Visually: transparent over the page gradient, with a blur + hairline that
  * only appear on scroll. A solid header bar would cut the gradient in half.
+ *
+ * ⚠️ `backdrop-blur-md` below is deliberate, and it has a side effect worth
+ * knowing about: a backdrop-filter makes this element the CONTAINING BLOCK for
+ * every fixed-position descendant. That is why MobileNav portals its open
+ * panel out to document.body — inside here, `fixed inset-0` would size to this
+ * 64px header box instead of the viewport. See the comment in mobile-nav.tsx
+ * before touching either the blur or the portal.
  */
 export function Header() {
   return (

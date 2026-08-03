@@ -52,7 +52,18 @@ npm run audit:gsc -- <gsc-pages-export.csv>
                     # redirect map and reports URLs that would 404, ranked by
                     # clicks. The sitemap shows what the CMS thinks exists;
                     # this shows what Google ACTUALLY has. Run before DNS.
-npm run check       # typecheck + build
+npm run check       # the full gate, seven steps in order:
+                    #   1. lint:tokens       CSS-variable syntax guard
+                    #   2. check:responsive  mobile overflow audit
+                    #   3. typecheck         tsc --noEmit
+                    #   4. build             next build
+                    #   5. check:links       every internal href resolves
+                    #   6. audit:seo         redirect map, single-hop
+                    #   7. check:shots       case studies missing screenshots
+                    # All seven are pure local work — no server, no Playwright.
+                    # NOTE: check:links and check:shots print their findings but
+                    # always exit 0. A green exit code is not enough; read the
+                    # output for ❌ and ⚠️.
 ```
 
 ---
