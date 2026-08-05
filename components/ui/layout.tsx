@@ -44,6 +44,7 @@ export function Section({
    * index — and re-screenshot after you do.
    */
   defer = false,
+  space = 'default',
 }: {
   as?: ElementType
   /**
@@ -57,6 +58,35 @@ export function Section({
    * black void. Use it on one or two sections per page, no more.
    */
   glow?: 'left' | 'right'
+  /**
+   * Vertical rhythm. THREE STEPS, and there will not be a fourth.
+   *
+   * ⚠️ MEASURE THESE BY THE COMBINED GAP, not by the class. `py` applies top
+   * AND bottom, so two stacked sections add up — that is the number a visitor
+   * actually sees, and forgetting it is what caused the original bug:
+   *
+   *   tight    py-10 md:py-14   →   80px /  112px combined
+   *   default  py-14 md:py-20   →  112px /  160px combined
+   *   loose    py-20 md:py-28   →  160px /  224px combined
+   *
+   * The old default was py-24 md:py-32, which put 192px of nothing between two
+   * sections on mobile and 256px on desktop — over a quarter of a 1080p
+   * viewport, empty. That is why the default had been overridden 27 times
+   * across nine values (py-20, py-16, pb-16, pb-12, py-8, py-28, py-14, py-12,
+   * pb-4): each was somebody patching the symptom on one page, so the rhythm
+   * changed as you scrolled. Fixing the default made almost all of them
+   * unnecessary, which is why so few sections carry this prop now.
+   *
+   * ⚠️ DO NOT pass padding through `className` instead. A prop has three legal
+   * values; a className has infinite ones, so this cannot drift back.
+   *
+   * tight   — two sections meant to read as one block. Use tight on BOTH
+   *           rather than inventing a value in between.
+   * default — almost everything.
+   * loose   — a first section that would otherwise crowd the header, and
+   *           full-bleed statements that need room.
+   */
+  space?: 'tight' | 'default' | 'loose'
   className?: string
   children: ReactNode
   id?: string
@@ -67,7 +97,10 @@ export function Section({
       id={id}
       data-theme={tone === 'light' ? 'light' : undefined}
       className={cn(
-        'relative py-24 md:py-32',
+        'relative',
+        space === 'tight' && 'py-10 md:py-14',
+        space === 'default' && 'py-14 md:py-20',
+        space === 'loose' && 'py-20 md:py-28',
         tone === 'veil' && 'bg-black/20',
         tone === 'light' && 'bg-white',
         defer && 'defer-paint',

@@ -63,7 +63,7 @@ export const SERVICES: ServiceContent[] = [
     eyebrow: 'Web development',
     h1: 'Websites that load fast, rank, and get answered',
     h1Accent: 'get answered',
-    lead: 'Most agency sites are beautiful and silent. We build the other kind — pages that load in under two seconds on a phone, survive a Google migration without losing a ranking, and put a real person on the other end of the form.',
+    lead: 'Most agency sites are beautiful and silent. We build the other kind: pages that load in under two seconds on a phone, survive a Google migration without losing a ranking, and put a real person on the other end of the form.',
     forWho: [
       'Your current site is slow on mobile and you can feel the leads leaking.',
       'You are on WordPress with fourteen plugins and you are afraid to touch it.',
@@ -72,11 +72,11 @@ export const SERVICES: ServiceContent[] = [
     included: [
       {
         title: 'A build on Next.js and TypeScript',
-        body: 'Server-rendered, statically generated, deployed to a CDN. Not a page builder with a theme bolted on. You get the repository, not a licence.',
+        body: 'Server-rendered, statically generated, deployed to a CDN. Not a page builder with a theme bolted on. You get the repository, not a license.',
       },
       {
         title: 'Core Web Vitals as an acceptance criterion',
-        body: 'We do not hand over until LCP, INP and CLS pass on mobile in the lab. Google measured a 21.6% improvement in lead-form completion per 0.1s of LCP gained — speed is a revenue line, not a vanity score.',
+        body: 'We do not hand over until LCP, INP and CLS pass on mobile in the lab. Google measured a 21.6% improvement in lead-form completion per 0.1s of LCP gained. Speed is a revenue line, not a vanity score.',
       },
       {
         title: 'A conversion path, not just pages',
@@ -88,7 +88,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         title: 'E-commerce when you need it',
-        body: 'Shopify, headless Shopify, or a custom checkout — chosen for your margin and volume, not for what we prefer to build.',
+        body: 'Shopify, headless Shopify, or a custom checkout, chosen for your margin and volume, not for what we prefer to build.',
       },
       {
         title: 'Analytics you will actually read',
@@ -102,15 +102,15 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: 'Will I lose my Google rankings?',
-        a: 'Not if the migration is done properly. Before we touch anything we export sixteen months of Search Console data and crawl every live URL, then build a redirect map where each old address resolves in exactly one hop. Expect a 10–30% dip in the first week — that is normal even on a clean migration — and a return to baseline by week four to six. We monitor it and tell you either way.',
+        a: 'Not if the migration is done properly. Before we touch anything we export sixteen months of Search Console data and crawl every live URL, then build a redirect map where each old address resolves in exactly one hop. Expect a 10–30% dip in the first week (that is normal even on a clean migration) and a return to baseline by week four to six. We monitor it and tell you either way.',
       },
       {
         q: 'Can I edit the site myself afterwards?',
-        a: 'Yes. We wire content to a CMS or a simple admin area so your team edits text, images, posts and case studies without a developer. Structural changes still need code, and that is deliberate — it is what stops a site drifting back into a slow mess.',
+        a: 'Yes. We wire content to a CMS or a simple admin area so your team edits text, images, posts and case studies without a developer. Structural changes still need code, and that is deliberate: it is what stops a site drifting back into a slow mess.',
       },
       {
         q: 'Why not just use WordPress?',
-        a: 'Sometimes WordPress is the right answer, and we will tell you when it is. It stops being the right answer when plugin count is dictating your page speed, when you need a real application behind the marketing pages, or when you want the site to be readable by AI search — which does not execute JavaScript, so a plugin-rendered page can be invisible to it.',
+        a: 'Sometimes WordPress is the right answer, and we will tell you when it is. It stops being the right answer when plugin count is dictating your page speed, when you need a real application behind the marketing pages, or when you want the site to be readable by AI search, which does not execute JavaScript, so a plugin-rendered page can be invisible to it.',
       },
       {
         q: 'How long does it take?',
@@ -130,7 +130,7 @@ export const SERVICES: ServiceContent[] = [
     eyebrow: 'Mobile apps',
     h1: 'iOS and Android, from one codebase to the store',
     h1Accent: 'to the store',
-    lead: 'An app that never gets through review is not an app. We build cross-platform products in React Native, ship them through App Store and Play review, and stay on for the version after launch — which is the version that actually decides whether people keep it.',
+    lead: 'An app that never gets through review is not an app. We build cross-platform products in React Native, ship them through App Store and Play review, and stay on for the version after launch, which is the version that actually decides whether people keep it.',
     forWho: [
       'Your customers keep asking whether there is an app, and there is not.',
       'You have a working web product and the mobile experience is holding it back.',
@@ -139,7 +139,7 @@ export const SERVICES: ServiceContent[] = [
     included: [
       {
         title: 'One codebase, both platforms',
-        body: 'React Native with TypeScript. Native modules where a platform genuinely needs them — camera, background location, secure storage — and shared code everywhere else.',
+        body: 'React Native with TypeScript. Native modules where a platform genuinely needs them (camera, background location, secure storage) and shared code everywhere else.',
       },
       {
         title: 'Authentication and payments that hold up',
@@ -150,7 +150,7 @@ export const SERVICES: ServiceContent[] = [
         body: 'Listing copy, screenshots, privacy nutrition labels, data-safety declarations and the review back-and-forth. Rejections are normal; the difference is whether someone knows how to answer them.',
       },
       {
-        title: 'Offline and low-bandwidth behaviour',
+        title: 'Offline and low-bandwidth behavior',
         body: 'Real users are on a subway with one bar. Local caching, queued writes and honest empty states are part of the build, not a later ticket.',
       },
       {
@@ -173,11 +173,11 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         q: 'Who owns the app listings?',
-        a: 'You do. The App Store Connect and Google Play accounts are created under your business, not ours. If we part ways you keep the app, the listing, the reviews and the users. Agencies that hold the developer account are holding your product hostage.',
+        a: 'You do. The App Store Connect and Google Play accounts are created under your business, not ours, so the listing, the reviews and the users sit on your account throughout. We work inside them as your developer. Ownership of the app source code itself transfers to you on final payment for the engagement. The agencies to watch are the ones that register the developer account in their own name, because that is the part you cannot buy back.',
       },
       {
         q: 'What if Apple rejects it?',
-        a: 'It happens, and it is usually about metadata, permissions copy or a payment rule rather than the code. Handling review is part of the engagement — we respond, adjust and resubmit until it is through.',
+        a: 'It happens, and it is usually about metadata, permissions copy or a payment rule rather than the code. Handling review is part of the engagement: we respond, adjust and resubmit until it is through.',
       },
     ],
   },
@@ -202,7 +202,7 @@ export const SERVICES: ServiceContent[] = [
     included: [
       {
         title: 'A scoping phase that produces a document, not a mood',
-        body: 'We map the workflow, name the entities, and write down what the software must do and — as importantly — what it will not do. You own that document whether or not you build with us.',
+        body: 'We map the workflow, name the entities, and write down what the software must do and, as importantly, what it will not do. You own that document whether or not you build with us.',
       },
       {
         title: 'A working slice in weeks, not a big-bang launch',
@@ -232,7 +232,7 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: 'Can you work with our existing system?',
-        a: 'Usually yes. We start with a short technical review of what exists, then either build alongside it through an API or strangle it out piece by piece. Full rewrites are the last option, not the first — they are where most software projects die.',
+        a: 'Usually yes. We start with a short technical review of what exists, then either build alongside it through an API or strangle it out piece by piece. Full rewrites are the last option, not the first. They are where most software projects die.',
       },
       {
         q: 'What happens if we want to bring it in-house later?',
@@ -250,13 +250,13 @@ export const SERVICES: ServiceContent[] = [
     name: 'WordPress → Next.js Migration',
     tier: 'build',
     isNew: true,
-    seoTitle: 'WordPress to Next.js Migration Service — Keep Your Rankings',
+    seoTitle: 'WordPress to Next.js Migration Service: Keep Your Rankings',
     seoDescription:
       'Migrate WordPress to Next.js without losing search rankings. Redirect mapping, metadata preservation, Core Web Vitals. Here is exactly how we did our own site.',
     eyebrow: 'Migration',
     h1: 'Leave WordPress without losing your rankings',
     h1Accent: 'without losing your rankings',
-    lead: 'We migrated our own site off WordPress and Elementor. We know precisely where it goes wrong, because we documented every step of ours — the redirect chain we caught with curl that the documentation told us would not exist, the metadata we froze on launch day, the traffic dip we expected and briefed everyone about in advance.',
+    lead: 'We migrated our own site off WordPress and Elementor. We know precisely where it goes wrong, because we documented every step of ours: the redirect chain we caught with curl that the documentation told us would not exist, the metadata we froze on launch day, the traffic dip we expected and briefed everyone about in advance.',
     forWho: [
       'Your WordPress site is slow, and every plugin you remove breaks something.',
       'You want a modern stack but you cannot afford to lose the search traffic you have.',
@@ -273,7 +273,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         title: 'Metadata frozen on launch day',
-        body: 'Your existing titles and descriptions ship unchanged, even the ones we would like to rewrite. Improve them after Search Console confirms recovery — otherwise you cannot tell a metadata mistake from a normal migration dip.',
+        body: 'Your existing titles and descriptions ship unchanged, even the ones we would like to rewrite. Improve them after Search Console confirms recovery. Otherwise you cannot tell a metadata mistake from a normal migration dip.',
       },
       {
         title: 'WordPress cruft handled',
@@ -281,11 +281,11 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         title: 'Structured data rebuilt, not lost',
-        body: 'Organization, WebSite, Article and breadcrumbs. Not FAQPage — Google dropped FAQ rich results on 7 May 2026 — and never a self-serving star rating, which Google ignores by policy.',
+        body: 'Organization, WebSite, Article and breadcrumbs. Not FAQPage (Google dropped FAQ rich results on 7 May 2026) and never a self-serving star rating, which Google ignores by policy.',
       },
       {
         title: 'Six weeks of monitoring after launch',
-        body: 'Weekly Search Console review with a plain-English note. Expect a dip in week one. The failure signal is not the dip — it is no recovery trend by week four.',
+        body: 'Weekly Search Console review with a plain-English note. Expect a dip in week one. The failure signal is not the dip: it is no recovery trend by week four.',
       },
     ],
     stack: ['Next.js', 'TypeScript', 'Screaming Frog', 'Google Search Console', 'Vercel', 'Cloudflare'],
@@ -295,11 +295,11 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: 'How much traffic will I lose?',
-        a: 'Plan for a 10–30% dip in the first week and a return to baseline by week four to six. That range holds on clean migrations. Image search recovers more slowly than web search and there is no published figure for how much slower — we tell you that up front rather than after.',
+        a: 'Plan for a 10–30% dip in the first week and a return to baseline by week four to six. That range holds on clean migrations. Image search recovers more slowly than web search and there is no published figure for how much slower. We tell you that up front rather than after.',
       },
       {
         q: 'Do I keep my URLs?',
-        a: 'Wherever possible, yes — including the trailing slashes. Changing a URL for aesthetics costs equity for nothing. We only change an address when the old one is genuinely broken or duplicated, and then it gets a 301 and stays redirected permanently.',
+        a: 'Wherever possible, yes, including the trailing slashes. Changing a URL for aesthetics costs equity for nothing. We only change an address when the old one is genuinely broken or duplicated, and then it gets a 301 and stays redirected permanently.',
       },
       {
         q: 'Can you prove you can do this?',
@@ -320,7 +320,7 @@ export const SERVICES: ServiceContent[] = [
     seoDescription:
       'LabTechCrew offers AI and Data Science development services in the USA, including ML, NLP, DL, and chatbot solutions for business growth.',
     eyebrow: 'AI agents & assistants',
-    h1: 'An assistant that answers from your data — and shows its source',
+    h1: 'An assistant that answers from your data, and shows its source',
     h1Accent: 'shows its source',
     lead: 'A general chatbot bolted onto your website will confidently invent your refund policy. We build retrieval-grounded assistants that answer only from documents you approve, attach the source to every answer, and say "I don\'t know, here is a human" when the question is outside what they can defend.',
     forWho: [
@@ -331,14 +331,14 @@ export const SERVICES: ServiceContent[] = [
     included: [
       {
         title: 'A retrieval layer over your own content',
-        body: 'Your documents, policies, manuals and catalogue — chunked, embedded and indexed. The model answers from what you gave it, not from what it half-remembers from the internet.',
+        body: 'Your documents, policies, manuals and catalog: chunked, embedded and indexed. The model answers from what you gave it, not from what it half-remembers from the internet.',
       },
       {
         title: 'Citations on every answer',
         body: 'Each response links back to the passage it came from. Your team can audit it, and your customer can verify it. This is the single feature that turns a demo into something you can put in front of a client.',
       },
       {
-        title: 'Refusal behaviour you define',
+        title: 'Refusal behavior you define',
         body: 'The most important engineering in this work is deciding what the system must not answer. Legal, medical, financial or safety-critical questions get a defined handoff instead of a confident guess. We built exactly this into our own product.',
       },
       {
@@ -383,9 +383,9 @@ export const SERVICES: ServiceContent[] = [
     name: 'AI Voice Agents',
     tier: 'intelligence',
     isNew: true,
-    seoTitle: 'AI Voice Agent Development — Answer Calls and Qualify Leads',
+    seoTitle: 'AI Voice Agent Development: Answer Calls and Qualify Leads',
     seoDescription:
-      'Custom AI voice agents that answer, qualify and hand off — grounded in your own data, with a defined escalation path to a human. Built and supported by a US-contracted team.',
+      'Custom AI voice agents that answer, qualify and hand off, grounded in your own data, with a defined escalation path to a human. Built and supported by a US-contracted team.',
     eyebrow: 'AI voice agents',
     h1: 'A voice that answers at 2am and knows when to stop talking',
     h1Accent: 'knows when to stop talking',
@@ -393,7 +393,7 @@ export const SERVICES: ServiceContent[] = [
     forWho: [
       'You miss calls after hours and you have no idea what they were worth.',
       'Your front desk spends its day on the same five questions and booking changes.',
-      'You want voice in your product — a tutor, a guide, a support line — not just a phone bot.',
+      'You want voice in your product (a tutor, a guide, a support line), not just a phone bot.',
     ],
     included: [
       {
@@ -402,7 +402,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         title: 'A written escalation policy',
-        body: 'We define, with you, exactly which intents go straight to a human — complaints, cancellations, anything medical, legal or financial — and the agent obeys it. This is the part that keeps you out of trouble.',
+        body: 'We define, with you, exactly which intents go straight to a human (complaints, cancellations, anything medical, legal or financial), and the agent obeys it. This is the part that keeps you out of trouble.',
       },
       {
         title: 'Consent, recording and retention handled',
@@ -418,7 +418,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         title: 'In-product voice, not only telephony',
-        body: 'Voice inside a web or mobile app — a guided lesson, a walkthrough, an accessible interface — is often the higher-value version of this, and it is what we built into our own platform.',
+        body: 'Voice inside a web or mobile app (a guided lesson, a walkthrough, an accessible interface) is often the higher-value version of this, and it is what we built into our own platform.',
       },
     ],
     stack: ['Speech-to-text', 'Text-to-speech', 'RAG architecture', 'React Native', 'Next.js', 'WebSockets', 'Twilio'],
@@ -432,7 +432,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         q: 'What happens when it cannot help?',
-        a: 'It hands off, with the transcript, to a human by warm transfer, callback or ticket — whichever your operation actually supports. We define that path before we build the agent, not after.',
+        a: 'It hands off, with the transcript, to a human by warm transfer, callback or ticket, whichever your operation actually supports. We define that path before we build the agent, not after.',
       },
       {
         q: 'Is voice data safe?',
@@ -469,7 +469,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         title: 'AI used where judgment is needed, rules everywhere else',
-        body: 'Classifying, summarising and drafting are good jobs for a model. Moving a field from A to B is not — that is a rule, and rules do not hallucinate or bill per token.',
+        body: 'Classifying, summarizing and drafting are good jobs for a model. Moving a field from A to B is not. That is a rule, and rules do not hallucinate or bill per token.',
       },
       {
         title: 'Error handling and alerting',
@@ -495,7 +495,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         q: 'What if our process changes?',
-        a: 'You get the runbook and the diagram, and the workflows live in your own account. Small changes your team can make. Larger ones we quote per change — there is no retainer you have to keep paying to keep the lights on.',
+        a: 'You get the runbook and the diagram, and the workflows live in your own account. Small changes your team can make. Larger ones we quote per change. There is no retainer you have to keep paying to keep the lights on.',
       },
       {
         q: 'How quickly does this pay for itself?',
@@ -527,11 +527,11 @@ export const SERVICES: ServiceContent[] = [
     included: [
       {
         title: 'Logo and core identity',
-        body: 'Primary mark, variations, colour, type and clear-space rules, delivered as SVG and PNG in every size you will actually be asked for.',
+        body: 'Primary mark, variations, color, type and clear-space rules, delivered as SVG and PNG in every size you will actually be asked for.',
       },
       {
         title: 'A design system, not a pile of screens',
-        body: 'Colour tokens, type scale, spacing, and components with real states — hover, focus, disabled, error, empty, loading. The unglamorous states are where products fall apart.',
+        body: 'Color tokens, type scale, spacing, and components with real states: hover, focus, disabled, error, empty, loading. The unglamorous states are where products fall apart.',
       },
       {
         title: 'UI/UX for web and mobile',
@@ -547,21 +547,21 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         title: 'Files you own outright',
-        body: 'Editable Figma, exported assets, fonts documented with their licences. No lock-in, no "we keep the working files".',
+        body: 'Editable Figma, exported assets, fonts documented with their licenses. Ownership transfers on final payment and the editable sources go with it — no lock-in, no "we keep the working files".',
       },
     ],
     stack: ['Figma', 'Design tokens', 'Tailwind CSS', 'SVG', 'WCAG 2.1', 'Adobe Illustrator'],
     priceLabel: '$2,500 – $20,000',
-    priceNote: 'Custom design engagements run from $2,500. If you just need a logo and brand kit, the fixed-price $299 Starter Pack covers it properly — start there.',
+    priceNote: 'Custom design engagements run from $2,500. If you just need a logo and brand kit, the fixed-price $299 Starter Pack covers it properly. Start there.',
     proof: ['quranri', 'the-digital-samurais'],
     faqs: [
       {
         q: 'Do you do small jobs, like just a logo?',
-        a: 'Yes, and we do not treat them as a favour. Small work is how most good client relationships start, and a logo done properly is a week — brief, three directions, two rounds of refinement, full file set.',
+        a: 'Yes, and we do not treat them as a favor. Small work is how most good client relationships start, and a logo done properly is a week: brief, three directions, two rounds of refinement, full file set.',
       },
       {
         q: 'Who owns the design?',
-        a: 'You do, in full, including editable source files. Any licensed fonts or stock are documented with their licence so you know exactly what you can use commercially and where.',
+        a: 'You do, in full, including the editable source files. Ownership transfers on final payment for the engagement, and nothing is held back once it clears. Any licensed fonts or stock are documented with their license so you know exactly what you can use commercially and where.',
       },
       {
         q: 'Can you work with our existing brand?',
@@ -581,7 +581,7 @@ export const SERVICES: ServiceContent[] = [
     eyebrow: 'Brand strategy',
     h1: 'Decide what you stand for before you design anything',
     h1Accent: 'what you stand for',
-    lead: 'Most rebrands are a colour change wearing a strategy costume. This is the other work: who you are for, what you actually do better, what you will refuse, and the exact sentences your team uses to say it.',
+    lead: 'Most rebrands are a color change wearing a strategy costume. This is the other work: who you are for, what you actually do better, what you will refuse, and the exact sentences your team uses to say it.',
     forWho: [
       'You look like every competitor and you compete on price because of it.',
       'Three people in your company describe what you do three different ways.',
@@ -594,7 +594,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         title: 'A positioning statement you can defend',
-        body: 'One paragraph naming who it is for, what changes for them, and why you. Short enough to remember, specific enough to lose someone — which is the point.',
+        body: 'One paragraph naming who it is for, what changes for them, and why you. Short enough to remember, specific enough to lose someone, which is the point.',
       },
       {
         title: 'Messaging architecture',
@@ -602,7 +602,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         title: 'Voice and tone with real examples',
-        body: 'Not "friendly yet professional". Actual sentences: how you open an email, how you decline, how you price, how you apologise.',
+        body: 'Not "friendly yet professional". Actual sentences: how you open an email, how you decline, how you price, how you apologize.',
       },
       {
         title: 'Naming when you need it',

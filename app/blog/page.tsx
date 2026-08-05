@@ -56,7 +56,7 @@ export default async function BlogPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Blog' }])} />
 
-      <Section className="pb-12 md:pb-16">
+      <Section>
         <Container>
           <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Blog' }]} />
           <div className="flex max-w-3xl flex-col gap-5">
@@ -97,7 +97,7 @@ export default async function BlogPage() {
         <Section tone="veil">
           <Container>
             <div className="panel flex max-w-3xl flex-col gap-5 rounded-(--radius-xl) p-8">
-              <h2 className="text-h3">Nothing published yet — and that is deliberate</h2>
+              <h2 className="text-h3">Nothing published yet, and that is deliberate</h2>
               <p className="text-(--color-text-muted)">
                 We would rather have an empty section than four posts of filler. Here is what is
                 actually being written, in order:

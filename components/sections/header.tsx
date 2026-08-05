@@ -34,13 +34,24 @@ import { MegaMenu } from './mega-menu'
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-(--color-brand-950)/70 backdrop-blur-md">
-      <Container>
+      {/* `relative` makes THIS the positioning context for the mega-menu panel.
+          The panel used to be centered on the Services button, which sits left
+          of center, so a wide panel hung off the left edge — and browser zoom
+          shrinks the CSS viewport, which made the overhang grow until it
+          clipped. Anchored here it spans the site container and cannot exceed
+          the page width at any zoom level. See mega-menu.tsx. */}
+      <Container className="relative">
         <div className="flex h-16 items-center justify-between gap-6">
           <Link href="/" className="flex items-center gap-2.5">
             <Wordmark className="h-8 w-auto" />
           </Link>
 
-          <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
+          {/* `self-stretch` gives the nav the full 64px header height so the
+              mega-menu trigger can stretch too — that is what keeps the pointer
+              inside the trigger all the way down to the panel. Without it there
+              is a dead band between button and panel, and onMouseLeave closes
+              the menu while the mouse is still traveling towards it. */}
+          <nav aria-label="Primary" className="hidden items-center gap-1 self-stretch lg:flex">
             {PRIMARY_NAV.map((item) =>
               item.mega ? (
                 <MegaMenu key={item.href} label={item.label} href={item.href}>

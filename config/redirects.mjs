@@ -5,7 +5,7 @@
  * Blueprint §8.2. Read this before editing:
  *
  *  1. `trailingSlash: true` is set in next.config.ts because ALL 19 legacy
- *     URLs end in "/". Next normalises the INCOMING request before matching,
+ *     URLs end in "/". Next normalizes the INCOMING request before matching,
  *     so every `source` is written WITHOUT a trailing slash.
  *
  *  1b. ⚠️ VERIFIED BY TEST, NOT BY DOCS: Next does NOT append the trailing

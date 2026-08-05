@@ -517,7 +517,7 @@ Keep WordPress hosting alive for **60 days** so this option exists.
 thing before switching DNS, verify that.
 
 **Two.** When a lead comes in, a human replies in under five minutes during
-your 8am–1pm Eastern window. Everything on this site exists to make a US buyer
+business hours, 9:00 AM – 6:00 PM. Everything on this site exists to make a US buyer
 fill that form. Response speed is what converts them afterwards, and it is the
 only part no competitor can copy from you.
 

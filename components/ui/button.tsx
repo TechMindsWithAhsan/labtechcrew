@@ -5,12 +5,12 @@ import { cn } from '@/lib/utils'
 /**
  * Server Component. No 'use client' — a button that navigates needs no JS.
  *
- * COLOUR RULE, measured not guessed:
+ * Color RULE, measured not guessed:
  *   coral #DA797E with WHITE text  = 2.99:1  ❌ fails WCAG
  *   coral #DA797E with #0F0026     = 6.8:1   ✅
  * So the primary button is coral with DARK text. Never invert it.
  *
- * Coral is the only warm colour in the brand, which makes it the strongest
+ * Coral is the only warm color in the brand, which makes it the strongest
  * possible draw on a violet-to-black page. Reserve it for the ONE action you
  * actually want taken. Everything else is secondary or ghost.
  */

@@ -8,8 +8,9 @@ import { JsonLd } from '@/components/ui/json-ld'
 import { ProcessSteps, PriceBands, CtaBand } from '@/components/sections/blocks'
 import { FaqSection } from '@/components/sections/faq'
 import { pageMetadata, breadcrumbSchema } from '@/lib/seo'
-import { SERVICE_TIERS } from '@/lib/site'
+import { SERVICE_TIERS, SERVICE_COUNT } from '@/lib/site'
 import { getService } from '@/lib/content'
+import { numberWord } from '@/lib/utils'
 
 /**
  * Services hub.
@@ -22,17 +23,20 @@ import { getService } from '@/lib/content'
 export const metadata: Metadata = pageMetadata({
   title: 'Software, App & AI Development Services',
   description:
-    'Web and mobile development, custom software, AI assistants, voice agents, automation, design and brand strategy — delivered by one team, contracted through a Texas LLC.',
+    'Web and mobile development, custom software, AI assistants, voice agents, automation, design and brand strategy, delivered by one team, contracted through a Texas LLC.',
   path: '/services',
 })
 
 const FAQS = [
   {
     q: 'Do you take on small jobs?',
-    a: 'Yes. Our Starter Packs are fixed-price and fixed-scope — $299 for a logo and brand kit, $499 for a one-page site, $899 for a business site. Published on the pricing page with what is and is not included. Most long client relationships start small, and we would rather earn the bigger project than be handed it.',
+    a: 'Yes. Our Starter Packs are fixed-price and fixed-scope: $299 for a logo and brand kit, $499 for a one-page site, $899 for a business site. Published on the pricing page with what is and is not included. Most long client relationships start small, and we would rather earn the bigger project than be handed it.',
   },
   {
     q: 'Can one team really cover all of this?',
+    /* ⚠️ "four founders" is an UNVERIFIED HARDCODED CLAIM. Nothing derives it —
+       `TEAM` in lib/site.ts is empty. Four places say it and they must be
+       changed together — see the FOUNDER COUNT note beside `TEAM`. */
     a: 'It is four founders and a small crew, not a hundred people pretending to be specialists in everything. The honest version: design, web, mobile, AI and automation are what we build ourselves. Anything outside that we will tell you we do not do, and usually point you at someone who does.',
   },
   {
@@ -50,17 +54,17 @@ export default function ServicesPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Services' }])} />
 
-      <Section className="pb-12 md:pb-16">
+      <Section>
         <Container>
           <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Services' }]} />
           <div className="flex max-w-3xl flex-col gap-5">
             <Eyebrow>What we do</Eyebrow>
             <h1 className="text-display-1">
-              Nine services. <span className="em-accent">One team</span> that answers for all of
-              them.
+              {numberWord(SERVICE_COUNT, true)} services.{' '}
+              <span className="em-accent">One team</span> that answers for all of them.
             </h1>
             <p className="text-body-lg text-(--color-text-muted)">
-              Most agencies list everything and specialise in nothing. Here is the honest map: what
+              Most agencies list everything and specialize in nothing. Here is the honest map: what
               we build ourselves, what each one costs, and which of our own projects proves it.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
@@ -80,7 +84,6 @@ export default function ServicesPage() {
           key={tier.id}
           tone={tierIndex % 2 === 1 ? 'veil' : 'default'}
           glow={tierIndex === 1 ? 'right' : undefined}
-          className="py-16 md:py-20"
         >
           <Container>
             <SectionHeading eyebrow={tier.label} title={tier.blurb} />
@@ -108,7 +111,7 @@ export default function ServicesPage() {
                       </ul>
                     ) : null}
                     <span className="mt-auto pt-2 text-small font-semibold text-(--color-accent)">
-                      What&rsquo;s included →
+                      What's included →
                     </span>
                   </Card>
                 )
@@ -118,14 +121,14 @@ export default function ServicesPage() {
         </Section>
       ))}
 
-      <Section className="py-16 md:py-20">
+      <Section>
         <Container>
           <div className="panel flex flex-col gap-4 rounded-(--radius-xl) p-8 md:p-10">
             <Eyebrow>Not on this list</Eyebrow>
             <h2 className="text-h3">Things we used to offer, and stopped</h2>
             <p className="prose-measure text-(--color-text-muted)">
               We no longer take on paid-media management or game development. Both were real
-              services and we could keep selling them — but we were not the best team a client
+              services and we could keep selling them, but we were not the best team a client
               could hire for either, and a full-service list you cannot back up is how agencies end
               up competing on price. If you need those, ask us and we will point you somewhere
               good.
@@ -136,7 +139,7 @@ export default function ServicesPage() {
               <Link href="/services/website-development/" className="text-(--color-accent) hover:underline">
                 sites and landing pages
               </Link>{' '}
-              that paid campaigns point at — that part we are good at.
+              that paid campaigns point at. That part we are good at.
             </p>
           </div>
         </Container>

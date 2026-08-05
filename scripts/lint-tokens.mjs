@@ -5,7 +5,7 @@
  * `text-[--color-accent]` was valid in Tailwind v3. In v4 it compiles to the
  * invalid declaration `color: --color-accent`, which browsers discard without
  * warning — no build error, no console message, just an element with no
- * colour. It shipped 243 times in this repo and made the services mega-menu
+ * color. It shipped 243 times in this repo and made the services mega-menu
  * render fully transparent.
  *
  * Runs in ~50ms. Wire it into `npm run check` so CI catches a regression

@@ -4,9 +4,12 @@ import { Card, Badge } from '@/components/ui/card'
 import { Breadcrumbs } from '@/components/ui/breadcrumbs'
 import { JsonLd } from '@/components/ui/json-ld'
 import { CtaBand } from '@/components/sections/blocks'
+import { HeroColumns } from '@/components/sections/hero'
 import { FaqSection } from '@/components/sections/faq'
+import characterHowWeWork from '@/public/characters/how-we-work.webp'
 import { pageMetadata, breadcrumbSchema } from '@/lib/seo'
 import { SITE } from '@/lib/site'
+import { numberWord } from '@/lib/utils'
 
 /**
  * /how-we-work/ — the page that does more selling than any other.
@@ -18,9 +21,9 @@ import { SITE } from '@/lib/site'
  * writing, which is something no comparable agency's site does.
  */
 export const metadata: Metadata = pageMetadata({
-  title: 'How We Work — Contracts, IP, Timezone and Delivery',
+  title: 'How We Work: Contracts, IP, Timezone and Delivery',
   description:
-    'Engagement models, fixed-price phases, IP ownership from day one, a mutual NDA on request, Texas-governed contracts and five hours of daily US Eastern overlap.',
+    'Engagement models, fixed-price phases invoiced only after you sign them off, full code and IP transfer on final payment, a mutual NDA on request, Texas-governed contracts and business hours of 9:00 AM to 6:00 PM, Monday to Friday.',
   path: '/how-we-work',
 })
 
@@ -72,40 +75,40 @@ const PROCESS = [
     title: 'Build',
     duration: '3–12 weeks',
     what: 'A live staging URL from week two.',
-    body: 'Weekly demos on a real URL you can open on your own phone. Not a status report — the actual thing. If something is late you hear it in that call, not at the end.',
+    body: 'Weekly demos on a real URL you can open on your own phone. Not a status report: the actual thing. Frontend and backend are separate phases, each quoted and approved before it starts and invoiced only once you have signed it off. If something is late you hear it in that call, not at the end.',
   },
   {
     n: '05',
-    title: 'Launch',
+    title: 'QA and launch',
     duration: '1 week',
     what: 'Deployment, monitoring, handover.',
-    body: 'Analytics verified, search monitored, documentation and a recorded walkthrough handed over. For migrations we watch Search Console weekly for six weeks.',
+    body: 'Analytics verified, search monitored, documentation and a recorded walkthrough handed over. For migrations we watch Search Console weekly for six weeks. This is the last phase: when its invoice clears, full ownership of the code and IP is yours.',
   },
   {
     n: '06',
     title: 'Support',
     duration: 'Ongoing',
     what: 'Thirty days included, then optional.',
-    body: 'Thirty days of fixes after launch as standard, because the first real-user week always finds something. After that, a retainer if you want one — and no penalty if you do not.',
+    body: 'Thirty days of fixes after launch as standard, because the first real-user week always finds something. After that, a retainer if you want one, and no penalty if you do not.',
   },
 ]
 
 const FAQS = [
   {
     q: 'What happens if we are not happy with the work?',
-    a: 'Phases are the mechanism. Because each one is scoped, priced and approved separately, you can stop at the end of any phase and keep everything produced up to that point — code, designs, documents, accounts. There is no long contract to escape from, and nothing is withheld pending a final payment.',
+    a: 'Phases are the mechanism. Each one is scoped, priced and approved separately, demonstrated before it is invoiced and signed off before the next begins, so you find out how we work while the commitment is still one phase long. Stop at any boundary and that phase\'s invoice becomes the final payment of the engagement: it clears, ownership of everything produced transfers to you, and we hand over the code, designs, documents and accounts. There is no long contract to escape from.',
   },
   {
-    q: 'How do you handle the time difference?',
-    a: 'We hold 8am to 1pm US Eastern as fixed working hours, Monday to Friday — five hours of live overlap every working day. Meetings are booked inside that window on a calendar you can see. Outside it, anything urgent has a named person and a phone number rather than a shared inbox.',
+    q: 'When are you available?',
+    a: `Our business hours are ${SITE.hours.display}. Meetings are booked inside them on a calendar you can see, and anything you send during them gets a reply from a person the same working day: not an acknowledgement, an answer or a time by which you will have one. Outside them, anything urgent has a named person and a phone number rather than a shared inbox.`,
   },
   {
     q: 'Who actually does the work?',
-    a: 'The people named on our About page. If a specialist joins for part of a build you will be told who and why before they start. You will never be introduced to a senior engineer and handed a junior — that practice is why "offshore" carries the reputation it does.',
+    a: 'One named technical lead from the first call to the last, plus whoever that build genuinely needs. If a specialist joins for part of it you will be told who and why before they start. You will never be introduced to a senior engineer and then handed a junior. The bait-and-switch is the single most common complaint about agencies of every size, and it is a choice, not an accident.',
   },
   {
     q: 'What if a developer leaves mid-project?',
-    a: 'Everything lives in your repository with documented architecture and environment setup, and at least two people are familiar with every project. Turnover is a real risk in this industry and the honest answer is not "it will not happen" — it is that the project does not depend on one person\'s memory.',
+    a: 'Everything lives in your repository with documented architecture and environment setup, and at least two people are familiar with every project. Turnover is a real risk in this industry and the honest answer is not "it will not happen". It is that the project does not depend on one person\'s memory.',
   },
   {
     q: 'Do you sign NDAs?',
@@ -113,7 +116,7 @@ const FAQS = [
   },
   {
     q: 'How do we pay you?',
-    a: 'US bank account, W-9 on file, invoiced in USD like any US vendor. Typically a deposit to start a phase and the balance on completion of it. No international wires and nothing for your finance team to escalate.',
+    a: 'An advance to begin, then one invoice per phase, raised when that phase is complete and you have approved it. Pay however your finance team already pays vendors: ACH bank transfer, domestic or international wire, credit or debit card (Visa, Mastercard, American Express and Discover, processed through Stripe), Square, PayPal, Wise, or a company check. Invoiced in USD with a W-9 on file, so there is nothing for accounts payable to escalate. Above $10,000 we invoice by ACH or wire, because card processing fees on a five-figure invoice come out of the project budget rather than ours.',
   },
 ]
 
@@ -122,29 +125,36 @@ export default function HowWeWorkPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'How We Work' }])} />
 
-      <Section className="pb-12 md:pb-16">
+      <Section>
         <Container>
           <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'How We Work' }]} />
-          <div className="flex max-w-3xl flex-col gap-5">
-            <Eyebrow>How we work</Eyebrow>
-            <h1 className="text-display-1">
-              The boring parts, <span className="em-accent">in writing</span>
-            </h1>
-            <p className="text-body-lg text-(--color-text-muted)">
-              Contracts, IP, payment, timezone and what happens when something goes wrong. These
-              are the questions that decide whether you hire an offshore team, and almost nobody
-              answers them on their website. We do, here, before you have to ask.
-            </p>
-          </div>
+          <HeroColumns
+            character={{
+              src: characterHowWeWork,
+              alt: 'Figure in a gray suit with an alarm clock for a head, checking a wristwatch',
+            }}
+          >
+            <div className="flex max-w-3xl flex-col gap-5">
+              <Eyebrow>How we work</Eyebrow>
+              <h1 className="text-display-1">
+                The boring parts, <span className="em-accent">in writing</span>
+              </h1>
+              <p className="text-body-lg text-(--color-text-muted)">
+                Contracts, IP, payment, timezone and what happens when something goes wrong. These
+                are the questions that decide whether you hire an agency at all, and almost nobody
+                answers them on their website. We do, here, before you have to ask.
+              </p>
+            </div>
+          </HeroColumns>
         </Container>
       </Section>
 
       {/* --- The four guarantees ----------------------------------------- */}
-      <Section tone="veil" className="py-16 md:py-20">
+      <Section tone="veil">
         <Container>
           <SectionHeading
             eyebrow="Non-negotiables"
-            title="Four things that are true on every engagement"
+            title={`${numberWord(SITE.differentiators.length, true)} things that are true on every engagement`}
             accent="every engagement"
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -191,7 +201,7 @@ export default function HowWeWorkPage() {
         <Container>
           <SectionHeading
             eyebrow="The process"
-            title="Six steps, each with a duration attached"
+            title={`${numberWord(PROCESS.length, true)} steps, each with a duration attached`}
             accent="a duration attached"
             lead="A process diagram without dates is decoration. Here is what happens and how long it takes."
           />
@@ -229,7 +239,7 @@ export default function HowWeWorkPage() {
                   hold accountable.
                 </li>
                 <li>
-                  A master services agreement plus a statement of work per phase — the standard
+                  A master services agreement plus a statement of work per phase: the standard
                   structure your legal team already knows how to read.
                 </li>
                 <li>A mutual NDA before the first call, on request. Zero obligation.</li>
@@ -240,18 +250,25 @@ export default function HowWeWorkPage() {
             </div>
 
             <div className="panel flex flex-col gap-4 rounded-(--radius-xl) p-8">
-              <Eyebrow>Intellectual property</Eyebrow>
-              <h2 className="text-h3">You own it from the moment it is written</h2>
+              <Eyebrow>Payment and intellectual property</Eyebrow>
+              <h2 className="text-h3">Paid a phase at a time, yours in full on completion</h2>
               <ul className="flex flex-col gap-3 text-(--color-text-muted)">
                 <li>
-                  Work product belongs to you the instant it is created. Not on delivery, not on
-                  final payment.
+                  An advance to begin, then one invoice per phase: discovery and scoping, UI/UX
+                  design, frontend build, backend build, QA and launch. Each phase is scoped,
+                  quoted and approved in writing before it starts.
                 </li>
                 <li>
                   <strong className="text-white">
-                    Watch for &ldquo;IP transfers upon final payment&rdquo; in other proposals.
+                    You are never asked to pay for work you have not seen.
                   </strong>{' '}
-                  That is code held hostage with extra steps.
+                  A phase is demonstrated on a real URL and signed off by you before it is
+                  invoiced, and before the next one begins.
+                </li>
+                <li>
+                  Full ownership of the source code and IP transfers to you on receipt of final
+                  payment for the engagement. Until then you hold a license to use the delivered
+                  work for review and evaluation, and we retain title.
                 </li>
                 <li>
                   Repositories, cloud accounts, domains, App Store and Play Console accounts are
@@ -265,28 +282,35 @@ export default function HowWeWorkPage() {
       </Section>
 
       {/* --- Communication -------------------------------------------------- */}
-      <Section tone="veil" className="py-16 md:py-20">
+      <Section tone="veil">
         <Container>
           <div className="max-w-3xl">
             <SectionHeading
               eyebrow="Communication"
-              title="Five hours of overlap, every working day"
-              accent="Five hours"
+              title="A question gets an answer the same day"
+              accent="the same day"
             />
             <div className="mt-8 flex flex-col gap-4 text-body-lg text-(--color-text-muted)">
               <p>
-                The single most common complaint about offshore teams is not language or quality —
-                it is that a question costs you a day. Our fixed working window is{' '}
-                <strong className="text-white">8am to 1pm US Eastern, Monday to Friday</strong>.
-                Inside it we are live: calls, screen shares, decisions in real time.
+                The most common complaint about any outsourced team is not language or quality. It
+                is that a question costs you a day. We are open{' '}
+                <strong className="text-white">{SITE.hours.display}</strong>. Inside those hours we
+                are live: calls, screen shares, decisions in real time, and a reply from the person
+                doing the work rather than a ticket number.
+              </p>
+              <p>
+                Outside them, urgent means urgent. You have a named person and their direct phone
+                number from the first week, not a shared inbox and not a rota you cannot see.
+                Everything else waits for the next working morning, which is what the word is
+                supposed to mean.
               </p>
               <p>
                 Weekly demo on a staging URL you can open yourself. Same day and time, every week,
-                from week two. A written summary after each one — what shipped, what is next, what
+                from week two. A written summary after each one: what shipped, what is next, what
                 we need from you.
               </p>
               <p>
-                We work in your tools. Slack, Teams, Jira, Linear, Notion, email — whatever your
+                We work in your tools. Slack, Teams, Jira, Linear, Notion, email, whatever your
                 team already opens. We will not ask you to learn ours.
               </p>
             </div>

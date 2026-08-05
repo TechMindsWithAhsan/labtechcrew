@@ -14,7 +14,7 @@ import { pageMetadata } from '@/lib/seo'
  * keyboard, focus, contrast, screen reader — before assembling any page.
  * It is an order of magnitude cheaper than retrofitting.
  *
- * Every colour on this page was sampled from the six LabTechCrew ad
+ * Every color on this page was sampled from the six LabTechCrew ad
  * creatives, and every text/background pair was contrast-checked. The numbers
  * are printed next to the swatches so nobody has to take it on faith.
  */
@@ -158,7 +158,7 @@ export default function StyleguidePage() {
           <h2 className="text-display-2">Buttons</h2>
           <p className="prose-measure mt-3 text-(--color-text-muted)">
             Primary is coral with <strong>dark</strong> text. White on coral measures 2.99:1 and
-            fails WCAG — never invert it. Coral is the only warm colour on the page, so it goes on
+            fails WCAG — never invert it. Coral is the only warm color on the page, so it goes on
             the one action you actually want taken.
           </p>
           <div className="mt-8 flex flex-col gap-6">
@@ -203,8 +203,8 @@ export default function StyleguidePage() {
                 <Badge tone="highlight">Once per page</Badge>
               </div>
               <div className="mt-4 flex gap-8">
-                <StatBlock value="5 hrs" label="Daily US Eastern overlap" />
-                <StatBlock value="100%" label="IP transferred at creation" />
+                <StatBlock value="9–6" label="Business hours, Mon to Fri" />
+                <StatBlock value="100%" label="IP transfer on final payment" />
               </div>
             </Card>
           </div>
@@ -258,7 +258,7 @@ export default function StyleguidePage() {
             <TeamCard
               name="Sample Person"
               role="Co-founder — AI & full-stack"
-              location="Karachi, Pakistan"
+              location="Sample location — only ever a real, consented one"
             />
             <TeamCard
               name="TODO — US partner"

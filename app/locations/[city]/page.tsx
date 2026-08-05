@@ -9,6 +9,7 @@ import { CtaBand, Differentiators } from '@/components/sections/blocks'
 import { FaqSection } from '@/components/sections/faq'
 import { pageMetadata, breadcrumbSchema } from '@/lib/seo'
 import { LOCATIONS, getLocation, getService } from '@/lib/content'
+import { SITE } from '@/lib/site'
 
 /**
  * Location pages — blueprint §9.4.
@@ -66,7 +67,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         ])}
       />
 
-      <Section className="pb-12 md:pb-16">
+      <Section>
         <Container>
           <Breadcrumbs
             items={[
@@ -92,15 +93,19 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
               </ButtonLink>
             </div>
             {/*
-              Honesty note. We contract through a Texas LLC and our engineers
-              are in Karachi. Claiming a local office we do not have would be
-              both a lie and, if we filed a Google Business Profile against it,
-              a suspension. Stating it plainly costs nothing.
+              Honesty note, and it does real work on a geo page. Every
+              competitor ranking here implies a local presence. Saying plainly
+              that we have no local office is both true and disarming — and
+              filing a Google Business Profile against an address we do not
+              staff would get the profile suspended, which costs far more than
+              the ranking is worth. Follow it immediately with what the buyer
+              actually gets instead; never leave the denial standing alone.
             */}
             <p className="pt-2 text-small text-(--color-text-subtle)">
-              We are a Texas-registered company serving {loc.city} remotely, with five hours of
-              daily overlap with US Eastern time. We do not claim a {loc.city} office, because we
-              do not have one.
+              We do not claim a {loc.city} office, because we do not have one. What you get
+              instead: a contract with {SITE.legalName}, {SITE.jurisdiction}, governed by Texas
+              law · one named person on your project, reachable on a US number ·{' '}
+              {SITE.hours.display} · prices published on this site before you call.
             </p>
           </div>
         </Container>
@@ -135,7 +140,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
 
       <Differentiators />
 
-      <Section glow="left" className="py-16 md:py-20">
+      <Section glow="left">
         <Container>
           <SectionHeading eyebrow="Also serving" title="Other Texas cities" accent="Other" />
           <div className="mt-8 flex flex-wrap gap-3">
@@ -149,7 +154,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
       </Section>
 
       {automation ? (
-        <FaqSection items={automation.faqs} title={`${loc.city} — common questions`} accent="questions" />
+        <FaqSection items={automation.faqs} title={`${loc.city}: common questions`} accent="questions" />
       ) : null}
 
       <CtaBand

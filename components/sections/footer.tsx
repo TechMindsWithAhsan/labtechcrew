@@ -6,12 +6,14 @@ import { SITE, SERVICE_TIERS } from '@/lib/site'
 /**
  * Footer — blueprint §3.2 and §2.5.
  *
- * ORDERING IS THE WHOLE POINT: the US entity, street address and US phone
- * come FIRST; Karachi is stated plainly on the second line. That is the
- * pattern every credible Pakistani-origin comparable uses (Folio3, Arbisoft,
- * Cubix, Tkxel). Nothing is concealed — it is just ordered. Concealment is
- * fragile; a buyer who discovers it has found you being evasive about the one
- * thing they were already nervous about.
+ * The contact block is the site's NAP (name, address, phone) and it must match
+ * the Google Business Profile character for character — import every part of
+ * it from lib/site.ts and never retype it here.
+ *
+ * ⚠️ The delivery team's location is deliberately not stated anywhere on this
+ * site. Do not add a line here asserting one. If that decision is ever
+ * revisited, the replacement has to be accurate — see the note above
+ * `markets` in lib/site.ts.
  *
  * Visually the footer sits at the black end of the page gradient, which is
  * exactly where the creatives put their contact details.
@@ -63,7 +65,9 @@ export function Footer() {
               </a>
             </address>
             <p className="text-small text-(--color-text-subtle)">
-              Engineering team — {SITE.engineering.city}, {SITE.engineering.country}
+              Open {SITE.hours.display}
+              <br />
+              Serving clients across the {SITE.markets.join(' and ')}
             </p>
           </FooterColumn>
         </div>

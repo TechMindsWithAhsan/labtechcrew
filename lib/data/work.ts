@@ -90,18 +90,18 @@ export const CASE_STUDIES: CaseStudy[] = [
      ====================================================================== */
   {
     slug: 'quranri',
-    title: 'QuranRI — a grounded AI learning platform',
+    title: 'QuranRI: a grounded AI learning platform',
     client: 'QuranRI (with VIqra Educational & Welfare Services)',
     category: 'AI platform · EdTech',
     year: '2025–2026',
     featured: true,
-    seoTitle: 'QuranRI Case Study — Building a Source-Grounded AI Learning Platform',
+    seoTitle: 'QuranRI Case Study: Building a Source-Grounded AI Learning Platform',
     seoDescription:
       'How LabTechCrew designed and built QuranRI: a retrieval-grounded AI education platform that answers from verified sources, refuses what it cannot defend, and hands students to human teachers. Live in production.',
     summary:
       'A retrieval-grounded AI tutor that answers from verified sources, cites them, and knows when to hand a student to a human.',
     lead:
-      'An education institution that had been teaching one-to-one since 2008 needed to reach students it could never staff for. We spent eight months building the platform that does it — and, more importantly, the guardrails that make it safe to put in front of a child.',
+      'An education institution that had been teaching one-to-one since 2008 needed to reach students it could never staff for. We spent eight months building the platform that does it and, more importantly, the guardrails that make it safe to put in front of a child.',
     challenge:
       'The obvious build was a chatbot with a religious-sounding system prompt. That build is also a liability: a general model asked a doctrinal question will answer confidently and be wrong, in a domain where being wrong is not a support ticket but a reputational and ethical failure. The real problem was not making an AI that talks about scripture. It was making one that knows the boundary of what it is allowed to say, and stops.',
     approach: [
@@ -115,7 +115,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: 'Assessment before instruction',
-        body: 'New learners take a Noorani Qaida placement test — name, email, age, then a graded quiz — so the platform teaches at the right level from the first minute instead of guessing. It doubles as a clean qualification step for the human teaching side.',
+        body: 'New learners take a Noorani Qaida placement test (name, email, age, then a graded quiz) so the platform teaches at the right level from the first minute instead of guessing. It doubles as a clean qualification step for the human teaching side.',
       },
       {
         title: 'AI to qualify, humans to finish',
@@ -133,10 +133,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     results: [
       'Live in production and publicly testable at quranri.com.',
       'Every answer is generated from an indexed source corpus, with the source attached.',
-      'A written, enforced refusal boundary — no legal, medical, psychological, financial or religious rulings.',
+      'A written, enforced refusal boundary: no legal, medical, psychological, financial or religious rulings.',
       'Placement testing routes each learner to the right level, and qualified learners to a human teacher.',
       'Built to PIPEDA, GDPR and COPPA expectations, with published privacy and terms and a named data protection contact.',
-      'Designed, built, evaluated and shipped by one team over eight months — architecture, prompting, evaluation, web client, mobile client, brand.',
+      'Designed, built, evaluated and shipped by one team over eight months: architecture, prompting, evaluation, web client, mobile client, brand.',
     ],
     stack: [
       'RAG architecture',
@@ -203,7 +203,7 @@ export const CASE_STUDIES: CaseStudy[] = [
      ====================================================================== */
   {
     slug: 'ppinstall',
-    title: 'PPInstalls — affiliate marketing platform',
+    title: 'PPInstalls: affiliate marketing platform',
     client: 'PPInstalls',
     category: 'SaaS platform',
     year: '2025',
@@ -224,9 +224,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       "LabTechCrew's PPInstalls is a secure, cloud-powered affiliate marketing platform designed for brands and affiliates to grow.",
     summary: 'A cloud affiliate-marketing platform with tracking, payouts and role-based dashboards.',
     lead:
-      'Affiliate programmes fail on trust: the brand cannot see what is real, and the affiliate cannot see what they are owed. We built the layer that shows both sides the same numbers.',
+      'Affiliate programs fail on trust: the brand cannot see what is real, and the affiliate cannot see what they are owed. We built the layer that shows both sides the same numbers.',
     challenge:
-      'Two audiences with opposed incentives need one source of truth. Brands need attribution they can audit and fraud they can catch; affiliates need live performance and predictable payouts. Anything that looks like the brand controls the numbers unilaterally kills the programme.',
+      'Two audiences with opposed incentives need one source of truth. Brands need attribution they can audit and fraud they can catch; affiliates need live performance and predictable payouts. Anything that looks like the brand controls the numbers unilaterally kills the program.',
     approach: [
       {
         title: 'Event tracking built to be auditable',
@@ -272,7 +272,7 @@ export const CASE_STUDIES: CaseStudy[] = [
      * search engines; the title is for humans. Only the title was wrong.
      */
     slug: 'uload',
-    title: 'Utrade Logistics — on-demand delivery app',
+    title: 'Utrade Logistics: on-demand delivery app',
     client: 'Utrade Logistics',
     category: 'Mobile app',
     year: '2025',
@@ -287,12 +287,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     featured: true,
-    seoTitle: 'Utrade Logistics Case Study — Delivery App Development | LabTechCrew',
+    seoTitle: 'Utrade Logistics Case Study: Delivery App Development | LabTechCrew',
     seoDescription:
       'How LabTechCrew built Utrade Logistics: an on-demand delivery app with live route tracking, three-party accounts and a dispatch console, on iOS and Android.',
     summary: 'iOS and Android delivery app with live tracking, payments and a dispatch console.',
     lead:
-      'Delivery apps are judged on one thing: does the map match reality. Everything else — signup, payment, history — only matters if the tracking is honest.',
+      'Delivery apps are judged on one thing: does the map match reality. Everything else (signup, payment, history) only matters if the tracking is honest.',
     challenge:
       'Three parties, three different urgencies. The customer wants to know where their driver is right now. The driver wants a screen they can use one-handed while parked. Operations wants to see the whole fleet without refreshing. And all of it has to survive a phone with one bar of signal.',
     approach: [
@@ -306,7 +306,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: 'Payments and identity that reduce drop-off',
-        body: 'Social and Apple sign-in, saved cards, and platform wallets — because every extra field at checkout costs a delivery.',
+        body: 'Social and Apple sign-in, saved cards, and platform wallets, because every extra field at checkout costs a delivery.',
       },
       {
         title: 'Offline-tolerant by design',
@@ -329,7 +329,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 
   {
     slug: 'tradermind',
-    title: 'TraderMind — market analysis platform',
+    title: 'TraderMind: market analysis platform',
     client: 'TraderMind',
     category: 'Data platform',
     year: '2025',
@@ -363,7 +363,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       'TraderMind: a real-time market analysis platform with streaming data, predictive analytics tooling and a configurable dashboard, built by LabTechCrew.',
     summary: 'Real-time market data, streaming charts and a configurable analysis dashboard.',
     lead:
-      'A platform that streams live market data and lets analysts build their own view of it — engineered for latency and for the moments when the feed misbehaves.',
+      'A platform that streams live market data and lets analysts build their own view of it, engineered for latency and for the moments when the feed misbehaves.',
     challenge:
       'Financial interfaces are unforgiving. A chart that lags by two seconds is worse than no chart, and a silent disconnect that leaves stale prices on screen is genuinely dangerous. The engineering problem is not the analytics — it is the connection.',
     approach: [
@@ -399,7 +399,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 
   {
     slug: 'frame-x-labs',
-    title: 'FrameXLabs — platform build and analytics',
+    title: 'FrameXLabs: platform build and analytics',
     client: 'FrameXLabs',
     category: 'Web platform',
     year: '2025',
@@ -422,7 +422,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     lead:
       'A site rebuilt for speed, and instrumented properly — so that for the first time the marketing spend could be traced to an outcome.',
     challenge:
-      'The old build was slow, and worse, unmeasurable. Ad spend was going out with no reliable way to attribute what came back, which meant every optimisation argument was a matter of opinion.',
+      'The old build was slow, and worse, unmeasurable. Ad spend was going out with no reliable way to attribute what came back, which meant every optimization argument was a matter of opinion.',
     approach: [
       {
         title: 'Rebuilt for Core Web Vitals',
@@ -453,7 +453,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 
   {
     slug: 'the-digital-samurais',
-    title: 'The Digital Samurais — site, identity and search',
+    title: 'The Digital Samurais: site, identity and search',
     client: 'The Digital Samurais',
     category: 'Web & brand',
     year: '2025',
@@ -469,8 +469,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     seoTitle: 'LabTechCrew: Digital Samurai WordPress Website Design & SEO',
     seoDescription:
-      'LabTechCrew built The Digital Samurais a WordPress site with a custom logo and a structured SEO programme aimed at US businesses.',
-    summary: 'Brand identity, a WordPress build and a structured technical SEO programme.',
+      'LabTechCrew built The Digital Samurais a WordPress site with a custom logo and a structured SEO program aimed at US businesses.',
+    summary: 'Brand identity, a WordPress build and a structured technical SEO program.',
     lead:
       'A full launch package for a services business entering a crowded market: the mark, the site, and the search foundation underneath both.',
     challenge:
@@ -478,7 +478,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     approach: [
       {
         title: 'Identity before implementation',
-        body: 'Logo, colour and type resolved first, so the site was an expression of a decision rather than the place the decision got made.',
+        body: 'Logo, color and type resolved first, so the site was an expression of a decision rather than the place the decision got made.',
       },
       {
         title: 'A site structured around search intent',
@@ -505,7 +505,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 
   {
     slug: 'ottenheimer-publishers',
-    title: 'Ottenheimer Publishers — e-commerce rebuild',
+    title: 'Ottenheimer Publishers: e-commerce rebuild',
     client: 'Ottenheimer Publishers',
     category: 'E-commerce',
     year: '2025',
@@ -524,13 +524,13 @@ export const CASE_STUDIES: CaseStudy[] = [
       'LabTechCrew built Ottenheimer Publishers a responsive, SEO-structured e-commerce site with a streamlined checkout and full analytics.',
     summary: 'A mobile-first e-commerce rebuild with a streamlined checkout and proper analytics.',
     lead:
-      'A publisher\'s catalogue rebuilt for the way people actually browse books now — on a phone, in short sessions, deciding fast.',
+      'A publisher\'s catalog rebuilt for the way people actually browse books now: on a phone, in short sessions, deciding fast.',
     challenge:
-      'A large catalogue that was hard to navigate on mobile, and a checkout with more steps than it needed. Both problems compound: browsing friction reduces the number of people who reach checkout, and checkout friction removes a share of the ones who do.',
+      'A large catalog that was hard to navigate on mobile, and a checkout with more steps than it needed. Both problems compound: browsing friction reduces the number of people who reach checkout, and checkout friction removes a share of the ones who do.',
     approach: [
       {
-        title: 'Catalogue structure rebuilt for mobile browsing',
-        body: 'Categorisation, filtering and search designed for a small screen first, with the desktop layout derived from it rather than the other way round.',
+        title: 'Catalog structure rebuilt for mobile browsing',
+        body: 'Categorization, filtering and search designed for a small screen first, with the desktop layout derived from it rather than the other way round.',
       },
       {
         title: 'Checkout reduced to what is necessary',
@@ -542,11 +542,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: 'Search structure preserved through the rebuild',
-        body: 'Product and category URLs mapped and redirected so an existing catalogue did not disappear from search on launch day.',
+        body: 'Product and category URLs mapped and redirected so an existing catalog did not disappear from search on launch day.',
       },
     ],
     results: [
-      'A mobile-first catalogue and checkout rebuild.',
+      'A mobile-first catalog and checkout rebuild.',
       'GA4 e-commerce events plus a privacy-focused analytics layer.',
       'Product and category URLs mapped and redirected through the rebuild.',
     ],
@@ -561,7 +561,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 
   {
     slug: 'lift-and-learn-fitness',
-    title: 'Lift and Learn Fitness — training app',
+    title: 'Lift and Learn Fitness: training app',
     client: 'Lift and Learn Fitness',
     category: 'Mobile app',
     year: '2025',
@@ -577,15 +577,15 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     seoTitle: 'LabTechCrew: Lift and Learn Fitness Custom Mobile App USA',
     seoDescription:
-      'Lift and Learn Fitness: a mobile app with structured workout programmes, video tutorials, progress tracking and subscriptions, built by LabTechCrew.',
-    summary: 'Structured workout programmes, video tutorials, progress tracking and subscriptions.',
+      'Lift and Learn Fitness: a mobile app with structured workout programs, video tutorials, progress tracking and subscriptions, built by LabTechCrew.',
+    summary: 'Structured workout programs, video tutorials, progress tracking and subscriptions.',
     lead:
       'A training app built around the only metric that matters in fitness software: whether someone opens it again in week three.',
     challenge:
       'Fitness apps are uninstalled faster than almost any other category. The engineering is straightforward; the retention design is not. Everything had to serve the return visit rather than the first impression.',
     approach: [
       {
-        title: 'Programmes, not a library of exercises',
+        title: 'Programs, not a library of exercises',
         body: 'A structured path with a clear next session, so opening the app never requires a decision the user has to make while tired.',
       },
       {
@@ -602,7 +602,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     results: [
-      'Cross-platform app with structured programmes and video tutorials.',
+      'Cross-platform app with structured programs and video tutorials.',
       'Progress tracking across weight, volume and consistency.',
       'Subscription billing through both app stores with full restore and cancellation handling.',
     ],
@@ -610,7 +610,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     services: ['mobile-app-development', 'graphics-design'],
     updatedAt: new Date('2025-08-31T03:34:21Z'),
     riskFlags: [
-      'The legacy page has NO app screenshots at all — only the LabTechCrew logo — while claiming the app "earned recognition as a go-to fitness app for U.S. audiences". Recognition by whom? That claim is removed here. Add real screenshots or take this case study down.',
+      'The legacy page has NO app screenshots at all (only the LabTechCrew logo) while claiming the app "earned recognition as a go-to fitness app for U.S. audiences". Recognition by whom? That claim is removed here. Add real screenshots or take this case study down.',
     ],
   },
 ]
@@ -624,7 +624,7 @@ export const CASE_STUDIES: CaseStudy[] = [
  * named comparison set behind it.
  *
  * A quantified accuracy claim, and especially a comparative one, is only safe
- * once you can hand a sceptical buyer four things:
+ * once you can hand a skeptical buyer four things:
  *
  *   1. the question set (how many questions, how they were chosen)
  *   2. the grading method (who or what graded, against what reference)
@@ -659,13 +659,13 @@ export function getCaseStudy(slug: string): CaseStudy | undefined {
  * after the client was renamed to Utrade Logistics here. Any list of project
  * names maintained by hand is a second copy of this data, and it will drift.
  *
- * A title with no em dash falls back to the whole title rather than an empty
+ * A title with no colon falls back to the whole title rather than an empty
  * string, so an entry that breaks the convention degrades instead of vanishing.
  */
 export function caseStudyName(study: CaseStudy): string {
   // `?? study.title` is for the type checker (noUncheckedIndexedAccess) and for
-  // the no-em-dash case at once — split always yields at least one element.
-  return (study.title.split('—')[0] ?? study.title).trim()
+  // the no-colon case at once — split always yields at least one element.
+  return (study.title.split(':')[0] ?? study.title).trim()
 }
 
 export function caseStudiesForService(serviceSlug: string, limit = 2): CaseStudy[] {

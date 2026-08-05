@@ -3,14 +3,14 @@
 /* ==========================================================================
    LabTechCrew design system — DERIVED FROM THE ACTUAL AD CREATIVES
    --------------------------------------------------------------------------
-   Every value below was sampled with a colour picker from the six brand
+   Every value below was sampled with a color picker from the six brand
    creatives (branding / good-creative / different / time-is-now / digital-era
    / social-media-design), not invented. The gradient is IDENTICAL on all six,
-   which is what makes the ads recognisable — so it is the spine of the site.
+   which is what makes the ads recognizable — so it is the spine of the site.
 
    THE BRAND IN ONE LINE:
      a single hue-257 violet ramp from #2A0090 to black,
-     with coral #DA797E as the one warm emphasis colour.
+     with coral #DA797E as the one warm emphasis color.
 
    MEASURED FROM THE CREATIVES:
      gradient top     #2A0090   (hue 257.5, S 100%, L 28%)
@@ -62,7 +62,7 @@
   --color-brand-100: #bfb2e4;
   --color-brand-50: #ede9f9;
 
-  /* --- Coral. The one warm colour in the system. ------------------------- */
+  /* --- Coral. The one warm color in the system. ------------------------- */
   --color-coral-700: #b23f49; /* text on LIGHT backgrounds only (5.68:1) */
   --color-coral-600: #c4545c;
   --color-coral-500: #da797e; /* ← brand accent, exactly as sampled */

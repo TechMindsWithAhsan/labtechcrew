@@ -47,7 +47,7 @@ export function Badge({
         'inline-flex w-fit items-center rounded-full px-2.5 py-1 text-[0.75rem] font-medium',
         tone === 'neutral' && 'bg-white/10 text-(--color-text-muted)',
         tone === 'accent' && 'bg-coral-500/15 text-coral-300',
-        // #F90060. At most ONE of these on a page. It is a highlight, not a colour.
+        // #F90060. At most ONE of these on a page. It is a highlight, not a color.
         tone === 'highlight' && 'bg-magenta-500 text-white',
       )}
     >

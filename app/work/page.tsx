@@ -4,9 +4,12 @@ import { ButtonLink } from '@/components/ui/button'
 import { Breadcrumbs } from '@/components/ui/breadcrumbs'
 import { JsonLd } from '@/components/ui/json-ld'
 import { CaseStudyCard, CtaBand } from '@/components/sections/blocks'
+import { HeroColumns } from '@/components/sections/hero'
+import characterWork from '@/public/characters/work.webp'
 import { pageMetadata, breadcrumbSchema } from '@/lib/seo'
 import { getAllCaseStudies } from '@/lib/content'
 import { SITE } from '@/lib/site'
+import { numberWord } from '@/lib/utils'
 
 /**
  * Work index.
@@ -27,7 +30,7 @@ import { SITE } from '@/lib/site'
  * not the loudest thing in the navigation.
  */
 export const metadata: Metadata = pageMetadata({
-  title: 'Our Work — Case Studies in AI, Web and Mobile',
+  title: 'Our Work: Case Studies in AI, Web and Mobile',
   description:
     'Selected projects: a source-grounded AI learning platform, an affiliate SaaS, a delivery app, a market data platform and more. Every claim on these pages is one we can evidence.',
   path: '/work',
@@ -42,26 +45,33 @@ export default async function WorkPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Work' }])} />
 
-      <Section className="pb-12 md:pb-16">
+      <Section>
         <Container>
           <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Work' }]} />
-          <div className="flex max-w-3xl flex-col gap-5">
-            <Eyebrow>Selected work</Eyebrow>
-            <h1 className="text-display-1">
-              Products we built, and <span className="em-accent">still stand behind</span>
-            </h1>
-            <p className="text-body-lg text-(--color-text-muted)">
-              Eight projects, one of them our own. We have deliberately removed every performance
-              number we cannot produce a document for — what is left is what was actually built,
-              which is the part you can check.
-            </p>
-          </div>
+          <HeroColumns
+            character={{
+              src: characterWork,
+              alt: 'A laptop and a phone showing a violet dashboard interface',
+            }}
+          >
+            <div className="flex max-w-3xl flex-col gap-5">
+              <Eyebrow>Selected work</Eyebrow>
+              <h1 className="text-display-1">
+                Products we built, and <span className="em-accent">still stand behind</span>
+              </h1>
+              <p className="text-body-lg text-(--color-text-muted)">
+                {numberWord(all.length, true)} projects, one of them our own. We have deliberately
+                removed every performance number we cannot produce a document for. What is left is
+                what was actually built, which is the part you can check.
+              </p>
+            </div>
+          </HeroColumns>
         </Container>
       </Section>
 
       {/* --- Flagship ---------------------------------------------------- */}
       {flagship ? (
-        <Section glow="right" className="py-8 md:py-12">
+        <Section glow="right" space="tight">
           <Container>
             <div className="panel flex flex-col gap-6 rounded-(--radius-xl) p-8 md:p-12">
               <div className="flex flex-wrap items-center gap-3">
@@ -117,7 +127,7 @@ export default async function WorkPage() {
       </Section>
 
       {/* --- The honesty note -------------------------------------------- */}
-      <Section className="py-16 md:py-20">
+      <Section>
         <Container>
           <div className="panel flex max-w-3xl flex-col gap-4 rounded-(--radius-xl) p-8">
             <Eyebrow>Why there are so few percentages here</Eyebrow>
@@ -129,7 +139,7 @@ export default async function WorkPage() {
             </p>
             <p className="text-(--color-text-muted)">
               If a number matters to your decision, ask on the call. Where a client has agreed we
-              can share it, we will — with the export behind it.
+              can share it, we will, with the export behind it.
             </p>
           </div>
         </Container>

@@ -3,8 +3,16 @@ import Image from 'next/image'
 import { Container, Section, SectionHeading, Eyebrow } from '@/components/ui/layout'
 import { Card, Badge } from '@/components/ui/card'
 import { ButtonLink } from '@/components/ui/button'
-import { SITE, SERVICE_TIERS, PRIMARY_CTA, SECONDARY_CTA } from '@/lib/site'
+import {
+  SITE,
+  SERVICE_TIERS,
+  SERVICE_COUNT,
+  SERVICE_TIER_COUNT,
+  PRIMARY_CTA,
+  SECONDARY_CTA,
+} from '@/lib/site'
 import { caseStudyName, type CaseStudy } from '@/lib/content'
+import { numberWord } from '@/lib/utils'
 
 /* ==========================================================================
    ProofStrip
@@ -102,7 +110,7 @@ export function ProofStrip({ studies }: { studies: CaseStudy[] }) {
 
 /* ==========================================================================
    Differentiators — the moat. Blueprint §2.6.
-   No Pakistani-origin comparable states ANY of these on a homepage.
+   Almost no comparable agency states ANY of these on a homepage.
    ========================================================================== */
 
 export function Differentiators() {
@@ -111,9 +119,9 @@ export function Differentiators() {
       <Container>
         <SectionHeading
           eyebrow="Why us"
-          title="The four things every US buyer asks — answered up front"
+          title={`The ${numberWord(SITE.differentiators.length)} things every US buyer asks, answered up front`}
           accent="answered up front"
-          lead="These are the objections that kill offshore deals. We answer them before you have to ask."
+          lead="These are the questions that decide whether an agency gets hired. Almost nobody answers them on their website. We do, before you have to ask."
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {SITE.differentiators.map((d) => (
@@ -140,7 +148,7 @@ export function ServiceTiers() {
           eyebrow="What we build"
           title="One team across the whole stack"
           accent="One team"
-          lead="Ten services, three jobs. Whichever you start with, the same team owns it end to end."
+          lead={`${numberWord(SERVICE_COUNT, true)} services, ${numberWord(SERVICE_TIER_COUNT)} jobs. Whichever you start with, the same team owns it end to end.`}
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {SERVICE_TIERS.map((tier) => (
@@ -192,7 +200,7 @@ export function ProcessSteps() {
       <Container>
         <SectionHeading
           eyebrow="How it works"
-          title="Four steps, with dates attached"
+          title={`${numberWord(STEPS.length, true)} steps, with dates attached`}
           accent="dates attached"
         />
         <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -225,7 +233,7 @@ export function ProcessSteps() {
    Publishing a floor costs roughly 40% of raw form fills and buys roughly 70%
    better lead quality (HockeyStack, 31M visitors, 80 B2B companies). With
    Bark and Meta traffic your bottleneck is quality, not volume — so this
-   trade is strongly in your favour. It is also a trust signal: "cheap" is
+   trade is strongly in your favor. It is also a trust signal: "cheap" is
    exactly what US buyers fear about offshore teams. A floor says you are not.
 
    FLOOR SET TO $2,500 (July 2026). Reasoning, so nobody lowers it casually:
@@ -240,8 +248,8 @@ export function ProcessSteps() {
 
 const BANDS = [
   { name: 'Starter Packs', range: 'from $299', body: 'Fixed price, fixed scope. Logo and brand kit, one-page site, business site, online store, AI assistant, app MVP.' },
-  { name: 'Custom build', range: '$2.5k – $30k', body: 'Bespoke work scoped to you — a marketing site, a mobile app, an AI assistant on your own documents.' },
-  { name: 'Ongoing team', range: 'from $4k / month', body: 'A dedicated squad — design, build and support on a rolling basis.' },
+  { name: 'Custom build', range: '$2.5k – $30k', body: 'Bespoke work scoped to you: a marketing site, a mobile app, an AI assistant on your own documents.' },
+  { name: 'Ongoing team', range: 'from $4k / month', body: 'A dedicated squad: design, build and support on a rolling basis.' },
 ]
 
 export function PriceBands() {
@@ -324,7 +332,7 @@ export function TestimonialCard({
 }) {
   return (
     <figure className="panel flex h-full flex-col gap-4 rounded-(--radius-lg) p-6">
-      <blockquote className="text-body-lg text-white">“{quote}”</blockquote>
+      <blockquote className="text-body-lg text-white">"{quote}"</blockquote>
       <figcaption className="mt-auto text-small text-(--color-text-subtle)">
         <span className="font-semibold text-white">{name}</span> — {role}, {company}
         {linkedin ? (

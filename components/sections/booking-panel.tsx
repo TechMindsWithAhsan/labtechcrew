@@ -70,8 +70,8 @@ export function BookingPanel({ compact = false }: { compact?: boolean }) {
       </div>
 
       <p className="border-t border-white/10 pt-4 text-small text-(--color-text-subtle)">
-        Answered 8am–1pm US Eastern, Monday to Friday — five hours of overlap
-        with your working day, every working day.
+        Answered {SITE.hours.display}. Outside those hours, leave a message and
+        you get a call back on the next working day.
       </p>
     </div>
   )

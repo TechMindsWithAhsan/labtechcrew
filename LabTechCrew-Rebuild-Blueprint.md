@@ -109,7 +109,7 @@ Why this works: the homepage earns the click on your strongest story, the servic
 
 > **LabTechCrew builds AI agents, custom software, and the web and mobile products around them — for US businesses that need one accountable team, not five vendors.**
 >
-> Contracted through LabTechCrew LLC, a Texas limited liability company. You own 100% of the code and IP from the moment it's written.
+> Contracted through LabTechCrew LLC, a Texas limited liability company. Work is scoped, approved and invoiced one phase at a time, and full ownership of the code and IP transfers to you on final payment.
 
 Every page's copy should be derivable from that. If a sentence on the new site doesn't ladder up to it, cut it.
 
@@ -124,12 +124,28 @@ You are currently a Florida address with a New York phone number forming a Texas
 | Legal entity | LabTechCrew LLC, a Texas limited liability company |
 | Primary address | One real Texas address (see caveat below) |
 | Phone | One US number with an **area code matching that address** (Dallas 214/469/972, Houston 713/281/832, Austin 512/737, San Antonio 210/726) |
-| Secondary location | "Engineering team — Karachi, Pakistan" in the footer, second line |
+| Secondary location | ⚠️ SUPERSEDED — the site states no team location. See §2.5 and CLAUDE.md. |
 | Brand spelling | **LabTechCrew** — one casing, everywhere, forever |
 
 **Caveat on Google Business Profile:** Google's guidelines are explicit that **virtual offices and PO boxes / remote mailboxes are ineligible** — *"If your business rents a physical mailing address but doesn't operate out of that location, also known as a virtual office, that location isn't eligible for a Business Profile."* Registered-agent addresses aren't named in the guidelines, but they fall foul of the same rule wherever you don't actually operate from and staff that address. A *suspended* profile is worse than no profile because it poisons the entity. **Assume you cannot win the local 3-pack** and plan around it (Section 9 shows which geo keywords are still winnable without a physical office — there are some, and offshore agencies are already ranking them).
 
-### 2.5 Disclosing that you're in Pakistan — what actually works
+### 2.5 Disclosing team location — ⚠️ SUPERSEDED, August 2026
+
+> **This entire section no longer describes the site.** The decision was
+> reversed: the site states no team location at all. The footer carries the US
+> entity, address, phone, business hours and the markets served, and nothing
+> else. `lib/site.ts` no longer has an `engineering` object.
+>
+> **Do not implement anything below.** In particular, do not add a second
+> location line to the footer — and do not "fix" its absence by asserting a US
+> location instead. Not publishing a location is a normal marketing choice;
+> publishing a false one is a misrepresentation, and a marketing page carrying
+> it is the worst possible document to face in a payment dispute or a
+> chargeback representment.
+>
+> The research below is retained only as a record of what comparable agencies
+> do. See the "Team location" rule in CLAUDE.md for the position that is
+> actually in force.
 
 I audited how every comparable handles this:
 
@@ -156,10 +172,10 @@ I audited how every comparable handles this:
 
 I checked every Pakistani-origin comparable. **None of them state any of these on a homepage.** Each is free, true, and directly answers a top-5 objection:
 
-1. **"5 hours of daily overlap with US Eastern time — 8am–1pm ET, every working day."** (Karachi is UTC+5. Say it as a number, not as "we're flexible.") → kills objection #1
-2. **"You own 100% of the code and IP from the moment it's written. Not on delivery. Not on final payment."** → kills objection #8
+1. **"Open 9:00 AM – 6:00 PM, Monday to Friday."** (State the business hours plainly. Not "we're flexible", and not an "overlap window" — that framing advertises a timezone gap instead of a working day.) → kills objection #1
+2. **"You're never asked to pay for work you haven't seen. An advance to begin, then one payment per phase — each phase scoped and approved in writing before it starts, demonstrated and signed off before it's invoiced. Full code and IP ownership transfers on final payment."** → kills objection #8
 3. **"Your contract is with LabTechCrew LLC, a Texas limited liability company, governed by Texas law."** → kills objections #3 and #7 in one sentence
-4. **"US bank account. W-9 on file. We invoice like any standard US vendor — no international wires."** → kills the AP-department objection nobody else even addresses
+4. **"Pay however you already pay vendors — ACH, domestic or international wire, card through Stripe, Square, PayPal, Wise or a company cheque. Invoiced in USD, W-9 on file."** → kills the AP-department objection nobody else even addresses
 
 Add, from Arbisoft's playbook (best NDA line I found): **"We'll send a mutual NDA before the discovery call if requested. Zero obligation."**
 
@@ -223,7 +239,8 @@ Add, from Arbisoft's playbook (best NDA line I found): **"We'll send a mutual ND
 ```
 Row 1:  Services (all 10, plain links)  |  Company  |  Work  |  Resources
 Row 2:  LabTechCrew LLC · [Texas street address] · [US phone] · info@labtechcrew.com
-        Engineering team — Karachi, Pakistan
+        Open 9:00 AM – 6:00 PM, Monday to Friday
+        Serving clients across the United States and Canada
 Row 3:  © 2026 LabTechCrew LLC  ·  Privacy  ·  Terms  ·  Cookies      [LinkedIn] [Instagram] [Facebook]
 ```
 
@@ -237,7 +254,7 @@ Each page below is a section list in render order, with the job each section doe
 
 | # | Section | Job | Spec |
 |---|---|---|---|
-| 1 | **Hero** | Say what you do, for whom, and give one action | H1 states outcome + audience. Subhead states scope + accountability. **Static image or CSS gradient — no autoplay video** (§7.2). Two CTAs: primary `Get a project estimate`, secondary `See our work`. Below the buttons, one line of micro-trust: *"Texas LLC · 5 hrs daily overlap with US Eastern · You own the IP"* |
+| 1 | **Hero** | Say what you do, for whom, and give one action | H1 states outcome + audience. Subhead states scope + accountability. **Static image or CSS gradient — no autoplay video** (§7.2). Two CTAs: primary `Get a project estimate`, secondary `See our work`. Below the buttons, one line of micro-trust: *"Texas LLC · 9:00 AM – 6:00 PM, Monday to Friday · Full code & IP transfer on final payment"* |
 | 2 | **Proof strip** | Kill the "who are you" reflex in <2s | 4–6 **real** project names (PPInstalls, uLoad, TraderMind, QuranRI, FrameXlabs, Digital Samurai) as text or your-own-work marks. **No third-party client logos without written permission.** |
 | 3 | **What we build** | Show the three tiers | 3 cards → Build / Intelligence / Launch. Each with 3–4 sub-services and a link to the hub. Not 10 flat tiles. |
 | 4 | **Featured case study** | One deep proof, not seven shallow ones | QuranRI. Problem → what you built → stack → outcome. Only outcomes you can evidence. Link to full case study. |
@@ -305,7 +322,7 @@ Structure: Client & context → The problem → What we built → Stack → **Re
 
 ### 4.5 `/how-we-work/` — new, and it does more work than any other page
 
-This is where the four differentiators become a full page. Sections: engagement models (fixed-scope project / monthly retainer / dedicated team) · the delivery process with durations · **contracts** (MSA + SOW, Texas governing law, mutual NDA on request) · **IP ownership** (verbatim: *"Work product belongs to you the instant it's created. Not after the project ships, and not after final payment."*) · **communication** (named overlap hours, tools, response SLA) · **who you'll actually work with** — named humans with photos and LinkedIn links, **including your US partner**.
+This is where the four differentiators become a full page. Sections: engagement models (fixed-scope project / monthly retainer / dedicated team) · the delivery process with durations · **contracts** (MSA + SOW, Texas governing law, mutual NDA on request) · **payment and IP ownership** (verbatim: *"An advance to begin, then one invoice per phase — scoped and approved before it starts, demonstrated and signed off before it's invoiced. Full ownership of the source code and IP transfers on receipt of final payment; until then you hold a licence to use the delivered work for review and evaluation and we retain title."*) · **communication** (stated business hours, tools, response SLA) · **who you'll actually work with** — named humans with photos and LinkedIn links, **including your US partner**.
 
 That last one is your cheapest and strongest trust asset. No Pakistani comparable does it.
 
@@ -319,7 +336,7 @@ Structure: a stated floor (*"We take on projects starting from $X,000"*), 3–4 
 
 Keep: founding story, mission, real team, real locations.
 **Delete: the client-logo wall, "#1", "Award Winning", "Rated 5 out of 5", "200+/1200+ clients", the broken 0-counters, and the three stock headshots unless they're real employees.**
-Add: the four founders — real names, real photos, real LinkedIn URLs, real roles, including who's in Texas and who's in Karachi.
+Add: the four founders — real names, real photos, real LinkedIn URLs, real roles, with written consent on file. Do not attach a location to anyone unless it is that person's real one. (In force: the team section is empty and the page runs on enforceable commitments instead — see `TEAM` in `lib/site.ts`.)
 
 A page that says "four people, here we are, here's what we've built" outperforms a page claiming 1200 clients that a buyer can't verify.
 
@@ -331,7 +348,7 @@ Copy Halo Lab's structure exactly; it's the best I found:
 2. **Qualified** — project description + **required budget dropdown**: `$1k–$5k · $5k–$15k · $15k–$50k · $50k–$150k · $150k+` → **"Send project brief"**
 3. **High intent** — inline scheduling embed → **"Book a 20-minute scoping call"**
 
-Then: US address, US phone (click-to-call), email, and Karachi as the second location.
+Then: US address, US phone (click-to-call), email, business hours, and the markets served. No second location line — see §2.5.
 
 **On the submit action:** putting instant scheduling on the thank-you step raises form-to-meeting from ~30% to ~67% (Chili Piper, ~4M submissions). This is a bigger lever than any copy change on the page. Build it.
 
@@ -453,7 +470,7 @@ Build these and nothing else. If a design needs an eleventh component type, ques
 Any page → CTA → /contact/ (or inline estimator) → submit
         → instant scheduling offered on the thank-you step
         → email + Slack/WhatsApp notification to the team within seconds
-        → human response target: under 5 minutes during overlap hours
+        → human response target: under 5 minutes during business hours
 ```
 
 ### 6.2 CTA copy
@@ -479,7 +496,7 @@ Contacting a lead within 5 minutes vs 30 makes qualification roughly 21× more l
 
 For Bark specifically it's decisive: up to five professionals get the same lead, and a lead older than ~30 minutes has already been called by several of them.
 
-Build: form submit → MongoDB write → email + **WhatsApp/Slack push to whoever is awake**. Assign an on-call rotation across your Karachi morning and your US partner's afternoon so the overlap gap is covered.
+Build: form submit → MongoDB write → email + **WhatsApp/Slack push to whoever is awake**. Assign an on-call rotation so every hour of the 9:00 AM – 6:00 PM working day is covered, and so is anything urgent outside it.
 
 ### 6.5 Lead data model
 
@@ -1009,7 +1026,7 @@ Screenshot your **own** work (you built PPInstalls, uLoad, TraderMind, QuranRI �
 | Site-wide conversion | 1.5–2.5% | GA4 |
 | `/contact/` conversion | 8–15% | GA4 |
 | Landing page conversion | 5–15% | GA4 |
-| **Time to first response** | **< 5 min** in overlap hours | MongoDB `firstResponseAt` |
+| **Time to first response** | **< 5 min** in business hours | MongoDB `firstResponseAt` |
 | Form → meeting booked | > 50% | Scheduler |
 | Organic sessions | Back to baseline by week 6 | GSC |
 | Indexed pages | 100% of sitemap | GSC |

@@ -66,7 +66,11 @@ export function MegaMenu({
   return (
     <div
       ref={ref}
-      className="relative"
+      /* NOT `relative`. The panel is positioned against the header's Container
+         instead — see the panel's className below. `self-stretch` runs this
+         trigger the full height of the header so the pointer stays inside it
+         (and so mouseleave does not fire) on the way down to the panel. */
+      className="flex items-center self-stretch"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
@@ -86,10 +90,25 @@ export function MegaMenu({
       </button>
 
       {open ? (
-        /* absolute → out of flow → zero layout shift */
+        /* absolute → out of flow → zero layout shift.
+         *
+         * ⚠️ THE ZOOM CLIPPING BUG (fixed here, do not regress):
+         * This was `left-1/2 -translate-x-1/2 w-[min(56rem,90vw)]`, which
+         * centers the panel on the TRIGGER BUTTON. Services sits left of
+         * center, so a panel up to 90vw wide centered on it hung off the left
+         * edge of the page. Browser zoom shrinks the CSS viewport, so the vw
+         * width grew relative to the header and the overhang got worse until
+         * the panel clipped.
+         *
+         * There is now NO width here at all. `left-0 right-0` against the
+         * header's Container (`relative`, in header.tsx) makes the panel span
+         * the site container, so it is bounded by the page at every zoom level
+         * and fills the space properly at 100%. Do not reintroduce a width —
+         * any fixed one reopens this, and a bracketed pixel width is rejected
+         * by `npm run check:responsive`. */
         <div
           id="services-mega-panel"
-          className="absolute left-1/2 top-full z-50 w-[min(56rem,90vw)] -translate-x-1/2 pt-3"
+          className="absolute left-0 right-0 top-full z-50 pt-3"
           /* Belt and braces: a click on a link to the CURRENT url fires no
              pathname change, so close on any panel click as well. */
           onClick={() => setOpen(false)}

@@ -201,9 +201,29 @@ that list ships until it is resolved.
 WordPress site pairs a Florida address with a New York 929 number and a Texas
 LLC — do not carry that incoherence over.
 
-Footer ordering matters: **US entity, address and phone first; Karachi second.**
-That is the pattern Folio3, Arbisoft, Cubix and Tkxel all use. Nothing hidden,
-just ordered.
+### Team location — the site does not state one
+
+**Changed August 2026. This supersedes blueprint §2.5 entirely.**
+
+The delivery team's location is not stated anywhere on the site. The footer
+carries the US entity, address, phone, business hours and the markets served.
+There is no second location line and no `engineering` object in `lib/site.ts`.
+
+⚠️ **Do not replace this with a claim that the team is in the United States**,
+or that we are a "US-based team", or any equivalent. Declining to publish a
+location is a normal marketing choice. Asserting one we do not have is a
+misrepresentation, and a marketing page asserting it is the worst possible
+document to face in a payment dispute or a chargeback representment. Silence
+is safe; a false statement is not.
+
+Where a passage's argument depended on the location, it now runs on what we
+actually promise: the Texas entity and governing law, one named person, US
+phone and business hours, published prices, and a scope in writing.
+
+The privacy policy is the deliberate exception. It still discloses that
+personal information may be accessed from outside the US and Canada, without
+naming a country — deleting that would make a legal document inaccurate, which
+is the very thing this rule exists to prevent.
 
 ## Conventions
 

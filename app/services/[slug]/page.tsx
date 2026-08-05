@@ -66,7 +66,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       />
 
       {/* ---------------------------------------------------------------- */}
-      <Section className="pb-12 md:pb-16">
+      <Section>
         <Container>
           <Breadcrumbs
             items={[
@@ -123,7 +123,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </Section>
 
       {/* --- Who this is for ------------------------------------------- */}
-      <Section tone="veil" className="py-16 md:py-20">
+      <Section tone="veil">
         <Container>
           <SectionHeading
             eyebrow="Who this is for"
@@ -192,10 +192,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       <ProcessSteps />
       <Differentiators />
-      <FaqSection items={service.faqs} title={`${service.name} — questions`} accent="questions" />
+      <FaqSection items={service.faqs} title={`${service.name}: questions`} accent="questions" />
 
       {/* --- Other services ---------------------------------------------- */}
-      <Section className="py-16 md:py-20">
+      <Section>
         <Container>
           <SectionHeading eyebrow="Also useful" title="Other things we build" accent="build" />
           <div className="mt-8 flex flex-wrap gap-3">

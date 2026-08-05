@@ -11,6 +11,8 @@ import { pageMetadata, breadcrumbSchema } from '@/lib/seo'
 import { SERVICES } from '@/lib/content'
 import { STARTER_PACKS, SITE, SERVICE_ENTRY_POINT } from '@/lib/site'
 import { BudgetMatcher } from '@/components/sections/budget-matcher'
+import { HeroColumns } from '@/components/sections/hero'
+import characterPricing from '@/public/characters/pricing.webp'
 
 /**
  * /pricing/ — the highest-leverage page on the site.
@@ -19,14 +21,14 @@ import { BudgetMatcher } from '@/components/sections/budget-matcher'
  * REDUCES raw form conversion (2.8% vs 4.6%) but nearly DOUBLES the rate at
  * which submissions become real pipeline (17.5% vs 10.3%). With Bark and Meta
  * traffic the bottleneck is lead quality, not lead volume, so this trade is
- * strongly in our favour.
+ * strongly in our favor.
  *
  * Second reason, specific to an offshore team: "cheap means bad" is a top-five
  * US buyer objection. A published floor is itself a trust signal — it says you
  * are not the bottom of the market.
  */
 export const metadata: Metadata = pageMetadata({
-  title: 'Pricing — What Projects Actually Cost',
+  title: 'Pricing: What Projects Actually Cost',
   description:
     'Real ranges for web, mobile, custom software, AI assistants, automation and design. What drives the price up, what brings it down, and who we are not a fit for.',
   path: '/pricing',
@@ -35,14 +37,14 @@ export const metadata: Metadata = pageMetadata({
 const DRIVERS_UP = [
   'Integrations with systems that have no documented API',
   'Multiple languages, or content that changes per region',
-  'Regulated data — health, financial, or anything involving under-18s',
+  'Regulated data: health, financial, or anything involving under-18s',
   'Real-time features: live tracking, streaming, collaborative editing',
   'Migrating existing data that is inconsistent or undocumented',
   'A hard external deadline that compresses the schedule',
 ]
 
 const DRIVERS_DOWN = [
-  'A clear, written decision-maker — one person who can approve',
+  'A clear, written decision-maker: one person who can approve',
   'Existing brand and content, so we are not writing your copy',
   'Starting with one painful workflow instead of the whole platform',
   'Accepting sensible defaults where you have no strong preference',
@@ -53,7 +55,7 @@ const DRIVERS_DOWN = [
 const NOT_A_FIT = [
   {
     title: 'Custom builds under about $2,500',
-    body: 'Bespoke work has open scope, and below this we cannot scope, build and support it properly. This is why the Starter Packs above exist — if one of them fits, the budget is not the problem and we would rather sell you that.',
+    body: 'Bespoke work has open scope, and below this we cannot scope, build and support it properly. This is why the Starter Packs above exist. If one of them fits, the budget is not the problem and we would rather sell you that.',
   },
   {
     title: 'Equity-only or revenue-share builds',
@@ -72,7 +74,7 @@ const NOT_A_FIT = [
 const FAQS = [
   {
     q: 'Do you discount for early or first-time clients?',
-    a: 'We discount in exchange for something, never just to win the work. If you are happy to be a named case study, give us a recorded testimonial and a reference call for future buyers, that is worth real money to us and we will price accordingly. What we will not do is quote below cost to get a foot in the door — a team working for free cuts corners, and you would feel it in month two. A discount with a reason attached holds its value. A discount with no reason just tells you the first number was invented.',
+    a: 'We discount in exchange for something, never just to win the work. If you are happy to be a named case study, give us a recorded testimonial and a reference call for future buyers, that is worth real money to us and we will price accordingly. What we will not do is quote below cost to get a foot in the door. A team working for free cuts corners, and you would feel it in month two. A discount with a reason attached holds its value. A discount with no reason just tells you the first number was invented.',
   },
   {
     q: 'Why publish prices when nobody else does?',
@@ -84,11 +86,11 @@ const FAQS = [
   },
   {
     q: 'What is the payment schedule?',
-    a: 'Typically a deposit to begin a phase and the balance on its completion. Longer engagements are billed monthly. US bank account, W-9 on file, invoiced in USD like any domestic vendor.',
+    a: 'An advance to begin, then one invoice per phase, raised when that phase is complete and you have signed it off. Longer engagements are billed monthly. Pay by ACH bank transfer, domestic or international wire, credit or debit card (Visa, Mastercard, American Express and Discover, through Stripe), Square, PayPal, Wise, or a company check, invoiced in USD with a W-9 on file. Above $10,000 we invoice by ACH or wire, because card processing fees on a five-figure invoice come out of the project budget rather than ours.',
   },
   {
     q: 'Do you offer a discount for a longer commitment?',
-    a: 'Retainers and dedicated-team arrangements price better per day than one-off projects, because we can plan capacity. We do not discount a fixed-scope project for a promise of future work — that just moves the risk onto the current project.',
+    a: 'Retainers and dedicated-team arrangements price better per day than one-off projects, because we can plan capacity. We do not discount a fixed-scope project for a promise of future work, which just moves the risk onto the current project.',
   },
   {
     q: 'What if the project runs over?',
@@ -101,34 +103,39 @@ export default function PricingPage() {
     <>
       <JsonLd data={breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Pricing' }])} />
 
-      <Section className="pb-12 md:pb-16">
+      <Section>
         <Container>
           <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Pricing' }]} />
-          <div className="flex max-w-3xl flex-col gap-5">
-            <Eyebrow>Pricing</Eyebrow>
-            <h1 className="text-display-1">
-              What things actually <span className="em-accent">cost</span>
-            </h1>
-            <p className="text-body-lg text-(--color-text-muted)">
-              Real ranges, published, so you can rule us in or out in ninety seconds. Everything
-              here is a fixed price per phase — scoped, quoted and approved before any work starts.
-            </p>
-            <div className="flex flex-wrap gap-3 pt-2">
-              <ButtonLink href="/contact/" size="lg">
-                Get my project estimate
-              </ButtonLink>
-              <ButtonLink href="/how-we-work/" size="lg" variant="secondary">
-                How the phases work
-              </ButtonLink>
+          <HeroColumns
+            character={{
+              src: characterPricing,
+              alt: 'Figure in a gray suit with a desk calculator for a head',
+            }}
+          >
+            <div className="flex max-w-3xl flex-col gap-5">
+              <Eyebrow>Pricing</Eyebrow>
+              <h1 className="text-display-1">
+                What things actually <span className="em-accent">cost</span>
+              </h1>
+              <p className="text-body-lg text-(--color-text-muted)">
+                Real ranges, published, so you can rule us in or out in ninety seconds. Everything
+                here is a fixed price per phase: scoped, quoted and approved before any work
+                starts.
+              </p>
+              <div className="flex flex-wrap gap-3 pt-2">
+                <ButtonLink href="/contact/" size="lg">
+                  Get my project estimate
+                </ButtonLink>
+                <ButtonLink href="/how-we-work/" size="lg" variant="secondary">
+                  How the phases work
+                </ButtonLink>
+              </div>
             </div>
-          </div>
+          </HeroColumns>
         </Container>
       </Section>
 
-      {/* --- Per-service ranges ------------------------------------------ */}
-      <Section tone="veil">
-        <Container>
-          <Section className="pb-4">
+      <Section space="tight">
         <Container>
           <div className="max-w-3xl">
             <BudgetMatcher />
@@ -142,7 +149,7 @@ export default function PricingPage() {
             eyebrow="Start here"
             title="Fixed price, fixed scope, no surprises"
             accent="Fixed price"
-            lead="You should not need a five-figure budget to get something real built properly. These are complete, finished pieces of work at a fixed price — not trial versions, and not cut-price custom projects. The scope is written down, which is exactly why the price can be what it is."
+            lead="You should not need a five-figure budget to get something real built properly. These are complete, finished pieces of work at a fixed price, not trial versions, and not cut-price custom projects. The scope is written down, which is exactly why the price can be what it is."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {STARTER_PACKS.map((pack) => (
@@ -173,26 +180,30 @@ export default function PricingPage() {
             <p className="mt-2 text-(--color-text-muted)">
               Not because the work is worth less, and not because we are hoping
               to upsell you later. It is because the scope is decided before we
-              start. Open-ended projects carry the cost of every &ldquo;could we
-              also just&hellip;&rdquo; — these do not, and that saving is passed
-              to you. Our team is in Karachi, which lowers our cost base
-              honestly rather than by cutting corners on the build.
+              start. Open-ended projects carry the cost of every "could we
+              also just..." These do not, and that saving is passed
+              to you. We also carry no sales floor and no account-management
+              layer between you and the person building the thing, and that
+              shows up in the price rather than in corners cut on the build.
             </p>
             <p className="mt-3 text-(--color-text-muted)">
               We would rather do a ${SITE.starterFloorUsd} job properly and earn the
               next one than take a budget we cannot deliver against. Outgrow a
-              pack and we quote the custom version — with what you already paid
+              pack and we quote the custom version, with what you already paid
               credited against it.
             </p>
           </div>
         </Container>
       </Section>
 
-      <SectionHeading
+      {/* --- Per-service ranges ------------------------------------------ */}
+      <Section tone="veil">
+        <Container>
+          <SectionHeading
             eyebrow="By service"
             title="Custom builds, if a pack is not enough"
             accent="if a pack is not enough"
-            lead="These are open-scope engagements — built from nothing, to your requirements, with no template underneath. Most people do not need one. Where a fixed-price pack covers the same ground, it is shown beside the range so you can see both numbers at once."
+            lead="These are open-scope engagements: built from nothing, to your requirements, with no template underneath. Most people do not need one. Where a fixed-price pack covers the same ground, it is shown beside the range so you can see both numbers at once."
           />
           <div className="mt-12 grid gap-4">
             {SERVICES.map((s) => {
@@ -208,7 +219,7 @@ export default function PricingPage() {
                     <p className="mt-1 text-small text-(--color-text-subtle)">{s.priceNote}</p>
                   </div>
                   {/* Affordable number is the loud one. The custom range is
-                      secondary and muted — present for the people who need it,
+                      secondary and muted, present for the people who need it,
                       not shouting at the people who do not. */}
                   <div className="shrink-0 md:text-right">
                     {entry ? (
@@ -217,7 +228,7 @@ export default function PricingPage() {
                           from ${entry.price.toLocaleString('en-US')}
                         </p>
                         <p className="text-small text-(--color-text-subtle)">
-                          {entry.label} — fixed price
+                          {entry.label}, fixed price
                         </p>
                         <p className="mt-2 border-t border-white/10 pt-2 text-small text-(--color-text-subtle)">
                           Custom: {s.priceLabel}

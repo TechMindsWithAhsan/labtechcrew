@@ -15,7 +15,7 @@ import { SITE } from '@/lib/site'
  * in the Google snippet, and you cannot rank for it anyway.
  */
 export const metadata: Metadata = pageMetadata({
-  title: 'Contact LabTechCrew — Get a Project Estimate',
+  title: 'Contact LabTechCrew: Get a Project Estimate',
   description:
     'Tell us what you are building. A 20-minute call, then a written scope with a fixed price and dates. Contracted through a Texas LLC.',
   path: '/contact',
@@ -67,7 +67,7 @@ export default function ContactPage() {
                   }
                   lead={
                     SITE.bookingUrl
-                      ? 'Pick a time in our US-morning overlap window. No prep needed.'
+                      ? `Pick any slot in our working day, ${SITE.hours.display}. No prep needed.`
                       : 'Twenty minutes, no prep, no pitch. Tell us what you are trying to build and we will tell you honestly whether we are the right team for it.'
                   }
                 />
@@ -88,7 +88,7 @@ export default function ContactPage() {
                   </a>
                 </address>
                 <p className="mt-4 text-small text-(--color-text-subtle)">
-                  Answered 8am–1pm US Eastern, Monday to Friday.
+                  Answered {SITE.hours.display}.
                 </p>
               </div>
 
@@ -101,7 +101,8 @@ export default function ContactPage() {
                   {SITE.address.city}, {SITE.address.region} {SITE.address.postalCode}
                 </address>
                 <p className="mt-4 text-small text-(--color-text-subtle)">
-                  Engineering team — {SITE.engineering.city}, {SITE.engineering.country}
+                  {SITE.jurisdiction}, governed by Texas law. Serving clients across the{' '}
+                  {SITE.markets.join(' and ')}.
                 </p>
               </div>
 
@@ -109,7 +110,10 @@ export default function ContactPage() {
                 <h2 className="text-h3">Before you ask</h2>
                 <ul className="mt-3 flex flex-col gap-3 text-small text-(--color-text-muted)">
                   <li>We sign a mutual NDA before the call if you want one. Zero obligation.</li>
-                  <li>You own 100% of the code and IP from the moment it is written.</li>
+                  <li>
+                    We invoice per phase, and a phase is only invoiced once you have seen it and
+                    signed it off. Full code and IP ownership transfers to you on final payment.
+                  </li>
                   <li>Your contract is with {SITE.legalName}, {SITE.jurisdiction}.</li>
                 </ul>
               </div>

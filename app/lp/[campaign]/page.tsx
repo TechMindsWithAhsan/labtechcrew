@@ -74,7 +74,7 @@ export default async function LandingPage({
         </Container>
       </div>
 
-      <Section className="py-14 md:py-20">
+      <Section>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_28rem] lg:items-start">
             {/* --- The offer ------------------------------------------- */}

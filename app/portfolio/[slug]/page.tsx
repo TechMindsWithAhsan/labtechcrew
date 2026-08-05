@@ -59,7 +59,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       />
 
       {/* --- Hero --------------------------------------------------------- */}
-      <Section className="pb-12 md:pb-16">
+      <Section>
         <Container>
           <Breadcrumbs
             items={[
@@ -137,7 +137,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           of broken boxes. First shot is priority — it is usually the LCP
           element on this page. */}
       {study.shots?.length ? (
-        <Section className="pb-12 md:pb-16">
+        <Section>
           <Container>
             <div className="grid gap-8 md:grid-cols-2">
               {study.shots.map((shot, i) => (
@@ -156,7 +156,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         </Section>
       ) : null}
 
-      <Section tone="veil" className="py-16 md:py-20">
+      <Section tone="veil">
         <Container>
           <div className="max-w-3xl">
             <SectionHeading eyebrow="The problem" title="What was actually hard" accent="actually hard" />

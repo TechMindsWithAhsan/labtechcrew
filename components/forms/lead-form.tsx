@@ -13,7 +13,7 @@ import { BUDGET_BANDS, TIMELINES, SERVICE_TIERS, SITE } from '@/lib/site'
  * Blueprint §4.8 — Halo Lab's three-tier pattern, the best contact page found.
  *
  * Tier 1 (quick):  3 fields, minimum friction.
- * Tier 2 (brief):  budget REQUIRED — the cheapest tyre-kicker filter there is.
+ * Tier 2 (brief):  budget REQUIRED — the cheapest tire-kicker filter there is.
  * Tier 3 (call):   a scheduling embed, rendered separately.
  *
  * On field count, honestly: there is NO trustworthy controlled study isolating
@@ -82,7 +82,7 @@ export function LeadForm({ tier }: Props) {
   if (status === 'sent') {
     return (
       <div className="panel rounded-(--radius-lg) p-6">
-        <h3 className="text-h3">Got it — we will reply within one business day.</h3>
+        <h3 className="text-h3">Got it. We will reply within one business day.</h3>
         <p className="mt-2 text-(--color-text-muted)">
           If you would rather not wait, book a time directly. Most scoping calls happen the same
           week.
@@ -212,7 +212,7 @@ export function LeadForm({ tier }: Props) {
       <div className="flex flex-col gap-3">
         <Button type="submit" size="lg" disabled={status === 'sending'}>
           {status === 'sending'
-            ? 'Sending…'
+            ? 'Sending...'
             : tier === 'quick'
               ? 'Discuss my project'
               : 'Send my project brief'}

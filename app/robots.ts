@@ -6,7 +6,7 @@ import { SITE } from '@/lib/site'
  *
  * THREE THINGS THAT MUST NEVER CHANGE HERE:
  *
- * 1. Never add `/_next/` to disallow — it blocks the image optimiser entirely.
+ * 1. Never add `/_next/` to disallow — it blocks the image optimizer entirely.
  *
  * 2. Never block `OAI-SearchBot`, `PerplexityBot`, `Claude-SearchBot`.
  *    OpenAI, verbatim: "Sites that are opted out of OAI-SearchBot will not be
