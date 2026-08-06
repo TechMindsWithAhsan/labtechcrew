@@ -247,8 +247,7 @@ export function LeadForm({ tier }: Props) {
                 className="font-semibold text-(--color-accent) underline underline-offset-2"
               >
                 {SITE.contact.phoneDisplay}
-              </a>
-              .
+              </a>.
             </p>
           </div>
         ) : null}

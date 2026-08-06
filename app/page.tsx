@@ -294,12 +294,10 @@ export default async function HomePage() {
                   Local detail for{' '}
                   <Link href="/locations/dallas/" className="text-(--color-accent) hover:underline">
                     Dallas
-                  </Link>
-                  ,{' '}
+                  </Link>,{' '}
                   <Link href="/locations/houston/" className="text-(--color-accent) hover:underline">
                     Houston
-                  </Link>
-                  ,{' '}
+                  </Link>,{' '}
                   <Link href="/locations/austin/" className="text-(--color-accent) hover:underline">
                     Austin
                   </Link>{' '}
@@ -309,8 +307,7 @@ export default async function HomePage() {
                     className="text-(--color-accent) hover:underline"
                   >
                     San Antonio
-                  </Link>
-                  .
+                  </Link>.
                 </p>
               </Card>
             </div>

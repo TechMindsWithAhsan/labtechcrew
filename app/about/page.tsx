@@ -154,8 +154,7 @@ export default function AboutPage() {
                   source, and where a human teacher has to take over. The result is{' '}
                   <Link href="/portfolio/quranri/" className="text-(--color-accent) hover:underline">
                     QuranRI
-                  </Link>
-                  , and it is live today.
+                  </Link>, and it is live today.
                 </p>
                 <p>
                   That is the crew now: we build the architecture on our own products first, then

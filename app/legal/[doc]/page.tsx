@@ -88,7 +88,7 @@ export default async function LegalPage({ params }: { params: Promise<{ doc: str
                 <a href={`mailto:${SITE.contact.email}`} className="text-(--color-accent) underline">
                   {SITE.contact.email}
                 </a>{' '}
-                or write to {SITE.legalName}, {SITE.address.street}, {SITE.address.city},{' '}
+                or write to {SITE.legalName},{SITE.address.street ? ` ${SITE.address.street},` : ''} {SITE.address.city},{' '}
                 {SITE.address.region} {SITE.address.postalCode}.
               </p>
             </div>

@@ -124,7 +124,7 @@ export const SITE = {
      *  ("Lnbonita Springs": a street suffix with the number and name missing,
      *  scraped from the old WordPress footer). Do not propagate it. Fill this
      *  only with a real, staffed street address — most likely the Texas one. */
-    street: '',
+    street: '[YOUR STREET ADDRESS HERE]',
     city: 'Bonita Springs',
     region: 'FL',
     regionName: 'Florida',
