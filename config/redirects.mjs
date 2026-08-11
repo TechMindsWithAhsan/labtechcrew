@@ -49,6 +49,7 @@ export const LEGACY_URLS = [
   '/services/mobile-app-development/',
   '/services/website-development/',
   '/portfolio/frame-x-labs/',
+  '/portfolio/gufhtugu/',
   '/portfolio/lift-and-learn-fitness/',
   '/portfolio/ottenheimer-publishers/',
   '/portfolio/ppinstall/',
@@ -85,9 +86,9 @@ export const redirects = async () => [
   { source: '/graphics-design', destination: '/services/graphics-design/', permanent: true },
   { source: '/mobile-app-development', destination: '/services/mobile-app-development/', permanent: true },
   { source: '/ai-chatbots-development', destination: '/services/ai-chatbots-development/', permanent: true },
-  { source: '/game-development', destination: '/services/mobile-app-development/', permanent: true },
+  { source: '/game-development', destination: '/services/custom-software/', permanent: true },
   { source: '/brand-strategy', destination: '/services/brand-strategy/', permanent: true },
-  { source: '/digital-marketing', destination: '/services/', permanent: true },
+  { source: '/digital-marketing', destination: '/services/ai-automation/', permanent: true },
 
   // ---------------------------------------------------------------------
   // 2. Indexed URLs that 404 on the live site. Verified 404 July 2026.
@@ -106,13 +107,16 @@ export const redirects = async () => [
   //     the signal to a page that still exists. This is the whole reason the
   //     migration is worth doing carefully.
   //
-  //     game-development  → mobile-app-development (closest surviving intent:
-  //                         both are app builds for iOS/Android)
-  //     digital-marketing → /services/ hub (no surviving page matches the
-  //                         intent; the hub is the honest destination)
+  //     Destinations updated Aug 2026 (owner decision): the top-level
+  //     WordPress URLs and these /services/ variants point at the SAME
+  //     targets, so every spelling of each old URL lands in one hop.
+  //
+  //     game-development  → custom-software (closest surviving intent:
+  //                         both are bespoke software builds)
+  //     digital-marketing → ai-automation (closest surviving intent)
   // ---------------------------------------------------------------------
-  { source: '/services/game-development', destination: '/services/mobile-app-development/', permanent: true },
-  { source: '/services/digital-marketing', destination: '/services/', permanent: true },
+  { source: '/services/game-development', destination: '/services/custom-software/', permanent: true },
+  { source: '/services/digital-marketing', destination: '/services/ai-automation/', permanent: true },
 
   // ---------------------------------------------------------------------
   // 3. Portfolio index moves to /work/. The seven CHILD case-study URLs
@@ -120,6 +124,9 @@ export const redirects = async () => [
   //    Do not "tidy" them to /work/[slug].
   // ---------------------------------------------------------------------
   { source: '/portfolio', destination: '/work/', permanent: true },
+  // Legacy WordPress slug for the Ottenheimer Publishers case study,
+  // renamed in the rebuild. The old slug still gets crawled.
+  { source: '/portfolio/gufhtugu', destination: '/portfolio/ottenheimer-publishers/', permanent: true },
 
   // ---------------------------------------------------------------------
   // 4. WordPress date permalinks → flat blog.
