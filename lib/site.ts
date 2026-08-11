@@ -120,11 +120,14 @@ export const SITE = {
    * states plainly that we have no office there. Keep that honesty.
    */
   address: {
-    /** Still empty on purpose — the published street line is malformed
-     *  ("Lnbonita Springs": a street suffix with the number and name missing,
-     *  scraped from the old WordPress footer). Do not propagate it. Fill this
-     *  only with a real, staffed street address — most likely the Texas one. */
-    street: '[YOUR STREET ADDRESS HERE]',
+    /** Empty on purpose. The confirmed operating address is the city/state/ZIP
+     *  below — Bonita Springs, FL 34135 — with no street line. The malformed
+     *  "Lnbonita Springs" string scraped from the old WordPress footer was
+     *  never a real address and must not come back. Renderers treat '' as
+     *  "no street line" and skip it. If a staffed street address is added
+     *  later (e.g. after the Texas move), set it here and every renderer
+     *  picks it up automatically. */
+    street: '',
     city: 'Bonita Springs',
     region: 'FL',
     regionName: 'Florida',

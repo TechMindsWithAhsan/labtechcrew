@@ -52,8 +52,12 @@ export function Footer() {
           <FooterColumn title="Get in touch">
             <address className="not-italic text-small leading-relaxed text-(--color-text-subtle)">
               <strong className="block font-semibold text-white">{SITE.legalName}</strong>
-              {SITE.address.street}
-              <br />
+              {SITE.address.street ? (
+                <>
+                  {SITE.address.street}
+                  <br />
+                </>
+              ) : null}
               {SITE.address.city}, {SITE.address.region} {SITE.address.postalCode}
               <br />
               <a href={`tel:${SITE.contact.phone}`} className="text-(--color-accent) hover:text-coral-300">

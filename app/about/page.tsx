@@ -243,8 +243,12 @@ export default function AboutPage() {
               <Eyebrow>Contracting entity</Eyebrow>
               <h3 className="text-h3">{SITE.legalName}</h3>
               <address className="not-italic text-(--color-text-muted)">
-                {SITE.address.street}
-                <br />
+                {SITE.address.street ? (
+                  <>
+                    {SITE.address.street}
+                    <br />
+                  </>
+                ) : null}
                 {SITE.address.city}, {SITE.address.region} {SITE.address.postalCode}
                 <br />
                 {SITE.jurisdiction}, governed by Texas law

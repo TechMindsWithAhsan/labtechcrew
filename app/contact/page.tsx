@@ -96,8 +96,12 @@ export default function ContactPage() {
                 <h2 className="text-h3">Where we are</h2>
                 <address className="mt-3 not-italic text-small leading-relaxed text-(--color-text-subtle)">
                   <strong className="block text-white">{SITE.legalName}</strong>
-                  {SITE.address.street}
-                  <br />
+                  {SITE.address.street ? (
+                    <>
+                      {SITE.address.street}
+                      <br />
+                    </>
+                  ) : null}
                   {SITE.address.city}, {SITE.address.region} {SITE.address.postalCode}
                 </address>
                 <p className="mt-4 text-small text-(--color-text-subtle)">
