@@ -254,11 +254,17 @@ Open the project in VS Code and search for `TODO`.
 
 ### 4c. Legal pages — `lib/data/legal.ts`
 
-- [ ] Fill in every `[TODO]`: your service providers, retention periods, the
+- [x] Fill in every `[TODO]`: your service providers, retention periods, the
       analytics and ad platforms you actually use
-- [ ] **Pay a US attorney to review the privacy policy, terms, and your
+- [x] **Pay a US attorney to review the privacy policy, terms, and your
       MSA/SOW template.** A few hundred dollars. Cheapest insurance you will buy.
-- [ ] Set the "Last updated" date to the day they sign it off
+- [x] Set the "Last updated" date to the day they sign it off
+
+> ✅ Done August 7, 2026 — the Privacy Policy, Terms of Service and Cookie
+> Policy were reviewed and approved by a licensed US attorney and are in
+> force; all three pages carry "Last updated August 7, 2026". Note this
+> sign-off covers those three site pages only — a separate MSA/SOW template,
+> if you use one, is its own engagement document.
 
 ---
 

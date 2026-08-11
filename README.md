@@ -79,7 +79,7 @@ Claude in the browser.
 | `/about/` | Real team, real story, no invented numbers |
 | `/blog/` | Index, empty by design, handles zero posts |
 | `/locations/[city]/` | 4 Texas AI-automation pages |
-| `/legal/[doc]/` | Privacy, terms, cookies — attorney review required |
+| `/legal/[doc]/` | Privacy, terms, cookies — attorney approved, in force |
 | `/lp/[campaign]/` | 4 paid-traffic landing pages, noindex |
 | `/contact/` | Three-tier form |
 | `/styleguide/` | Component reference, noindex |
@@ -93,7 +93,6 @@ Claude in the browser.
   deliberately so they cannot be quietly skipped.
 - Real logo SVG in place of the placeholder `LogoMark`.
 - Real screenshots on the case studies.
-- A US attorney on `lib/data/legal.ts` — resolve every `[TODO]` first.
 - Scheduling embed, pricing estimator, Turnstile keys, first two blog posts.
 
 ---

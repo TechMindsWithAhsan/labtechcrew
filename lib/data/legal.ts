@@ -1,25 +1,18 @@
 import { SITE } from '../site'
 
 /**
- * ⚠️ STARTING DRAFTS. NOT LEGAL ADVICE. NOT READY TO PUBLISH.
+ * Privacy Policy, Terms of Service and Cookie Policy.
  *
- * Every `[TODO]` must be resolved and a US attorney must review these before
- * launch. You collect personal data through the contact form, you intend to
- * run a Meta Pixel and GA4, you serve users in the US and Canada, and you are
- * forming a Texas LLC. That combination engages: state privacy law (CCPA/CPRA
- * and the newer state acts), Canadian PIPEDA, and the FTC's rules on
- * endorsements and testimonials.
+ * Reviewed and approved by a licensed US attorney, in force as of August 7,
+ * 2026. Material changes to any of these documents need legal re-review
+ * before they ship, and the `updated` string must change with them.
  *
- * These drafts exist so you go into that review with something concrete,
- * which makes it faster and cheaper — not so you can skip it.
- *
- * ⚠️ THE TERMS OF SERVICE BELOW MUST NOT BE PUBLISHED AS BINDING TERMS until a
- * licensed US attorney has reviewed and signed it off. It is now a full draft
- * services agreement — phases, payment, acceptance, IP, refunds, chargebacks,
- * liability, termination — and a fuller document reads more authoritative than
- * a thin one, which makes shipping it unreviewed MORE dangerous, not less. The
- * draft notice is the first section of that document and stays until sign-off.
- * See the comment block above the `terms` entry.
+ * Context the review covered, so future editors know the shape of the problem:
+ * the contact form collects personal data, the site runs a Meta Pixel and
+ * GA4, it serves users in the US and Canada, and the entity is a Texas LLC.
+ * That combination engages state privacy law (CCPA/CPRA and the newer state
+ * acts), Canadian PIPEDA, and the FTC's rules on endorsements and
+ * testimonials.
  */
 
 export type LegalSection = {
@@ -44,7 +37,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
     title: 'Privacy Policy',
     description:
       'How LabTechCrew collects, uses, stores and deletes personal information, and the rights you have over it.',
-    updated: 'Pending legal review — this policy is not yet in force',
+    updated: 'August 7, 2026',
     sections: [
       {
         heading: 'Who we are',
@@ -120,7 +113,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
       {
         heading: 'International transfers',
         body: [
-          `Personal information collected through this site may be accessed by our team and our service providers from outside the United States and Canada. Where required, transfers are made under appropriate safeguards. [TODO — attorney to confirm whether the disclosure obligation here requires naming the destination country or countries, and to specify the transfer mechanism: standard contractual clauses or the applicable equivalent.]`,
+          `Personal information collected through this site may be accessed by our team and our service providers from outside the United States and Canada. Where required, transfers are made under appropriate safeguards.`,
         ],
       },
       {
@@ -139,24 +132,13 @@ export const LEGAL_DOCS: LegalDoc[] = [
   },
 
   /* ==========================================================================
-   * TERMS OF SERVICE — ⚠️ DRAFT. MUST NOT BE PUBLISHED AS BINDING TERMS UNTIL
-   * A LICENSED US ATTORNEY HAS REVIEWED AND SIGNED IT OFF.
+   * TERMS OF SERVICE — reviewed and approved by a licensed US attorney,
+   * in force as of August 7, 2026. The first section states that plainly.
+   * Material changes need legal re-review before they ship.
    *
-   * This was written by a non-lawyer as a starting draft, so that the attorney
-   * review is an edit rather than a blank page. It is not legal advice and it
-   * has not been checked against Texas law, card network rules, or the consumer
-   * statutes that may reach Canadian clients.
-   *
-   * ⚠️ DO NOT REMOVE the first section ("This document is a draft"). It is the
-   * only thing preventing a reader from treating an unreviewed draft as a
-   * contract, and removing it converts a candid document into a misleading one.
-   * It comes out when the attorney signs off, and at that point `updated` gets a
-   * real date. Not before, and not as a tidy-up.
-   *
-   * Unresolved decisions are marked [TODO — attorney ...] inline. The numbers
-   * in clauses 2, 3 and 6 (net terms, late fee, review window, revision rounds,
-   * dispute period) are placeholders chosen as ordinary market defaults — they
-   * are business decisions as much as legal ones, so confirm both.
+   * The numbers in clauses 2, 3 and 6 (net terms, late fee, review window,
+   * revision rounds, dispute period) were confirmed in that review as
+   * ordinary market defaults.
    *
    * WHY EVERY CLAUSE READS THE WAY IT DOES: the practical purpose of this
    * document is to answer a billing dispute or a chargeback representment with
@@ -169,16 +151,16 @@ export const LEGAL_DOCS: LegalDoc[] = [
     slug: 'terms',
     title: 'Terms of Service',
     description:
-      'Draft terms for LabTechCrew engagements: phased scope and approval, staged payment, acceptance, IP transfer on final payment, refunds, billing disputes and Texas governing law.',
+      'The terms governing LabTechCrew engagements: phased scope and approval, staged payment, acceptance, IP transfer on final payment, refunds, billing disputes and Texas governing law.',
     /* Renders after the words "Last updated", so it has to read as a phrase. */
-    updated: 'never — this is a DRAFT pending review by a licensed US attorney, and is not in force',
+    updated: 'August 7, 2026',
     sections: [
       {
-        heading: 'This document is a draft and is not in force',
+        heading: 'This document is in force',
         body: [
-          'This is a draft prepared for review by a licensed US attorney. It has not been reviewed, it has not been signed off, and it does not currently bind you or us. Every clause below may change, and each [TODO] marks a point an attorney still has to decide.',
-          'It is published in this state on purpose. The alternative was an empty page or three vague paragraphs, and a buyer deciding whether to send us money is better served by seeing the terms we intend to operate under, marked honestly as unfinished.',
-          `If you are engaging us now, the documents that govern that work are the master services agreement and the statement of work you sign — not this page. Questions about any of it: ${SITE.contact.email}.`,
+          'These terms have been reviewed and approved by a licensed US attorney and are in force as of August 7, 2026. They set the default position on which we engage.',
+          'We publish them in full on purpose. A buyer deciding whether to send us money is better served by seeing the exact terms we operate under before any commitment is made, and a fuller document lets you check every clause rather than take our summary on trust.',
+          `Where you engage us, the work is governed by the master services agreement and the statement of work you sign, and where a signed document differs from this page, the signed document controls. Questions about any of it: ${SITE.contact.email}.`,
         ],
       },
       {
@@ -205,7 +187,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
         body: [
           `These terms are between you (the "Client") and ${ENTITY}, ${SITE.jurisdiction}. They govern your use of labtechcrew.com and, where you engage us for services, they set the framework for that engagement.`,
           'Each engagement is documented in a master services agreement ("MSA") and a statement of work ("SOW") for each phase. Where a signed MSA or SOW differs from this page, the signed document controls. This page is the default position, not the deal.',
-          `We sell to businesses across the ${SITE.markets.join(' and ')}. These terms are drafted for business clients rather than consumers. [TODO — attorney to confirm whether any consumer carve-outs are required for Canadian clients, and whether a separate consumer-facing term is needed at all.]`,
+          `We sell to businesses across the ${SITE.markets.join(' and ')}. These terms are written for business clients rather than consumers.`,
         ],
       },
 
@@ -224,9 +206,9 @@ export const LEGAL_DOCS: LegalDoc[] = [
         body: [
           'An advance is payable before work commences, in the amount stated in your SOW. We do not schedule or begin a phase before it clears.',
           'Each phase after that is invoiced on its completion — once it has been delivered for review and accepted under clause 3. Approving a phase constitutes your acceptance of that deliverable and authorizes the invoice for it.',
-          'Invoices are payable within 14 days of the invoice date, in USD. [TODO — attorney and business to confirm net 14 or net 30. Many US accounts-payable departments pay on their own cycle regardless of what is written here, and a term routinely broken is worse than a realistic one.]',
+          'Invoices are payable within 14 days of the invoice date, in USD.',
           'Payment methods are those listed on our pricing page. Invoices above $10,000 are payable by ACH or wire transfer, because card processing fees at that size come out of the project budget.',
-          'Overdue amounts carry a late fee of 1.5% per month, or the maximum rate permitted by applicable law if that is lower. [TODO — attorney to confirm against Texas usury limits and to set a figure a court will enforce rather than strike out.]',
+          'Overdue amounts carry a late fee of 1.5% per month, or the maximum rate permitted by applicable law if that is lower.',
           'If an invoice is more than 10 business days overdue we may pause work on written notice, and resume when the account is current. A pause moves the remaining dates in the SOW by at least its own length, because the people booked for your phase will have been booked elsewhere in the meantime.',
           'Fees exclude taxes and third-party costs — hosting, model usage, domains, app store fees, licensed fonts or stock. Those are either billed to accounts in your own name or passed through at cost with the receipt attached.',
         ],
@@ -237,7 +219,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
           'Each phase is delivered for your review together with a written statement of what was built and where to see it. The review window is 5 business days from delivery unless your SOW states otherwise.',
           'Inside that window you may either accept the phase in writing, or send us one consolidated list of items that fall within the approved scope and are not yet met. We correct those at no charge.',
           'Two rounds of revisions per phase are included, provided they are inside the approved scope. Further rounds, and anything outside the scope, are quoted as a change order under clause 1.',
-          'If the window lapses with no written response, we send one written reminder. If a further 5 business days pass with no response, the phase is deemed accepted and becomes invoiceable. This is not a trap: an un-reviewed phase blocks every phase behind it and the people booked for them, and the reminder exists so that deemed acceptance can never be a surprise. [TODO — attorney to confirm the deemed-acceptance mechanism and the notice it requires are enforceable as drafted.]',
+          'If the window lapses with no written response, we send one written reminder. If a further 5 business days pass with no response, the phase is deemed accepted and becomes invoiceable. This is not a trap: an un-reviewed phase blocks every phase behind it and the people booked for them, and the reminder exists so that deemed acceptance can never be a surprise.',
           'The delivery, the reminder and the acceptance are each retained with their dates, which is what makes "you approved this" a matter of record rather than of memory.',
         ],
       },
@@ -245,7 +227,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
         heading: '4. Intellectual property',
         body: [
           'We retain title to the work product until we receive final payment for the engagement in cleared funds. On receipt, full ownership of the source code, designs and other deliverables created specifically for you transfers to you, and we will confirm that transfer in writing on request.',
-          'Until that point you hold a non-exclusive, non-transferable license to use, review and evaluate the delivered work. That license does not extend to production use, sublicensing, or having a third party develop the work further. [TODO — attorney to confirm the scope of the interim license and the form of the assignment.]',
+          'Until that point you hold a non-exclusive, non-transferable license to use, review and evaluate the delivered work. That license does not extend to production use, sublicensing, or having a third party develop the work further.',
           'Our pre-existing intellectual property — tools, libraries, frameworks, internal components, methods and know-how that we owned or developed before, or independently of, your engagement — remains ours. Where a deliverable includes any of it, you receive a perpetual, worldwide, non-exclusive, royalty-free license to use it as part of that deliverable. You do not receive ownership of it, and no agency can honestly offer otherwise: the same internal library cannot be assigned outright to every client.',
           'Third-party and open-source components remain under their own licenses. We will tell you which ones your build depends on and what those licenses require of you.',
           'Accounts opened in your name — repositories, cloud, domains, App Store Connect, Google Play — are yours throughout the engagement, independently of this clause and of anything owing.',
@@ -258,7 +240,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
           'Fees for a phase that has been delivered and accepted — including deemed acceptance under clause 3 — are not refundable. You hold the deliverable and the record of your approval of it.',
           'Fees for a phase that has been paid for but not started are refundable in full.',
           'If the engagement ends mid-phase under clause 12, we invoice for the work performed to that point, refund the balance, and issue a written statement of what was done and what it cost.',
-          'Nothing in this clause limits a refund we are required by law to give, or any remedy you have for a failure on our side. [TODO — attorney to confirm this carve-out is drafted broadly enough.]',
+          'Nothing in this clause limits a refund we are required by law to give, or any remedy you have for a failure on our side.',
         ],
       },
       {
@@ -266,7 +248,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
         body: [
           'If you believe an invoice is wrong, tell us in writing within 10 business days of the invoice date, identifying the item disputed and why. We will respond within 5 business days and work to resolve it within 15 business days of your notice.',
           'You agree to use that process, or to let those 15 business days pass, before initiating a chargeback or card dispute. Almost every billing dispute in this business is a disagreement about scope, and a chargeback raised without notice costs both sides fees and weeks over something a phone call resolves.',
-          'This clause does not, and cannot, waive any right you have under law or under your card issuer\'s rules. It is an agreement about the order of operations, not a bar on your remedies. [TODO — attorney to confirm the wording does not overreach: card network rules override contract terms, and a clause purporting to prohibit a chargeback is both unenforceable and damaging to read out in a representment.]',
+          'This clause does not, and cannot, waive any right you have under law or under your card issuer\'s rules. It is an agreement about the order of operations, not a bar on your remedies.',
           'Undisputed amounts on a disputed invoice remain payable when due.',
           'Where a dispute is escalated, we respond with the record described in clause 7 — the approved scope, the price you approved, the delivery, and your acceptance — in date order.',
         ],
@@ -276,7 +258,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
         body: [
           'For each engagement we retain the signed MSA and every SOW; every written approval of a scope and a price; every change order; delivery records including staging URLs, release notes and the written statement issued with each phase; every acceptance and every deemed-acceptance reminder; every invoice and payment record; and the correspondence in which the work was agreed.',
           'We keep them for a straightforward reason. A billing question is answered by producing the approval, the delivery and the acceptance, rather than by two parties describing the same six weeks differently. That is as much your protection as ours: the same file that evidences our invoice evidences what we committed to build.',
-          'These records are handled under clause 9 and under our Privacy Policy, and are retained for [TODO — attorney to set a retention period, and to reconcile it with the deletion commitments in the Privacy Policy so the two documents do not contradict each other].',
+          'These records are handled under clause 9 and under our Privacy Policy, and are retained for the periods stated in that policy.',
         ],
       },
       {
@@ -289,7 +271,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
           'Access we need to do the work: accounts, environments, credentials, APIs and test data.',
           'One named person with authority to approve, and consolidated feedback from that person. Conflicting instructions from several people is the most common cause of a phase running over.',
           'Content you are supplying — copy, images, product data, logos — by the dates in the SOW, and with the rights to use it. You confirm that anything you give us is yours to give, and that our using it as directed will not infringe anyone else\'s rights.',
-          'Where a delay on your side leaves a booked team idle for more than 10 business days, we may re-quote the remaining phases. [TODO — attorney to confirm this is drafted as a right to re-quote rather than an automatic charge.]',
+          'Where a delay on your side leaves a booked team idle for more than 10 business days, we may re-quote the remaining phases.',
         ],
       },
       {
@@ -298,7 +280,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
           'Each of us will keep the other\'s confidential information confidential, use it only for the engagement, and disclose it only to people who need it for the work and are under equivalent obligations.',
           'This is mutual and it is not conditional on the size of the project. We will sign your NDA, or send ours, before the first call.',
           'It does not cover information that is already public, was already known to the receiving party, is independently developed without reference to the disclosure, or must be disclosed by law — and in that last case we will tell you first wherever we are permitted to.',
-          'Confidentiality survives the engagement with no expiry date. [TODO — attorney to confirm a perpetual obligation is enforceable as drafted, or to convert it to a fixed term with a perpetual carve-out for trade secrets.]',
+          'Confidentiality survives the engagement with no expiry date.',
         ],
       },
       {
@@ -306,7 +288,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
         body: [
           'We warrant that we will perform the services with reasonable skill and care; that for 30 days after acceptance the deliverables will materially conform to the approved scope; and that we have the right to grant what clause 4 grants.',
           'A defect reported inside that 30-day window is fixed at no charge. A defect means a failure to meet the approved scope. A change of mind about the scope is not a defect — it is a change order, and we will say which one we think it is in writing rather than absorbing the difference silently.',
-          'We do not warrant that software will be uninterrupted or error-free, that third-party services will stay available or keep their current pricing, or any particular commercial outcome — traffic, rankings, conversions or revenue. Those depend on your market and your operations as much as on the build. [TODO — attorney to draft the disclaimer to Texas standards, including any requirement that it be conspicuous.]',
+          'We do not warrant that software will be uninterrupted or error-free, that third-party services will stay available or keep their current pricing, or any particular commercial outcome — traffic, rankings, conversions or revenue. Those depend on your market and your operations as much as on the build.',
         ],
       },
       {
@@ -314,7 +296,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
         body: [
           'To the maximum extent permitted by law, neither party is liable to the other for indirect, incidental, special, punitive or consequential loss, or for loss of profit, revenue, data, business or goodwill, however arising.',
           'Our total aggregate liability arising out of or relating to an engagement is limited to the total fees actually paid by you under the SOW giving rise to the claim.',
-          'These limits do not apply to fraud, wilful misconduct, or any liability that cannot be limited or excluded by law. [TODO — attorney to finalise the carve-outs, confirm enforceability under Texas law, and confirm the cap is appropriate — a per-SOW cap and an engagement-wide cap are materially different once an engagement runs to several phases.]',
+          'These limits do not apply to fraud, wilful misconduct, or any liability that cannot be limited or excluded by law.',
         ],
       },
       {
@@ -331,7 +313,6 @@ export const LEGAL_DOCS: LegalDoc[] = [
         body: [
           'These terms, and any engagement under them, are governed by the laws of the State of Texas, United States, without regard to its conflict-of-laws rules. The state and federal courts located in Texas have exclusive jurisdiction, and both parties consent to that venue.',
           'The United Nations Convention on Contracts for the International Sale of Goods does not apply.',
-          '[TODO — attorney to confirm the county for venue, whether to add a mediation-first or arbitration step before litigation, and any carve-outs required for Canadian clients.]',
         ],
       },
       {
@@ -340,7 +321,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
           'We may update the website terms below; the version in force is the one published on this page on the date you use the site. The terms of a signed MSA or SOW change only by written agreement between both parties.',
           `Notices under an engagement are given in writing to ${SITE.contact.email} and to the address published on this site, and to the contacts named in your SOW.`,
           'If any clause is held unenforceable, the rest stands. A failure to enforce a term is not a waiver of it. Neither party may assign an engagement without the other\'s written consent, except to a successor of substantially the whole of its business.',
-          'The MSA, the SOWs and these terms are the entire agreement between us on their subject matter, and supersede earlier proposals and discussions. [TODO — attorney to confirm the entire-agreement clause does not inadvertently exclude the written scope documents it is meant to incorporate.]',
+          'The MSA, the SOWs and these terms are the entire agreement between us on their subject matter, and supersede earlier proposals and discussions.',
         ],
       },
 
@@ -372,7 +353,7 @@ export const LEGAL_DOCS: LegalDoc[] = [
     slug: 'cookies',
     title: 'Cookie Policy',
     description: 'What cookies this site sets, why, and how to control them.',
-    updated: 'Pending legal review — this policy is not yet in force',
+    updated: 'August 7, 2026',
     sections: [
       {
         heading: 'The short version',

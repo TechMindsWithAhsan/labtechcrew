@@ -25,7 +25,6 @@ canonicals correct on every page.
 - Replace the placeholder `LogoMark` with the real SVG export.
 - Add real screenshots to the case studies, especially QuranRI's
   authenticated features.
-- Have a US attorney review `lib/data/legal.ts`. Every `[TODO]` must go first.
 - Phase 4 remainder: scheduling embed on the form success state, the pricing
   estimator, Cloudflare Turnstile wiring, and the first two blog posts.
 

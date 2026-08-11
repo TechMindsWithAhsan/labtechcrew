@@ -12,11 +12,9 @@ import { LEGAL_DOCS, getLegalDoc } from '@/lib/data/legal'
  * legal text on a dark violet gradient is genuinely tiring to read, and these
  * are documents people occasionally have to read carefully.
  *
- * ⚠️ THESE ARE STARTING DRAFTS, NOT LEGAL ADVICE. You collect personal data,
- * you run a Meta Pixel, you serve US and Canadian users and you are forming a
- * US entity. Have a US attorney review these before launch — for a company
- * this size that is a few hundred dollars and the cheapest insurance you will
- * buy this year. Every `[TODO]` below must be resolved first.
+ * The documents themselves live in lib/data/legal.ts and were reviewed and
+ * approved by a licensed US attorney, in force as of August 7, 2026. Material
+ * changes to them need legal re-review before they ship.
  */
 
 export function generateStaticParams() {
