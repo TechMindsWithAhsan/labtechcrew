@@ -50,7 +50,12 @@ export function ProofStrip({ studies }: { studies: CaseStudy[] }) {
           Widths stay on the spacing scale (w-64, not w-[256px]): check:responsive
           fails bracketed pixel widths, which is the class of bug it exists for.
         */}
-        <ul className="-mx-6 mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 md:-mx-8 md:px-8">
+        {/*
+          Scrollbar hidden on purpose: the clipped next card is the affordance,
+          and a native scrollbar under the rail never matched the brand.
+          Drag/swipe/wheel scroll and snap points are untouched by this.
+        */}
+        <ul className="-mx-6 mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 md:-mx-8 md:px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {studies.map((study) => {
             const shot = study.shots?.[0]
             return (

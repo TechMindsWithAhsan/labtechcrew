@@ -68,7 +68,20 @@ export function Textarea({ className, ...props }: ComponentProps<'textarea'>) {
 export function Select({ className, children, ...props }: ComponentProps<'select'>) {
   return (
     <select
-      className={cn(control, 'appearance-none pr-9 [&>option]:bg-brand-800 [&>option]:text-white', className)}
+      className={cn(
+        control,
+        'appearance-none pr-9',
+        /* Open-dropdown legibility. color-scheme makes the browser paint the
+           native popup dark; the explicit option/optgroup colors cover engines
+           that honor them. Descendant selectors on purpose — a direct-child
+           variant misses every option nested inside an <optgroup>. */
+        '[color-scheme:dark] [&_option]:bg-brand-800 [&_option]:text-white',
+        '[&_optgroup]:bg-brand-800 [&_optgroup]:text-white',
+        '[[data-theme=light]_&]:[color-scheme:light]',
+        '[[data-theme=light]_&_option]:bg-white [[data-theme=light]_&_option]:text-(--color-text)',
+        '[[data-theme=light]_&_optgroup]:bg-white [[data-theme=light]_&_optgroup]:text-(--color-text)',
+        className,
+      )}
       {...props}
     >
       {children}

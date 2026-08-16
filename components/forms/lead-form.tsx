@@ -124,7 +124,14 @@ export function LeadForm({ tier }: Props) {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Phone" htmlFor="phone" hint="Optional — but it is how we reply fastest.">
-          <Input id="phone" type="tel" autoComplete="tel" {...register('phone')} />
+          <Input
+            id="phone"
+            type="tel"
+            inputMode="numeric"
+            pattern="\+?[0-9\s\-\(\)]*"
+            autoComplete="tel"
+            {...register('phone')}
+          />
         </Field>
 
         {tier === 'brief' ? (

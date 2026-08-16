@@ -9,7 +9,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "node scripts/lint-tokens.mjs",
     "typecheck": "tsc --noEmit",
     "check": "npm run lint:tokens && npm run check:responsive && npm run typecheck && npm run build && npm run check:links && npm run audit:seo && npm run check:shots",
     "audit:seo": "node scripts/audit-redirects.mjs",

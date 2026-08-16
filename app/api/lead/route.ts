@@ -84,13 +84,29 @@ export async function POST(request: Request) {
   // Persist first. A notification failure must never lose a lead.
   let persisted = false
   if (isDatabaseConfigured) {
+    let connected = false
     try {
       await connectToDatabase()
-      await LeadModel.create(record)
-      persisted = true
+      connected = true
     } catch (err) {
-      console.error('[lead] persist failed', err)
-      // Fall through — still notify, so the lead is not lost entirely.
+      // Distinct from the write failure below: a connect failure means Mongo
+      // itself is unreachable, so EVERY lead until recovery is email-only.
+      console.error('[lead] DB CONNECT failed — Mongo unreachable, lead not persisted', {
+        email: record.email,
+        err,
+      })
+    }
+    if (connected) {
+      try {
+        await LeadModel.create(record)
+        persisted = true
+      } catch (err) {
+        // The DB is up but the insert was rejected (schema drift, enum, etc).
+        console.error('[lead] DB WRITE failed — insert rejected, lead not persisted', {
+          email: record.email,
+          err,
+        })
+      }
     }
   } else {
     console.warn('[lead] MONGODB_URI not set — lead not persisted', record.email)

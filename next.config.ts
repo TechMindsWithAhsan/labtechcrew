@@ -3,6 +3,31 @@ import type { NextConfig } from 'next'
 // that ships. Never maintain two copies of a redirect table.
 import { redirects } from './config/redirects.mjs'
 
+/**
+ * De-indexing guard — see app/robots.ts. Without either variable, robots.ts
+ * serves `Disallow: /` and the deploy silently vanishes from search. A build
+ * that cannot prove its environment must fail here, not ship noindex.
+ * Vercel sets VERCEL_ENV itself; local builds get NEXT_PUBLIC_SITE_ENV from
+ * .env.local (copied from .env.example).
+ */
+const vercelEnv = process.env.VERCEL_ENV
+const siteEnv = process.env.NEXT_PUBLIC_SITE_ENV
+
+if (!vercelEnv && !siteEnv) {
+  throw new Error(
+    '[env] Neither VERCEL_ENV nor NEXT_PUBLIC_SITE_ENV is set — refusing to build. ' +
+      'Without one, robots.ts ships "Disallow: /" and the site is silently de-indexed. ' +
+      'Local builds: copy .env.example to .env.local (it sets NEXT_PUBLIC_SITE_ENV=development).',
+  )
+}
+
+if (vercelEnv === 'production' && siteEnv && siteEnv !== 'production') {
+  throw new Error(
+    `[env] VERCEL_ENV is "production" but NEXT_PUBLIC_SITE_ENV is "${siteEnv}" — ` +
+      'this deploy would ship a noindex robots.txt. Fix the env var before deploying.',
+  )
+}
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
 

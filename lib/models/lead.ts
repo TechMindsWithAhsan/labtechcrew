@@ -1,4 +1,5 @@
 import mongoose, { Schema, type InferSchemaType } from 'mongoose'
+import { BUDGET_BANDS } from '../site'
 
 /**
  * Lead model — blueprint §6.5.
@@ -21,7 +22,7 @@ const leadSchema = new Schema(
     service: { type: String },
     budgetBand: {
       type: String,
-      enum: ['1-5k', '5-15k', '15-50k', '50-150k', '150k+'],
+      enum: BUDGET_BANDS.map((b) => b.value),
     },
     timeline: { type: String, enum: ['asap', '1-3mo', '3-6mo', 'exploring'] },
     message: { type: String },

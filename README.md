@@ -27,7 +27,11 @@ npm run build       # production build
 npm run audit:seo   # redirect map auditor — run after ANY redirect change
 npm run audit:gsc -- Pages.csv   # checks your Search Console export for URLs
                                  # that would 404 on launch day
-npm run check       # typecheck + build
+npm run check       # full gate, in order: lint:tokens (Tailwind v4 token
+                    # syntax), check:responsive (mobile overflow audit),
+                    # typecheck, build, check:links (internal links),
+                    # audit:seo (redirect map), check:shots (portfolio
+                    # screenshots)
 ```
 
 > **Note:** `npm run build` needs outbound network access the first time,

@@ -10,12 +10,21 @@ const budgetValues = BUDGET_BANDS.map((b) => b.value) as [string, ...string[]]
 const timelineValues = TIMELINES.map((t) => t.value) as [string, ...string[]]
 const serviceValues = ALL_SERVICE_SLUGS as unknown as [string, ...string[]]
 
+/** Digits with common separators and an optional leading +. Letters fail. */
+const phoneField = z
+  .string()
+  .trim()
+  .regex(/^\+?[0-9][0-9\s\-().]{6,19}$/, 'Please enter a valid phone number')
+  .refine((value) => value.replace(/\D/g, '').length >= 7, 'Please enter a valid phone number')
+  .optional()
+  .or(z.literal(''))
+
 /** Tier 1 — low friction. 3 fields. Blueprint §4.8. */
 export const leadTier1Schema = z.object({
   tier: z.literal('quick'),
   name: z.string().trim().min(2, 'Please enter your name').max(120),
   email: z.string().trim().toLowerCase().email('Please enter a valid email'),
-  phone: z.string().trim().max(40).optional().or(z.literal('')),
+  phone: phoneField,
   // Honeypot: real users never fill this. Validated PERMISSIVELY on purpose —
   // if zod rejects it we return 422 and the bot learns it was caught. The
   // route checks the field itself and returns 200 so the bot thinks it worked.
@@ -28,7 +37,7 @@ export const leadTier2Schema = z.object({
   tier: z.literal('brief'),
   name: z.string().trim().min(2, 'Please enter your name').max(120),
   email: z.string().trim().toLowerCase().email('Please enter a valid email'),
-  phone: z.string().trim().max(40).optional().or(z.literal('')),
+  phone: phoneField,
   company: z.string().trim().max(160).optional().or(z.literal('')),
   service: z.enum(serviceValues, { errorMap: () => ({ message: 'Pick the closest service' }) }),
   budgetBand: z.enum(budgetValues, { errorMap: () => ({ message: 'Please select a budget range' }) }),
