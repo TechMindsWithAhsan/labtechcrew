@@ -127,7 +127,7 @@ async function sendEmail(lead: NotifyPayload): Promise<ChannelResult> {
         from,
         to: [to],
         reply_to: lead.email,
-        subject: `New lead — ${lead.name}${lead.budgetBand ? ` (${lead.budgetBand})` : ''}`,
+        subject: `New lead — ${lead.name.replace(/[\r\n]/g, ' ')}${lead.budgetBand ? ` (${lead.budgetBand})` : ''}`,
         html,
       }),
       signal: AbortSignal.timeout(8000),

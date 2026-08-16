@@ -114,11 +114,11 @@ export function Checkbox({
  * Never `display: none` alone — some bots skip those. Off-screen +
  * aria-hidden + tabIndex -1 is the durable version.
  */
-export function Honeypot({ name = 'website_url' }: { name?: string }) {
+export function Honeypot({ name = 'website_url', ...props }: { name?: string } & ComponentProps<'input'>) {
   return (
     <div aria-hidden="true" className="absolute left-[-9999px] top-0 h-0 w-0 overflow-hidden">
       <label htmlFor={name}>Leave this field empty</label>
-      <input id={name} name={name} type="text" tabIndex={-1} autoComplete="off" />
+      <input id={name} name={name} type="text" tabIndex={-1} autoComplete="off" {...props} />
     </div>
   )
 }

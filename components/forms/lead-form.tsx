@@ -96,7 +96,7 @@ export function LeadForm({ tier }: Props) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="relative flex flex-col gap-5" noValidate>
-      <Honeypot />
+      <Honeypot {...register('website_url')} />
       <input type="hidden" {...register('tier')} />
 
       <div className="grid gap-5 sm:grid-cols-2">
@@ -123,13 +123,20 @@ export function LeadForm({ tier }: Props) {
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Phone" htmlFor="phone" hint="Optional — but it is how we reply fastest.">
+        <Field
+          label="Phone"
+          htmlFor="phone"
+          hint="Optional — but it is how we reply fastest."
+          error={errors.phone?.message}
+        >
           <Input
             id="phone"
             type="tel"
             inputMode="numeric"
             pattern="\+?[0-9\s\-\(\)]*"
             autoComplete="tel"
+            aria-invalid={Boolean(errors.phone)}
+            aria-describedby={errors.phone ? 'phone-error' : undefined}
             {...register('phone')}
           />
         </Field>
