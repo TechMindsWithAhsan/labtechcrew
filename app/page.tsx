@@ -16,6 +16,7 @@ import {
   CtaBand,
 } from '@/components/sections/blocks'
 import { FaqSection } from '@/components/sections/faq'
+import { Testimonials } from '@/components/sections/testimonials'
 import { pageMetadata } from '@/lib/seo'
 import { SITE } from '@/lib/site'
 import { CASE_STUDIES, getCaseStudy, featuredCaseStudies } from '@/lib/content'
@@ -227,6 +228,8 @@ export default async function HomePage() {
           </div>
         </Container>
       </Section>
+
+      <Testimonials />
 
       <Differentiators />
 
