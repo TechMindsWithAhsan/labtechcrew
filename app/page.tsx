@@ -16,6 +16,7 @@ import {
   CtaBand,
 } from '@/components/sections/blocks'
 import { FaqSection } from '@/components/sections/faq'
+import { TechBadges } from '@/components/sections/tech-badges'
 import { Testimonials } from '@/components/sections/testimonials'
 import { pageMetadata } from '@/lib/seo'
 import { SITE } from '@/lib/site'
@@ -115,6 +116,8 @@ export default async function HomePage() {
           alt: 'Humanoid robot character standing, white and violet with glowing eyes',
         }}
       />
+
+      <TechBadges />
 
       {/*
         OWN WORK ONLY — no third-party logos without written permission.
