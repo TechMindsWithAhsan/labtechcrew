@@ -2,13 +2,12 @@ import { Container } from '@/components/ui/layout'
 import { Badge } from '@/components/ui/card'
 
 const TECH_BADGES = [
+  'RAG architecture',
+  'Vector search',
   'Next.js',
   'React Native',
   'TypeScript',
-  'Node.js',
-  'Firebase',
-  'MongoDB',
-  'Stripe',
+  'Evaluation harness',
 ]
 
 export function TechBadges() {
