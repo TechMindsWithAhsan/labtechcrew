@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Container, Section, SectionHeading } from '@/components/ui/layout'
-import { BookingPanel } from '@/components/sections/booking-panel'
+import { CalendlyEmbed } from '@/components/sections/calendly-embed'
 import { LeadForm } from '@/components/forms/lead-form'
 import { JsonLd } from '@/components/ui/json-ld'
 import { pageMetadata, breadcrumbSchema } from '@/lib/seo'
@@ -54,15 +54,11 @@ export default function ContactPage() {
 
               {/* Tier 3 — high intent */}
               <div id="book" className="flex flex-col gap-6 border-t border-white/10 pt-16">
-                {/* Heading tracks whether a calendar is actually configured.
-                    Promising "pick a time" above a phone number is the kind of
-                    small mismatch that makes a careful buyer wonder what else
-                    on the page is not quite true. */}
                 <SectionHeading
                   eyebrow="Skip the form"
                   title={
                     SITE.bookingUrl
-                      ? 'Book a 20-minute scoping call'
+                      ? 'Book your free 20-minute call'
                       : 'Skip the form and just call us'
                   }
                   lead={
@@ -71,7 +67,7 @@ export default function ContactPage() {
                       : 'Twenty minutes, no prep, no pitch. Tell us what you are trying to build and we will tell you honestly whether we are the right team for it.'
                   }
                 />
-                <BookingPanel />
+                <CalendlyEmbed />
               </div>
             </div>
 

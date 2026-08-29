@@ -302,4 +302,20 @@
     content-visibility: auto;
     contain-intrinsic-size: auto 600px;
   }
+
+  /* Skeleton shimmer for lazy-loaded embeds. */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.06) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s ease-in-out infinite;
+  }
 }
