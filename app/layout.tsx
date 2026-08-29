@@ -55,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         the same breakpoint or every desktop page gains 80px of dead space.
         If the bar's padding or button size changes, re-measure this.
       */}
-      <body className="flex min-h-dvh flex-col pb-20 antialiased lg:pb-0">
+      <body suppressHydrationWarning className="flex min-h-dvh flex-col pb-20 antialiased lg:pb-0">
         {/*
           Consent Mode v2 DEFAULTS must execute before gtag.js loads, or the
           defaults do not apply at all. This inline script is deliberately

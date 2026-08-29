@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 const CALENDLY_URL =
-  'https://calendly.com/labtechcrew65/20min?background_color=05000f&text_color=ffffff&primary_color=da797e&hide_gdpr_banner=1&hide_landing_page_details=1'
+  'https://calendly.com/labtechcrew65/20min?background_color=05000f&primary_color=da797e&hide_gdpr_banner=1&hide_landing_page_details=1'
 
 const HEIGHT = 1050
 
