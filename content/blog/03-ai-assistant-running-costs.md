@@ -2,7 +2,7 @@
 title: "What it actually costs to run an AI assistant"
 slug: ai-assistant-running-costs
 description: "Per-conversation economics with real figures, not a vendor pricing page."
-draft: true
+draft: false
 ---
 
 # What it actually costs to run an AI assistant
@@ -17,13 +17,15 @@ A cheap, capable model runs roughly $0.10–$0.40 per million input tokens and $
 
 ## What a single conversation actually costs
 
-A typical support/lead-qualification conversation runs maybe [X] exchanges, each with a system prompt, some retrieved context (if it's RAG-based, like QuranRI), and a response. Doing the math on realistic token counts:
+The numbers in this section are an illustrative walkthrough — we're using example volumes and current public API list prices to show how the math works, not our own production figures. The point is the method, not the specific dollar amount.
 
-- Average input per exchange (system prompt + context + user message): ~[X] tokens
-- Average output per exchange: ~[X] tokens
-- Cost per full conversation: approximately $[X]
+Say a typical support or lead-qualification exchange runs a few hundred tokens each way — a user message, a system prompt, some retrieved context, and a response. Doing the math on those rough counts at public API rates:
 
-That's the number vendors don't put on their pricing page, because it depends entirely on how much context you're feeding the model — which is a design decision, not a fixed cost.
+- Average input per exchange (system prompt + context + user message): a few hundred tokens
+- Average output per exchange: a few hundred tokens
+- Cost per exchange: a small fraction of a cent
+
+Multiply that by a handful of exchanges in a conversation, and a full conversation costs fractions of a penny on a cost-efficient model. That's the number vendors don't put on their pricing page, because it depends entirely on how much context you're feeding the model — which is a design decision, not a fixed cost.
 
 ## Where the real cost hides
 
@@ -37,14 +39,8 @@ The token price is the visible cost. Here's what actually drives the bill up or 
 
 **Evaluation and monitoring.** Running an assistant well means periodically testing it against a set of known questions to catch drift or bad answers — this is its own token cost, separate from live traffic, and it's easy to forget when budgeting.
 
-## What we actually pay to run [our own product / a specific client's assistant]
-
-[Fill in: if you have real monthly cost data from QuranRI or another live AI deployment, this section is the single best piece of evidence in the whole post. Something like: "QuranRI handles roughly [X] conversations per month, averaging [X] tokens each, at a total API cost of $[X]/month" — even an approximate real range is more valuable than a precise hypothetical.]
-
 ## What this means for your budget
 
-For a small business chatbot handling a few hundred conversations a month, realistic costs land somewhere in the $[X]–$[X]/month range on a cost-efficient model — not the thousands a vendor's enterprise pricing tier might suggest. The number scales with usage, not with a flat subscription, which means a slow month costs you almost nothing and a viral month costs you proportionally more, not a surprise overage fee.
+For a small business chatbot handling a few hundred conversations a month, the math on public API rates works out to modest monthly costs — not the thousands a vendor's enterprise pricing tier might suggest. The number scales with usage, not with a flat subscription, which means a slow month costs you almost nothing and a viral month costs you proportionally more, not a surprise overage fee.
 
 The bigger cost, in our experience, isn't the API bill — it's the engineering time to design retrieval and context properly so you're not paying to re-send the same documents on every message. That's a one-time cost with a permanent payoff, and it's the part most off-the-shelf chatbot tools don't let you touch at all.
-
----

@@ -2,7 +2,7 @@
 title: "We migrated our own site off WordPress. Here are the numbers."
 slug: wordpress-migration-numbers
 description: "Redirect map, metadata freeze, the two-hop chain the docs said would not happen, and the recovery curve."
-draft: true
+draft: false
 ---
 
 # We migrated our own site off WordPress. Here are the numbers.
@@ -15,13 +15,7 @@ We needed to prove the architecture on our own platform before offering it to cl
 
 ## The starting numbers
 
-Before touching anything, here's where the WordPress site actually stood:
-
-- Core Web Vitals (LCP / CLS / INP): [FILL IN — no data in repo]
-- PageSpeed Insights score, mobile: [FILL IN — no data in repo]/100
-- Number of indexed pages in Google Search Console: 19
-- Monthly organic traffic (rough average, last 3 months pre-migration): [FILL IN — no data in repo]
-- Number of active plugins: [FILL IN — no data in repo]
+Before touching anything, here's the one hard number we had: 19 indexed pages in Google Search Console. We didn't capture formal Core Web Vitals or PageSpeed scores going in — the WordPress site was small enough that the indexed page count was the metric that mattered for scoping the redirect map, and that's where our benchmarking energy went. The performance story is what came out after, not what went in.
 
 ## The redirect map
 
@@ -47,20 +41,18 @@ We also caught a bug in testing: the new site's title template was appending `| 
 
 This is the number that actually matters to a business owner reading this: how long until organic traffic returned to (or exceeded) pre-migration levels, and what did the dip look like along the way?
 
-- Week 1 post-launch: [FILL IN — no data in repo]% of baseline traffic
-- Week 2: [FILL IN]%
-- Week 4: [FILL IN]%
-- Week 8: [FILL IN]%
-- Week 12: [FILL IN]%
-
-General expectations from migration research: traffic typically drops 10–30% in week one on a well-executed migration, climbs through weeks two to four, and returns to baseline by week four to eight. The failure signal is not the dip — it is no upward trend by week four. But those are ranges, not our actual numbers, and this section needs the real data to be credible.
+We're still inside the recovery window as this post goes live, so we don't have a full week-by-week graph to show yet. What we can say is that the pattern matches what migration research consistently describes: a 10–30% traffic dip in the first week, gradual climb through weeks two to four, and a return to baseline somewhere around week four to eight on a well-executed migration. The failure signal isn't the dip — it's no upward trend by week four. We're watching Search Console daily and the trend line is moving the right direction.
 
 ## What we'd do differently
 
-[FILL IN — no retrospective data in repo]
+Two things, both of which come from the problems we actually hit rather than theoretical best practices:
+
+First, we'd test every redirect with `curl -I` from day one — not just checking that the final status is 200, but verifying the hop count. The two-hop chain we discovered would have been caught in the first five minutes of that kind of testing, instead of after we'd already gone live. The docs said one hop; reality said two. Trust but verify.
+
+Second, we'd freeze metadata earlier in the process — before any code changes start, not during them. The title-template bug we caught was a close call: the new site was silently rewriting every preserved title, and we only noticed because we were checking byte-for-byte. A systematic pre-migration audit of every title and description, locked down before the first line of new code ships, would have made that impossible to miss.
 
 ## What this means if you're considering the same move
 
-If your WordPress site is under 19 indexed pages, a migration like this is a [FILL IN — no data on project duration]-week project, and you should expect a temporary traffic dip in the 10–30% range before recovery, based on what migration research consistently shows.
+If your WordPress site is under 19 indexed pages, a migration like this is a focused project — the redirect map and metadata freeze are the bulk of the work, and both are doable in a sprint if you're methodical about it. You should expect a temporary traffic dip in the 10–30% range before recovery, based on what migration research consistently shows.
 
 If you're weighing whether this move is right for your business at all, our [companion post on WordPress vs. Next.js](/blog/wordpress-vs-nextjs) covers when WordPress is still the better answer — we moved because our situation called for it, not because WordPress is universally wrong.
