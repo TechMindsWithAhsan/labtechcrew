@@ -82,7 +82,7 @@ export default async function BlogPostPage({
         </Container>
       </Section>
 
-      <Section tone="light">
+      <Section>
         <Container>
           <article
             className="prose prose-lg"
