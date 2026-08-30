@@ -303,6 +303,7 @@ export type NavItem = { href: string; label: string; mega?: boolean }
 export const PRIMARY_NAV: NavItem[] = [
   { href: '/services/', label: 'Services', mega: true },
   { href: '/work/', label: 'Work' },
+  { href: '/blog/', label: 'Blog' },
   { href: '/how-we-work/', label: 'How We Work' },
   { href: '/pricing/', label: 'Pricing' },
   { href: '/about/', label: 'About' },

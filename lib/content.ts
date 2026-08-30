@@ -1,16 +1,22 @@
 /**
  * Content facade.
  *
- * The real content lives in `lib/data/services.ts` and `lib/data/work.ts`.
- * This file exists so pages, the sitemap and any future CMS have one import
- * surface — swap the bodies for database calls later without touching a
- * single page component.
+ * The real content lives in `lib/data/services.ts`, `lib/data/work.ts`,
+ * and `content/blog/*.md`. This file exists so pages, the sitemap and any
+ * future CMS have one import surface — swap the bodies for database calls
+ * later without touching a single page component.
  *
  * Everything here is build-time. No marketing page should query a database on
  * request (blueprint §7.3): all of them are statically generated, which is
  * both a speed decision and an AI-visibility prerequisite, since AI crawlers
  * execute zero JavaScript.
  */
+
+import fs from 'node:fs'
+import path from 'node:path'
+import matter from 'gray-matter'
+import { remark } from 'remark'
+import html from 'remark-html'
 
 import { SERVICES, getService, type ServiceContent } from './data/services'
 import {
@@ -40,30 +46,60 @@ export type Post = {
   publishedAt: Date
   updatedAt: Date
   readingMinutes: number
-  /** Plain-text body. Swap for MDX when the first post is written. */
-  body?: string
+  body: string
+  draft: boolean
 }
 
-/**
- * Blog is empty on purpose.
- *
- * Blueprint §9.6 — the first two posts should be
- *   1. "WordPress vs Next.js for a business website"
- *   2. the write-up of THIS migration, with the real before/after numbers
- * because that SERP is the weakest we inspected (page one is personal blogs
- * and micro-agencies, zero directories) and you are living the topic.
- *
- * Publishing filler to make the section look populated is worse than an empty
- * section. The index handles zero posts gracefully.
- */
-const POSTS: Post[] = []
+const CONTENT_DIR = path.join(process.cwd(), 'content', 'blog')
+
+function readMarkdownFiles(): Post[] {
+  if (!fs.existsSync(CONTENT_DIR)) return []
+
+  const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.md'))
+
+  const posts = files.map((file) => {
+    const raw = fs.readFileSync(path.join(CONTENT_DIR, file), 'utf-8')
+    const { data, content } = matter(raw)
+
+    const stat = fs.statSync(path.join(CONTENT_DIR, file))
+    const publishedAt = stat.birthtime
+    const updatedAt = stat.mtime
+
+    const wordCount = content.split(/\s+/).filter(Boolean).length
+    const readingMinutes = Math.max(1, Math.round(wordCount / 200))
+
+    const body = remark().use(html).processSync(content).toString()
+
+    return {
+      slug: data.slug ?? file.replace(/\.md$/, ''),
+      title: data.title ?? file.replace(/\.md$/, ''),
+      description: data.description ?? '',
+      publishedAt,
+      updatedAt,
+      readingMinutes,
+      body,
+      draft: data.draft === true,
+    } satisfies Post
+  })
+
+  return posts.sort(
+    (a, b) => b.publishedAt.getTime() - a.publishedAt.getTime(),
+  )
+}
+
+let _posts: Post[] | null = null
+
+function getPosts(): Post[] {
+  if (!_posts) _posts = readMarkdownFiles()
+  return _posts
+}
 
 export async function getAllPosts(): Promise<Post[]> {
-  return POSTS
+  return getPosts().filter((p) => !p.draft)
 }
 
 export async function getPost(slug: string): Promise<Post | undefined> {
-  return POSTS.find((p) => p.slug === slug)
+  return getPosts().find((p) => p.slug === slug && !p.draft)
 }
 
 export async function getAllCaseStudies(): Promise<CaseStudy[]> {
