@@ -17,9 +17,9 @@ The actual engineering challenge isn't "make the AI smart enough to answer corre
 
 ## What QuranRI will not do, by design
 
-[Fill in real specifics here if you can share them without exposing anything sensitive: what are the actual categories of refusal? Your homepage already states it refuses to issue legal, medical, financial or religious rulings — expand on what that looks like in practice. For example: does it decline to issue a fatwa-style ruling but still explain what different scholarly positions say? Where exactly is the line between "explaining" and "ruling"?]
+QuranRI does not issue legal, medical, psychological, financial or religious rulings — that boundary is published in its terms of service, in writing. In practice, this means a student can ask "what does this verse say about justice?" and get a sourced answer, but asking "is what I'm doing halal?" triggers a refusal. The system explains what different scholarly positions say where its sources cover them, but it does not issue a ruling. The line between "explaining" and "ruling" is the single hardest boundary to draw, because the same underlying request for a ruling can be phrased dozens of ways.
 
-This isn't a single keyword filter. A keyword filter catches "what is the ruling on X" but misses "so if I did X, would that be wrong" — the same underlying request for a ruling, asked differently. [If you built something more sophisticated than keyword matching — e.g., classifying the *intent* of a question regardless of phrasing — explain that approach here, at whatever level of detail you're comfortable sharing.]
+This isn't a single keyword filter. A keyword filter catches "what is the ruling on X" but misses "so if I did X, would that be wrong" — the same underlying request for a ruling, asked differently. [FILL IN — describe the intent-classification approach if you can share it at the level of detail you're comfortable with.]
 
 ## Retrieval with a source, not memory
 
@@ -29,7 +29,7 @@ This matters because a wrong answer that comes with a citation is checkable. A w
 
 ## The handoff to a human
 
-[Fill in: what actually triggers the handoff to a human teacher? Is it purely the refusal categories above, or are there other signals — a student expressing distress, a question repeated multiple times suggesting confusion, an edge case the system isn't confident about? Describe the actual handoff mechanism — is it a flag to a teacher dashboard, a direct message, something else?]
+When a student is ready — assessed through placement testing and qualified for one-to-one instruction — the system hands them to a human teacher at VIqra. [FILL IN — describe the specific handoff mechanism: is it a flag to a teacher dashboard, a direct message, an automated routing step, something else?]
 
 The handoff exists because refusal alone isn't a complete answer to "I don't know" — a system that just says "I can't help with that" and stops has failed the person who asked, even if it avoided giving a wrong answer. The refusal has to lead somewhere.
 
@@ -37,7 +37,7 @@ The handoff exists because refusal alone isn't a complete answer to "I don't kno
 
 Building a system that answers well is, at this point, a largely solved engineering problem — good retrieval, a capable model, decent prompt design gets you most of the way there quickly. Building a system that knows the shape of its own limits, reliably, across the many ways a real person might phrase a question that crosses that line — that's the part that doesn't have a library you can import. It has to be designed, tested against real edge cases, and audited, specifically for the population using it.
 
-[If you have any specific numbers here — how many test cases you ran the refusal logic against, how many iterations it took, any specific failure mode you caught and fixed during testing — this is exactly the kind of concrete detail that makes this post credible instead of just a well-written opinion piece.]
+[FILL IN — any specific numbers: test cases the refusal logic was validated against, iterations required, failure modes caught during testing.]
 
 ## Why this is the actual product
 
@@ -46,5 +46,3 @@ Anyone can build the version of QuranRI that answers questions. What makes it so
 If you're building an AI assistant for a domain where a wrong answer has real consequences — healthcare information, financial guidance, anything involving minors — the refusal design is where your build time should go first, not last.
 
 ---
-
-*[NOTE FOR AHSAN: This one leans most heavily on real specifics you have direct knowledge of from building QuranRI. The bracketed sections are where your actual design decisions go — even a few real specifics here will make this the most distinctive post of the four, since "how we built a refusal system" isn't something most competitors can write about honestly at all.]*

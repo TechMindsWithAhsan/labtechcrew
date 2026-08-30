@@ -9,8 +9,6 @@ draft: true
 
 Every AI vendor's pricing page tells you what the API costs per million tokens. Almost none of them tell you what that means for an actual business — what a real conversation costs, what a month of real usage costs, and where the money quietly goes that nobody budgets for. Here's the real breakdown, based on what we've actually built and run.
 
-> **NOTE FOR AHSAN:** The token-pricing figures below reflect publicly available API pricing as of writing (this changes often, so re-verify before publishing). The "real conversation" cost estimates are illustrative — replace the bracketed sections with actual usage data from QuranRI or any client AI assistant you have real numbers for. That's what will make this post stand out from every other "AI cost breakdown" article — yours will have a real system behind it.
-
 ## The token math, in plain terms
 
 AI models charge per "token" — roughly ¾ of a word. You pay separately for tokens going in (your prompt, plus any context/documents the assistant reads) and tokens coming out (the response).
@@ -50,5 +48,3 @@ For a small business chatbot handling a few hundred conversations a month, reali
 The bigger cost, in our experience, isn't the API bill — it's the engineering time to design retrieval and context properly so you're not paying to re-send the same documents on every message. That's a one-time cost with a permanent payoff, and it's the part most off-the-shelf chatbot tools don't let you touch at all.
 
 ---
-
-*[NOTE FOR AHSAN: Fill in real numbers from QuranRI's actual usage if you have access to that data — that's what turns this from "a good generic explainer" into "proof you know what you're talking about," which is exactly the positioning your site is going for.]*
