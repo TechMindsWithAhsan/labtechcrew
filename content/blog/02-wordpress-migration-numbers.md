@@ -39,7 +39,7 @@ We also caught a bug in testing: the new site's title template was appending `| 
 
 This is the number that actually matters to a business owner reading this: how long until organic traffic returned to (or exceeded) pre-migration levels, and what did the dip look like along the way?
 
-We're still inside the recovery window as this post goes live, so we don't have a full week-by-week graph to show yet. What we can say is that the pattern matches what migration research consistently describes: a 10–30% traffic dip in the first week, gradual climb through weeks two to four, and a return to baseline somewhere around week four to eight on a well-executed migration. The failure signal isn't the dip, it's no upward trend by week four. We're watching Search Console daily and the trend line is moving the right direction.
+We're still inside the recovery window as this post goes live, so we don't have a full week-by-week graph to show yet. What we can say is that the pattern matches what migration research consistently describes: a 10–30% traffic dip in the first week, gradual climb through weeks two to four, and a return to baseline somewhere around week four to eight on a well-executed migration. The failure signal isn't the dip; it's no upward trend by week four. We're watching Search Console daily and the trend line is moving the right direction.
 
 ## What we'd do differently
 
@@ -53,4 +53,4 @@ Second, we'd freeze metadata earlier in the process, before any code changes sta
 
 If your WordPress site is under 19 indexed pages, a migration like this is a focused project: the redirect map and metadata freeze are the bulk of the work, and both are doable in a sprint if you're methodical about it. You should expect a temporary traffic dip in the 10–30% range before recovery, based on what migration research consistently shows.
 
-If you're weighing whether this move is right for your business at all, our [companion post on WordPress vs. Next.js](/blog/wordpress-vs-nextjs) covers when WordPress is still the better answer, we moved because our situation called for it, not because WordPress is universally wrong.
+If you're weighing whether this move is right for your business at all, our [companion post on WordPress vs. Next.js](/blog/wordpress-vs-nextjs) covers when WordPress is still the better answer. We moved because our situation called for it, not because WordPress is universally wrong.

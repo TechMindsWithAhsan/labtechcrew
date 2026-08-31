@@ -33,7 +33,7 @@ The handoff exists because refusal alone isn't a complete answer to "I don't kno
 
 ## Why this took longer than the answering
 
-Building a system that answers well is, at this point, a largely solved engineering problem: good retrieval, a capable model, decent prompt design gets you most of the way there quickly. Building a system that knows the shape of its own limits, reliably, across the many ways a real person might phrase a question that crosses that line, that's the part that doesn't have a library you can import. It has to be designed, tested against real edge cases, and audited, specifically for the population using it.
+Building a system that answers well is, at this point, a largely solved engineering problem: good retrieval, a capable model, decent prompt design gets you most of the way there quickly. Building a system that knows the shape of its own limits, reliably, across the many ways a real person might phrase a question that crosses that line — that's the part that doesn't have a library you can import. It has to be designed, tested against real edge cases, and audited, specifically for the population using it.
 
 The testing work is iterative and never truly finished. You build a refusal rule, then you try to phrase the same request five different ways and see if the rule holds on all of them. You find the cases where a legitimate educational question gets caught by a refusal that was designed for a ruling request, and you tune the boundary. You find the cases where a ruling request slips through because it was phrased as a hypothetical, and you tighten it. Each cycle surfaces edge cases the previous design didn't account for, and for a system serving children in a sensitive domain, that cycle has to be thorough, not fast.
 

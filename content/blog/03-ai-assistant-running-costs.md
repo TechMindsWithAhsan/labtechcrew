@@ -9,7 +9,7 @@ Every AI vendor's pricing page tells you what the API costs per million tokens. 
 
 ## The token math, in plain terms
 
-AI models charge per "token", roughly ¾ of a word. You pay separately for tokens going in (your prompt, plus any context/documents the assistant reads) and tokens coming out (the response).
+AI models charge per "token," roughly ¾ of a word. You pay separately for tokens going in (your prompt, plus any context/documents the assistant reads) and tokens coming out (the response).
 
 A cheap, capable model runs roughly $0.10–$0.40 per million input tokens and $0.40–$1.60 per million output tokens. A more capable model can run 5–10x that. For most business chatbot use cases (answering questions, qualifying leads), the cheap tier is enough; you don't need your top-tier flagship model to answer "what are your hours."
 
