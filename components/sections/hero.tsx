@@ -95,9 +95,12 @@ export type HeroCharacter = { src: StaticImageData; alt: string }
 export function HeroColumns({
   character,
   children,
+  imageClassName,
 }: {
   character?: HeroCharacter
   children: ReactNode
+  /** Optional override for the character image className. Defaults to the standard sizing. */
+  imageClassName?: string
 }) {
   if (!character) return <>{children}</>
 
@@ -111,7 +114,7 @@ export function HeroColumns({
            See the two-kinds-of-hero-image note at the top of this file. */
         loading="lazy"
         sizes="(min-width: 1024px) 18rem, 80vw"
-        className="mx-auto h-auto w-auto max-h-64 max-w-full lg:max-h-96"
+        className={imageClassName ?? "mx-auto h-auto w-auto max-h-64 max-w-full lg:max-h-96"}
       />
     </div>
   )

@@ -8,7 +8,7 @@ import { CtaBand } from '@/components/sections/blocks'
 import { HeroColumns } from '@/components/sections/hero'
 import { pageMetadata, breadcrumbSchema } from '@/lib/seo'
 import { getAllPosts } from '@/lib/content'
-import characterBlog from '@/public/characters/blog.png'
+import characterBlog from '@/public/characters/blog.webp'
 
 /**
  * Blog index.
@@ -66,6 +66,7 @@ export default async function BlogPage() {
               src: characterBlog,
               alt: 'Figure with a notebook for a head, pen in hand, standing beside a stack of papers',
             }}
+            imageClassName="mx-auto h-auto w-auto max-h-80 max-w-full lg:max-h-[28rem]"
           >
             <div className="flex max-w-3xl flex-col gap-5">
               <Eyebrow>Notes</Eyebrow>
