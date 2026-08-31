@@ -8,7 +8,7 @@ import { CtaBand } from '@/components/sections/blocks'
 import { HeroColumns } from '@/components/sections/hero'
 import { pageMetadata, breadcrumbSchema } from '@/lib/seo'
 import { getAllPosts } from '@/lib/content'
-import characterBlog from '@/public/characters/blog-cropped.webp'
+import characterBlog from '@/public/characters/blog.webp'
 
 /**
  * Blog index.
