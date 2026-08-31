@@ -20,7 +20,7 @@ Performance is the other wall. WordPress renders pages dynamically from a databa
 
 ## What Next.js actually gets right
 
-Next.js sites are typically pre-built (statically generated) or rendered on-demand at the edge, which means there's no database query standing between a visitor and the page. That translates directly into faster load times and better Core Web Vitals scores, which is not just a vanity metric, it's a ranking factor and a conversion factor. A site that loads in under a second converts measurably better than one that takes three.
+Next.js sites are typically pre-built (statically generated) or rendered on-demand at the edge, which means there's no database query standing between a visitor and the page. That translates directly into faster load times and better Core Web Vitals scores, which is not just a vanity metric; it's a ranking factor and a conversion factor. A site that loads in under a second converts measurably better than one that takes three.
 
 There's no plugin graveyard to inherit. Every piece of functionality is code your team wrote and understands, which means fewer mystery bugs and a smaller attack surface: no plugin update breaking your checkout at 2am.
 

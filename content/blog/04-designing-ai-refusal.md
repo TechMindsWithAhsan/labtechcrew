@@ -9,7 +9,7 @@ Anyone can wire a chat box to a model. That's an afternoon of work with today's 
 
 ## Why refusal is the hard problem, not the model
 
-A language model, left to its own defaults, will attempt to answer almost anything you ask it, confidently, fluently, and sometimes wrong. That's fine for a lot of use cases. It is not fine when the subject is a child's education in a religious text, where "confidently wrong" isn't a bad support ticket, it's a real harm to someone who trusted the answer.
+A language model, left to its own defaults, will attempt to answer almost anything you ask it, confidently, fluently, and sometimes wrong. That's fine for a lot of use cases. It is not fine when the subject is a child's education in a religious text, where "confidently wrong" isn't a bad support ticket; it's a real harm to someone who trusted the answer.
 
 The actual engineering challenge isn't "make the AI smart enough to answer correctly." It's "make the AI know, reliably, which questions it should not attempt to answer at all, and hand those to a human instead."
 
@@ -23,7 +23,7 @@ This isn't a single keyword filter. A keyword filter catches "what is the ruling
 
 The other half of the trust problem: even for questions QuranRI *does* answer, the answer has to be traceable. Every response is built from an indexed source corpus with the specific reference attached, not generated from the model's general training knowledge, which can be subtly wrong or entirely fabricated in ways that sound just as confident as a correct answer.
 
-This matters because a wrong answer that comes with a citation is checkable. A wrong answer that sounds authoritative and has no source is just as convincing and impossible to verify. The citation isn't a nice-to-have UI element, it's the actual safety mechanism. If the system can't point to where an answer came from, it shouldn't be answering.
+This matters because a wrong answer that comes with a citation is checkable. A wrong answer that sounds authoritative and has no source is just as convincing and impossible to verify. The citation isn't a nice-to-have UI element; it's the actual safety mechanism. If the system can't point to where an answer came from, it shouldn't be answering.
 
 ## The handoff to a human
 

@@ -13,7 +13,7 @@ We needed to prove the architecture on our own platform before offering it to cl
 
 ## The starting numbers
 
-Before touching anything, here's the one hard number we had: 19 indexed pages in Google Search Console. We didn't capture formal Core Web Vitals or PageSpeed scores going in, the WordPress site was small enough that the indexed page count was the metric that mattered for scoping the redirect map, and that's where our benchmarking energy went. The performance story is what came out after, not what went in.
+Before touching anything, here's the one hard number we had: 19 indexed pages in Google Search Console. We didn't capture formal Core Web Vitals or PageSpeed scores going in; the WordPress site was small enough that the indexed page count was the metric that mattered for scoping the redirect map, and that's where our benchmarking energy went. The performance story is what came out after, not what went in.
 
 ## The redirect map
 

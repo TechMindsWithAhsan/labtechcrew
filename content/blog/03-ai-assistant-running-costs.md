@@ -31,7 +31,7 @@ The token price is the visible cost. Here's what actually drives the bill up or 
 
 **Context size.** A RAG system (like the one behind QuranRI) retrieves relevant source documents before answering. The more context retrieved per query, the more input tokens you pay for, every time, on every conversation. Smart retrieval (pulling only the most relevant few paragraphs, not entire documents) is a meaningful cost lever, not just an accuracy one.
 
-**Conversation length.** Multi-turn conversations resend the prior conversation history as context on every new message, unless you're managing that carefully. A 10-message conversation isn't 10x the cost of a 1-message one, it's closer to 50x, because each new message re-sends everything before it.
+**Conversation length.** Multi-turn conversations resend the prior conversation history as context on every new message, unless you're managing that carefully. A 10-message conversation isn't 10x the cost of a 1-message one; it's closer to 50x, because each new message re-sends everything before it.
 
 **Caching.** Most providers now offer prompt caching: a steep discount (up to 90%) on input tokens that are identical across requests, like a system prompt or a document that doesn't change. Structuring your prompts so the stable parts come first and get cached is one of the highest-leverage cost optimizations available, and most teams don't do it.
 
@@ -41,4 +41,4 @@ The token price is the visible cost. Here's what actually drives the bill up or 
 
 For a small business chatbot handling a few hundred conversations a month, the math on public API rates works out to modest monthly costs, not the thousands a vendor's enterprise pricing tier might suggest. The number scales with usage, not with a flat subscription, which means a slow month costs you almost nothing and a viral month costs you proportionally more, not a surprise overage fee.
 
-The bigger cost, in our experience, isn't the API bill, it's the engineering time to design retrieval and context properly so you're not paying to re-send the same documents on every message. That's a one-time cost with a permanent payoff, and it's the part most off-the-shelf chatbot tools don't let you touch at all.
+The bigger cost, in our experience, isn't the API bill; it's the engineering time to design retrieval and context properly so you're not paying to re-send the same documents on every message. That's a one-time cost with a permanent payoff, and it's the part most off-the-shelf chatbot tools don't let you touch at all.

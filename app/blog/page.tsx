@@ -5,8 +5,10 @@ import { Card } from '@/components/ui/card'
 import { Breadcrumbs } from '@/components/ui/breadcrumbs'
 import { JsonLd } from '@/components/ui/json-ld'
 import { CtaBand } from '@/components/sections/blocks'
+import { HeroColumns } from '@/components/sections/hero'
 import { pageMetadata, breadcrumbSchema } from '@/lib/seo'
 import { getAllPosts } from '@/lib/content'
+import characterBlog from '@/public/characters/blog.png'
 
 /**
  * Blog index.
@@ -59,16 +61,23 @@ export default async function BlogPage() {
       <Section>
         <Container>
           <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Blog' }]} />
-          <div className="flex max-w-3xl flex-col gap-5">
-            <Eyebrow>Notes</Eyebrow>
-            <h1 className="text-display-1">
-              Working notes, <span className="em-accent">not thought leadership</span>
-            </h1>
-            <p className="text-body-lg text-(--color-text-muted)">
-              Things we learned building real projects, written up while they are still fresh
-              enough to be specific.
-            </p>
-          </div>
+          <HeroColumns
+            character={{
+              src: characterBlog,
+              alt: 'Figure with a notebook for a head, pen in hand, standing beside a stack of papers',
+            }}
+          >
+            <div className="flex max-w-3xl flex-col gap-5">
+              <Eyebrow>Notes</Eyebrow>
+              <h1 className="text-display-1">
+                Working notes, <span className="em-accent">not thought leadership</span>
+              </h1>
+              <p className="text-body-lg text-(--color-text-muted)">
+                Things we learned building real projects, written up while they are still fresh
+                enough to be specific.
+              </p>
+            </div>
+          </HeroColumns>
         </Container>
       </Section>
 
