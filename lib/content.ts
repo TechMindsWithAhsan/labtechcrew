@@ -90,6 +90,11 @@ function readMarkdownFiles(): Post[] {
 let _posts: Post[] | null = null
 
 function getPosts(): Post[] {
+  // In dev mode, always read fresh from disk so content edits hot-reload
+  if (process.env.NODE_ENV === 'development') {
+    return readMarkdownFiles()
+  }
+  // In production, cache for the build lifetime (content is static anyway)
   if (!_posts) _posts = readMarkdownFiles()
   return _posts
 }

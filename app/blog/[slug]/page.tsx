@@ -57,7 +57,7 @@ export default async function BlogPostPage({
         })}
       />
 
-      <Section>
+      <Section className="pt-14 md:pt-20 pb-10 md:pb-14">
         <Container>
           <Breadcrumbs
             items={[
@@ -82,7 +82,7 @@ export default async function BlogPostPage({
         </Container>
       </Section>
 
-      <Section>
+      <Section space="tight">
         <Container>
           <article
             className="prose prose-lg"
