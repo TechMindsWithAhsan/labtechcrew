@@ -36,7 +36,11 @@ export const metadata: Metadata = {
   description: SITE.description,
   openGraph: ogDefaults,
   twitter: { card: 'summary_large_image' },
-  icons: { icon: '/favicon.ico' },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-icon.png',
+    shortcut: '/favicon.ico',
+  },
   formatDetection: { telephone: false },
 }
 
