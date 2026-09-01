@@ -69,7 +69,7 @@ export default function StyleguidePage() {
             <LogoMark className="h-10 w-auto" />
             <Wordmark />
             <span className="ml-4 text-small text-(--color-text-subtle)">
-              Placeholder mark — replace with the real SVG export.
+              Brand mark
             </span>
           </div>
         </Container>

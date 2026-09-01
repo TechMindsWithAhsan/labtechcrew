@@ -19,11 +19,6 @@ import mark from '@/public/brand/mark.png'
  * pixel-identical to the source; only the connected outer background was made
  * transparent, then the canvas was trimmed to content.
  *
- * WHEN YOU HAVE THE VECTOR SOURCE (.ai / .svg / .fig), replace these with SVG.
- * These are 480px-wide rasters — fine at header size on retina, but SVG is
- * sharper at every size and a fraction of the bytes. That is the only upgrade
- * left here.
- *
  * `logo-dark.png` also exists for light backgrounds — invoices, proposals,
  * print, and the light theme if it is ever enabled.
  */
