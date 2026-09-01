@@ -71,7 +71,7 @@ export const CAMPAIGNS: Campaign[] = [
       'Fixed price, agreed before we start. Live in four to six weeks.',
     ],
     proof:
-      'We migrated our own site off WordPress and documented every step, including a redirect chain the framework documentation said would not happen. Ask us for the before-and-after numbers — it is the same migration you would be buying.',
+      'We migrated our own site off WordPress and documented every step, including a redirect chain the framework documentation said would not happen. Ask us for the before-and-after numbers: it is the same migration you would be buying.',
     formHeading: 'Get a fixed-price scope',
     formSubhead:
       'Three fields. We reply within one business day, and we will sign a mutual NDA first if you want one.',
@@ -85,7 +85,7 @@ export const CAMPAIGNS: Campaign[] = [
     headline: 'A logo and identity you actually own, in one week',
     headlineAccent: 'actually own',
     subhead:
-      'Brief on Monday, three directions by Thursday, two rounds of refinement, and every file you will ever be asked for — including the editable Figma. Fixed price, $299.',
+      'Brief on Monday, three directions by Thursday, two rounds of refinement, and every file you will ever be asked for, including the editable Figma. Fixed price, $299.',
     bullets: [
       'Primary mark plus the variations you will need: horizontal, stacked, icon, monochrome',
       'Color, type and clear-space rules written down, so it stays consistent after we leave',

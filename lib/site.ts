@@ -154,7 +154,7 @@ export const SITE = {
   differentiators: [
     {
       title: `Open ${HOURS.range}, ${HOURS.days}`,
-      body: `Our working day, on a calendar you can book — not "we're flexible". Calls, screen shares and decisions happen inside it, and anything urgent outside it has a named person and a phone number rather than a shared inbox.`,
+      body: `Our working day, on a calendar you can book: not "we're flexible". Calls, screen shares and decisions happen inside it, and anything urgent outside it has a named person and a phone number rather than a shared inbox.`,
     },
     {
       title: 'You never pay for work you have not seen',
@@ -406,7 +406,7 @@ export const STARTER_PACKS = [
     forWho: 'A business answering the same twenty questions every single day.',
     includes: [
       'An assistant grounded on YOUR documents, that cites its sources',
-      'A published refusal boundary — it says "I do not know" instead of inventing',
+      'A published refusal boundary: it says "I do not know" instead of inventing',
       'Website widget plus WhatsApp, with conversation logs',
       'One retraining round after you see real usage',
     ],

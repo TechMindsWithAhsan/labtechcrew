@@ -169,7 +169,7 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: 'React Native or fully native?',
-        a: 'React Native for the large majority of business apps — one team, one codebase, and roughly the same result for the user. Fully native earns its cost when you are doing heavy real-time graphics, deep hardware work, or something the platform vendors gate. We will say which one you need before you pay us anything.',
+        a: 'React Native for the large majority of business apps: one team, one codebase, and roughly the same result for the user. Fully native earns its cost when you are doing heavy real-time graphics, deep hardware work, or something the platform vendors gate. We will say which one you need before you pay us anything.',
       },
       {
         q: 'Who owns the app listings?',
@@ -303,7 +303,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         q: 'Can you prove you can do this?',
-        a: 'We did it to ourselves and wrote down the numbers. Ask us for the before-and-after Core Web Vitals and the Search Console recovery curve for labtechcrew.com — it is the same migration you are buying.',
+        a: 'We did it to ourselves and wrote down the numbers. Ask us for the before-and-after Core Web Vitals and the Search Console recovery curve for labtechcrew.com: it is the same migration you are buying.',
       },
     ],
   },
@@ -547,7 +547,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         title: 'Files you own outright',
-        body: 'Editable Figma, exported assets, fonts documented with their licenses. Ownership transfers on final payment and the editable sources go with it — no lock-in, no "we keep the working files".',
+        body: 'Editable Figma, exported assets, fonts documented with their licenses. Ownership transfers on final payment and the editable sources go with it, no lock-in, no "we keep the working files".',
       },
     ],
     stack: ['Figma', 'Design tokens', 'Tailwind CSS', 'SVG', 'WCAG 2.1', 'Adobe Illustrator'],
@@ -565,7 +565,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         q: 'Can you work with our existing brand?',
-        a: 'Often that is the better option. We can extend what you have into a proper system rather than replace it — cheaper, faster, and it does not throw away recognition you have already paid for.',
+        a: 'Often that is the better option. We can extend what you have into a proper system rather than replace it: cheaper, faster, and it does not throw away recognition you have already paid for.',
       },
     ],
   },
@@ -624,7 +624,7 @@ export const SERVICES: ServiceContent[] = [
       },
       {
         q: 'How long does it take?',
-        a: 'Two to four weeks. Research and interviews first, then a working session with your founders, then the written strategy. It is deliberately short — this work goes stale if you let it run for a quarter.',
+        a: 'Two to four weeks. Research and interviews first, then a working session with your founders, then the written strategy. It is deliberately short; this work goes stale if you let it run for a quarter.',
       },
       {
         q: 'Do we have to redesign everything afterwards?',
