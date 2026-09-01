@@ -114,7 +114,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   <Link href="/services/" className="text-(--color-accent) hover:underline">
                     {tier.label}
                   </Link>{' '}
-                  — {tier.blurb.toLowerCase()}
+                  : {tier.blurb.toLowerCase()}
                 </p>
               ) : null}
             </aside>

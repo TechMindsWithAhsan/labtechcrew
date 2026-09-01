@@ -428,7 +428,7 @@ export const STARTER_PACKS = [
 ] as const
 
 export const BUDGET_BANDS = [
-  { value: 'under-2.5k', label: 'Under $2,500 (a Starter Pack)' },
+  { value: 'under-2.5k', label: 'Under $2,500 (Starter Pack)' },
   { value: '2.5-5k', label: '$2,500 – $5,000' },
   { value: '5-15k', label: '$5,000 – $15,000' },
   { value: '15-50k', label: '$15,000 – $50,000' },

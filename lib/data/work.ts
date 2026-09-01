@@ -119,7 +119,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         title: 'AI to qualify, humans to finish',
-        body: 'The platform handles the scalable part: assessment, practice, repetition, answering the same foundational question at 2am without fatigue. Qualified students then route to one-to-one sessions with VIqra\'s teachers. The AI does not replace the teacher — it protects the teacher\'s time for the work only a teacher can do.',
+        body: 'The platform handles the scalable part: assessment, practice, repetition, answering the same foundational question at 2am without fatigue. Qualified students then route to one-to-one sessions with VIqra\'s teachers. The AI does not replace the teacher; it protects the teacher\'s time for the work only a teacher can do.',
       },
       {
         title: 'Built for children, and audited for it',
@@ -365,7 +365,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     lead:
       'A platform that streams live market data and lets analysts build their own view of it, engineered for latency and for the moments when the feed misbehaves.',
     challenge:
-      'Financial interfaces are unforgiving. A chart that lags by two seconds is worse than no chart, and a silent disconnect that leaves stale prices on screen is genuinely dangerous. The engineering problem is not the analytics — it is the connection.',
+      'Financial interfaces are unforgiving. A chart that lags by two seconds is worse than no chart, and a silent disconnect that leaves stale prices on screen is genuinely dangerous. The engineering problem is not the analytics; it is the connection.',
     approach: [
       {
         title: 'Streaming architecture with honest failure states',

@@ -85,7 +85,7 @@ const COMMITMENTS = [
   },
   {
     title: 'Fixed price per phase, and you can stop between them',
-    body: 'Each phase is scoped, quoted and approved before any work starts, and there is a clean exit at every boundary. No annual retainer, no notice period, no penalty. Stop and the phase you have just approved becomes the final payment of the engagement — it clears, ownership of everything produced transfers to you, and we hand over. If phase one disappoints you, you leave with working code and no argument.',
+    body: 'Each phase is scoped, quoted and approved before any work starts, and there is a clean exit at every boundary. No annual retainer, no notice period, no penalty. Stop and the phase you have just approved becomes the final payment of the engagement; it clears, ownership of everything produced transfers to you, and we hand over. If phase one disappoints you, you leave with working code and no argument.',
   },
   {
     title: 'Business hours on a calendar you can book',
@@ -216,7 +216,7 @@ export default function AboutPage() {
             eyebrow="How this works"
             title="Everything here is something you can hold us to"
             accent="hold us to"
-            lead="Most agency about-pages ask you to trust a grid of photographs. You cannot verify a photograph. So instead, here is exactly what you get in writing — and exactly how you get out if we disappoint you."
+            lead="Most agency about-pages ask you to trust a grid of photographs. You cannot verify a photograph. So instead, here is exactly what you get in writing, and exactly how you get out if we disappoint you."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {COMMITMENTS.map((c) => (

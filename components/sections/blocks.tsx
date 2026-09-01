@@ -339,7 +339,7 @@ export function TestimonialCard({
     <figure className="panel flex h-full flex-col gap-4 rounded-(--radius-lg) p-6">
       <blockquote className="text-body-lg text-white">"{quote}"</blockquote>
       <figcaption className="mt-auto text-small text-(--color-text-subtle)">
-        <span className="font-semibold text-white">{name}</span> — {role}, {company}
+        <span className="font-semibold text-white">{name}</span>, {role}, {company}
         {linkedin ? (
           <>
             {' · '}

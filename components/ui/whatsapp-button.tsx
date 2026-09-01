@@ -19,7 +19,7 @@ export function WhatsAppButton() {
   if (!SITE.whatsapp) return null
 
   const text = encodeURIComponent(
-    "Hi LabTechCrew — I saw your site and I'd like to talk about a project.",
+    "Hi LabTechCrew, I saw your site and I'd like to talk about a project.",
   )
 
   return (

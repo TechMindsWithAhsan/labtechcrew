@@ -193,7 +193,7 @@ export const SERVICES: ServiceContent[] = [
     eyebrow: 'Custom software',
     h1: 'The system your business already runs on, finally built',
     h1Accent: 'finally built',
-    lead: 'Most companies are running on a spreadsheet, three SaaS tools and one person who remembers how it all fits together. We replace that with software — usually smaller and cheaper than people expect, because we build the part that hurts first.',
+    lead: 'Most companies are running on a spreadsheet, three SaaS tools and one person who remembers how it all fits together. We replace that with software, usually smaller and cheaper than people expect, because we build the part that hurts first.',
     forWho: [
       'A spreadsheet is doing a job that a database should be doing.',
       'You pay for four tools that almost talk to each other, and a person who copies between them.',
@@ -361,7 +361,7 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: 'How is this different from just using ChatGPT?',
-        a: 'A general model is trained on the whole internet and has no idea which of your policies is current. A retrieval-grounded assistant only reads the documents you gave it, attaches the source to what it says, and can be made to refuse rather than guess. The value is not a smarter model — it is a narrower one that you can audit.',
+        a: 'A general model is trained on the whole internet and has no idea which of your policies is current. A retrieval-grounded assistant only reads the documents you gave it, attaches the source to what it says, and can be made to refuse rather than guess. The value is not a smarter model; it is a narrower one that you can audit.',
       },
       {
         q: 'Will it make things up?',
@@ -428,7 +428,7 @@ export const SERVICES: ServiceContent[] = [
     faqs: [
       {
         q: 'Will callers know it is not a person?',
-        a: 'Yes, and it should tell them. Attempting to pass a voice agent off as human is both a trust problem and, in a growing number of jurisdictions, a legal one. Disclosure costs you almost nothing — what people object to is being trapped, not being told.',
+        a: 'Yes, and it should tell them. Attempting to pass a voice agent off as human is both a trust problem and, in a growing number of jurisdictions, a legal one. Disclosure costs you almost nothing; what people object to is being trapped, not being told.',
       },
       {
         q: 'What happens when it cannot help?',
@@ -518,7 +518,7 @@ export const SERVICES: ServiceContent[] = [
     eyebrow: 'Design & identity',
     h1: 'Design that survives contact with a real user',
     h1Accent: 'a real user',
-    lead: 'Logos, interfaces and the system that keeps them consistent after we leave. We design in Figma, hand over the source files and the tokens, and build what we drew — so nothing gets lost in the gap between designer and developer.',
+    lead: 'Logos, interfaces and the system that keeps them consistent after we leave. We design in Figma, hand over the source files and the tokens, and build what we drew, so nothing gets lost in the gap between designer and developer.',
     forWho: [
       'You need a logo and a basic identity, and you need it this month.',
       'Your product works but people get lost, and support is paying for it.',

@@ -126,7 +126,7 @@ export function LeadForm({ tier }: Props) {
         <Field
           label="Phone"
           htmlFor="phone"
-          hint="Optional — but it is how we reply fastest."
+          hint="Optional, but it is how we reply fastest."
           error={errors.phone?.message}
         >
           <Input
@@ -233,7 +233,7 @@ export function LeadForm({ tier }: Props) {
         </Button>
         <p className="text-small text-(--color-text-subtle)">
           We reply within one business day. We will sign a mutual NDA before the call if you want
-          one — zero obligation.
+          one: zero obligation.
         </p>
         {status === 'error' ? (
           /* A failed submit is the most expensive moment on the site: the
@@ -245,7 +245,7 @@ export function LeadForm({ tier }: Props) {
             className="rounded-(--radius-md) border border-(--color-danger)/40 bg-(--color-danger)/10 p-4"
           >
             <p className="text-small font-semibold text-(--color-danger)">
-              That did not go through — and we do not want to lose you.
+              That did not go through, and we do not want to lose you.
             </p>
             <p className="mt-1 text-small text-(--color-text-muted)">
               Reach us directly and we will pick it up right away:{' '}

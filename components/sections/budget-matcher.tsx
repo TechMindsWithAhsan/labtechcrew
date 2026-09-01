@@ -33,7 +33,7 @@ type BandValue = (typeof BUDGET_BANDS)[number]['value']
 
 const GUIDANCE: Record<BandValue, { headline: string; body: string; packs: readonly string[] }> = {
   'under-2.5k': {
-    headline: 'Yes — and you are not a second-class client here.',
+    headline: 'Yes, and you are not a second-class client here.',
     body: 'Every Starter Pack sits in this band: a brand identity, a business site written for search, an online store with payments configured, an AI assistant grounded on your own documents, or a mobile app shipped to both stores with the source code in your repository. Fixed price, real delivery date, full ownership. This is where most of our long-running clients started.',
     packs: [
       'Logo & Brand Kit',
@@ -45,12 +45,12 @@ const GUIDANCE: Record<BandValue, { headline: string; body: string; packs: reado
     ],
   },
   '2.5-5k': {
-    headline: 'Custom territory starts here — built to your requirements.',
+    headline: 'Custom territory starts here: built to your requirements.',
     body: 'Open scope, quoted per phase, approved before anything starts. A marketing site with a custom CMS, or a focused automation across your existing tools.',
     packs: [],
   },
   '5-15k': {
-    headline: 'Custom territory — built to your requirements.',
+    headline: 'Custom territory: built to your requirements.',
     body: 'Open scope, quoted per phase, approved before anything starts. A marketing site with a custom CMS, a multi-step automation across your existing tools, or a focused product build.',
     packs: [],
   },
@@ -81,7 +81,7 @@ export function BudgetMatcher() {
     <div className="panel rounded-(--radius-xl) p-8">
       <h3 className="text-h3">What can I actually get for my budget?</h3>
       <p className="mt-2 text-(--color-text-muted)">
-        Pick a range. No email, no form — the answer is right here.
+        Pick a range. No email, no form: the answer is right here.
       </p>
 
       <div

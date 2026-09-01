@@ -191,7 +191,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               eyebrow="Outcome"
               title="What shipped"
               accent="shipped"
-              lead="Described rather than quantified — we only publish numbers a client has signed off in writing."
+              lead="Described rather than quantified, we only publish numbers a client has signed off in writing."
             />
             <ul className="mt-10 flex flex-col gap-4">
               {study.results.map((r) => (

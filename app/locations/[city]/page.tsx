@@ -44,7 +44,7 @@ export async function generateMetadata({
 
   return pageMetadata({
     title: `AI Automation for ${loc.city} Businesses`,
-    description: `We build AI automations and workflow systems for ${loc.city}, ${loc.stateName} businesses — scoped in a 20-minute call, documented so your team owns them. Contracted through a Texas LLC.`,
+    description: `We build AI automations and workflow systems for ${loc.city}, ${loc.stateName} businesses. Scoped in a 20-minute call and documented so your team owns them, contracted through a Texas LLC.`,
     path: `/locations/${city}`,
   })
 }
@@ -160,7 +160,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
       <CtaBand
         title={`Find the hours you are losing in ${loc.city}`}
         accent={loc.city}
-        lead="Half a day mapping what actually happens, what the delay costs in hours per month, and which parts are worth automating. Some of what we find is not — and we say so."
+        lead="Half a day mapping what actually happens, what the delay costs in hours per month, and which parts are worth automating. Some of what we find is not, and we say so."
       />
     </>
   )

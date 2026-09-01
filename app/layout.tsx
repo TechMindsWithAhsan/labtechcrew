@@ -30,7 +30,7 @@ import { WebVitals } from './_components/web-vitals'
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — AI, Web & App Development for US Business`,
+    default: `${SITE.name}: AI, Web & App Development for US Business`,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,

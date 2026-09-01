@@ -5,7 +5,7 @@ description: "Redirect map, metadata freeze, the two-hop chain the docs said wou
 draft: false
 ---
 
-We ran labtechcrew.com on WordPress through July 2026. We moved it to Next.js in August 2026. This is what actually happened — not the marketing version, the real one, including the parts that went wrong.
+We ran labtechcrew.com on WordPress through July 2026. We moved it to Next.js in August 2026. This is what actually happened, not the marketing version, the real one, including the parts that went wrong.
 
 ## Why we moved
 
@@ -31,7 +31,7 @@ This was not in the documentation. It was caught by testing with `curl -I`, whic
 
 ## Metadata freeze
 
-During the migration, we froze every title tag and meta description byte-for-byte: the exact strings Google had indexed, reproduced in the new code, marked `KEEP` in the source so nobody could accidentally "improve" them. The only titles we changed were `/services/` (which had "Best Web Development Company" — an unsubstantiated superlative sitting in the Google snippet) and `/contact/` (which had "Top Software Development Company USA").
+During the migration, we froze every title tag and meta description byte-for-byte: the exact strings Google had indexed, reproduced in the new code, marked `KEEP` in the source so nobody could accidentally "improve" them. The only titles we changed were `/services/` (which had "Best Web Development Company", an unsubstantiated superlative sitting in the Google snippet) and `/contact/` (which had "Top Software Development Company USA").
 
 We also caught a bug in testing: the new site's title template was appending `| LabTechCrew` to titles that already began with the brand, silently changing every preserved title, the exact thing the migration exists to prevent. Fixed in `lib/seo.ts`.
 

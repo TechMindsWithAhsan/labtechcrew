@@ -5,7 +5,7 @@ description: "The part of the build that took longest on QuranRI, and why it mat
 draft: false
 ---
 
-Anyone can wire a chat box to a model. That's an afternoon of work with today's tools. What took eight months on QuranRI wasn't the answering — it was the refusing. This is the part of an AI build that almost never makes it into a vendor's pitch deck, because it's not a feature you can screenshot. It's a boundary, and boundaries are only visible when they hold.
+Anyone can wire a chat box to a model. That's an afternoon of work with today's tools. What took eight months on QuranRI wasn't the answering; it was the refusing. This is the part of an AI build that almost never makes it into a vendor's pitch deck, because it's not a feature you can screenshot. It's a boundary, and boundaries are only visible when they hold.
 
 ## Why refusal is the hard problem, not the model
 
@@ -17,7 +17,7 @@ The actual engineering challenge isn't "make the AI smart enough to answer corre
 
 QuranRI does not issue legal, medical, psychological, financial or religious rulings; that boundary is published in its terms of service, in writing. In practice, this means a student can ask "what does this verse say about justice?" and get a sourced answer, but asking "is what I'm doing halal?" triggers a refusal. The system explains what different scholarly positions say where its sources cover them, but it does not issue a ruling. The line between "explaining" and "ruling" is the single hardest boundary to draw, because the same underlying request for a ruling can be phrased dozens of ways.
 
-This isn't a single keyword filter. A keyword filter catches "what is the ruling on X" but misses "so if I did X, would that be wrong", the same underlying request for a ruling, asked differently. The real challenge is intent classification: understanding what a person is actually asking for, not just pattern-matching on the words they used. That requires thinking about the shape of the request — is this asking for information, or is it asking for a judgment? — and building classification that holds up across the many ways a real person phrases the same underlying question. Keyword matching is a starting point; reliable intent detection is the actual engineering work.
+This isn't a single keyword filter. A keyword filter catches "what is the ruling on X" but misses "so if I did X, would that be wrong", the same underlying request for a ruling, asked differently. The real challenge is intent classification: understanding what a person is actually asking for, not just pattern-matching on the words they used. That requires thinking about the shape of the request (is this asking for information, or is it asking for a judgment?) and building classification that holds up across the many ways a real person phrases the same underlying question. Keyword matching is a starting point; reliable intent detection is the actual engineering work.
 
 ## Retrieval with a source, not memory
 
@@ -33,7 +33,7 @@ The handoff exists because refusal alone isn't a complete answer to "I don't kno
 
 ## Why this took longer than the answering
 
-Building a system that answers well is, at this point, a largely solved engineering problem: good retrieval, a capable model, decent prompt design gets you most of the way there quickly. Building a system that knows the shape of its own limits, reliably, across the many ways a real person might phrase a question that crosses that line — that's the part that doesn't have a library you can import. It has to be designed, tested against real edge cases, and audited, specifically for the population using it.
+Building a system that answers well is, at this point, a largely solved engineering problem: good retrieval, a capable model, decent prompt design gets you most of the way there quickly. Building a system that knows the shape of its own limits, reliably, across the many ways a real person might phrase a question that crosses that line: that is the part that doesn't have a library you can import. It has to be designed, tested against real edge cases, and audited, specifically for the population using it.
 
 The testing work is iterative and never truly finished. You build a refusal rule, then you try to phrase the same request five different ways and see if the rule holds on all of them. You find the cases where a legitimate educational question gets caught by a refusal that was designed for a ruling request, and you tune the boundary. You find the cases where a ruling request slips through because it was phrased as a hypothetical, and you tighten it. Each cycle surfaces edge cases the previous design didn't account for, and for a system serving children in a sensitive domain, that cycle has to be thorough, not fast.
 

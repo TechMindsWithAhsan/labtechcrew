@@ -130,7 +130,7 @@ export const LOCATIONS = [
     state: 'TX',
     stateName: 'Texas',
     blurb:
-      'Dallas–Fort Worth runs on logistics, healthcare admin and professional services — three sectors where most of the working day is one team moving information between systems that do not talk.',
+      'Dallas–Fort Worth runs on logistics, healthcare admin and professional services: three sectors where most of the working day is one team moving information between systems that do not talk.',
   },
   {
     slug: 'houston',
@@ -146,7 +146,7 @@ export const LOCATIONS = [
     state: 'TX',
     stateName: 'Texas',
     blurb:
-      'Austin teams are usually already automated somewhere and stuck somewhere else — a Zapier bill that grows faster than revenue, or a workflow nobody wants to touch because one person built it.',
+      'Austin teams are usually already automated somewhere and stuck somewhere else: a Zapier bill that grows faster than revenue, or a workflow nobody wants to touch because one person built it.',
   },
   {
     slug: 'san-antonio',

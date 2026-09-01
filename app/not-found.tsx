@@ -14,7 +14,7 @@ export default function NotFound() {
           <p className="text-eyebrow uppercase text-(--color-accent)">404</p>
           <h1 className="text-display-2">That page moved, or never existed</h1>
           <p className="text-body-lg text-(--color-text-muted)">
-            If you followed a link from an old version of this site, try the services page — most
+            If you followed a link from an old version of this site, try the services page; most
             of the old URLs redirect there now.
           </p>
           <div className="flex flex-wrap gap-3">
