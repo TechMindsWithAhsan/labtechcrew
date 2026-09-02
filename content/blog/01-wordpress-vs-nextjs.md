@@ -4,7 +4,7 @@ slug: wordpress-vs-nextjs
 description: "The honest comparison, including when WordPress is still the right answer."
 ---
 
-Most agencies that build in Next.js will tell you WordPress is dead. Most agencies that build in WordPress will tell you Next.js is overkill. Both are selling something. Here's the version without a horse in the race — or rather, with one, but said out loud: we build in Next.js, and we still think WordPress is the right call for some businesses. Here's how to tell which one you are.
+Most agencies that build in Next.js will tell you WordPress is dead. Most agencies that build in WordPress will tell you Next.js is overkill. Both are selling something. Here's the version without a horse in the race, or rather, with one, but said out loud: we build in Next.js, and we still think WordPress is the right call for some businesses. Here's how to tell which one you are.
 
 ## What WordPress actually gets right
 
